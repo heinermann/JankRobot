@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dpvfrx004v7tn"
-path="res://.godot/imported/Brush.png-0d55c8db340f5865fa88e604e9a95a1f.ctex"
+path="res://.godot/imported/Brush.png-8ffb4283218fc5dec2b671bf92ab6659.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Painting Room/Brush.png"
-dest_files=["res://.godot/imported/Brush.png-0d55c8db340f5865fa88e604e9a95a1f.ctex"]
+source_file="res://[painting] Painting Room/Brush.png"
+dest_files=["res://.godot/imported/Brush.png-8ffb4283218fc5dec2b671bf92ab6659.ctex"]
 
 [params]
 

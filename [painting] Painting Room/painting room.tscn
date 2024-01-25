@@ -1,12 +1,12 @@
 [gd_scene load_steps=29 format=3 uid="uid://c63gewo0qeut2"]
 
-[ext_resource type="Script" path="res://Painting Room/SkeletonIK3D.gd" id="2_vwkp5"]
-[ext_resource type="Script" path="res://Painting Room/paint.gd" id="3_o3875"]
-[ext_resource type="Script" path="res://Painting Room/SetUVPositionMesh.gd" id="5_edvpv"]
-[ext_resource type="Script" path="res://Painting Room/Brush.gd" id="9_41s0o"]
-[ext_resource type="Script" path="res://Painting Room/DrawViewport.gd" id="9_j2chq"]
-[ext_resource type="Shader" uid="uid://8q2dcbmkx5nc" path="res://Painting Room/paintable.tres" id="11_1hcha"]
-[ext_resource type="Texture2D" uid="uid://dpvfrx004v7tn" path="res://Painting Room/Brush.png" id="11_ndstb"]
+[ext_resource type="Script" path="res://[painting] Painting Room/SkeletonIK3D.gd" id="2_vwkp5"]
+[ext_resource type="Script" path="res://[painting] Painting Room/paint.gd" id="3_o3875"]
+[ext_resource type="Script" path="res://[painting] Painting Room/SetUVPositionMesh.gd" id="5_edvpv"]
+[ext_resource type="Script" path="res://[painting] Painting Room/Brush.gd" id="9_41s0o"]
+[ext_resource type="Script" path="res://[painting] Painting Room/DrawViewport.gd" id="9_j2chq"]
+[ext_resource type="Shader" uid="uid://8q2dcbmkx5nc" path="res://[painting] Painting Room/paintable.tres" id="11_1hcha"]
+[ext_resource type="Texture2D" uid="uid://dpvfrx004v7tn" path="res://[painting] Painting Room/Brush.png" id="11_ndstb"]
 [ext_resource type="Texture2D" uid="uid://dnaqdlpo1r4pd" path="res://Models/Untitled.png" id="12_b4r8j"]
 [ext_resource type="Texture2D" uid="uid://b5acm1oor2xhw" path="res://Models/UV Texture.png" id="13_iut2t"]
 
@@ -280,12 +280,10 @@ script = ExtResource("9_41s0o")
 transform = Transform3D(10.695, 0, 0, 0, 0.810849, -5.4019, 0, 0.585255, 7.48414, 2.60509, 2.42864, -4.41618)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Tester"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 mesh = SubResource("BoxMesh_lrq0x")
 script = ExtResource("5_edvpv")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Tester/MeshInstance3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Tester/MeshInstance3D/StaticBody3D"]
 shape = SubResource("BoxShape3D_w1w2v")
