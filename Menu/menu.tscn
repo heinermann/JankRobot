@@ -1,6 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://bojm2io7eoq7h"]
+[gd_scene load_steps=2 format=3 uid="uid://c8hawbdsc0831"]
 
-[ext_resource type="Script" path="res://Menu/menu.cs" id="1_r0jq1"]
+[ext_resource type="Script" path="res://Menu/menu.gd" id="1_fqf76"]
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -9,9 +9,10 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_r0jq1")
+script = ExtResource("1_fqf76")
 
-[node name="MarginContainer" type="MarginContainer" parent="."]
+[node name="MenuContainer" type="MarginContainer" parent="."]
+unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -21,18 +22,24 @@ grow_vertical = 2
 theme_override_constants/margin_left = 300
 theme_override_constants/margin_right = 300
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="MenuContainer"]
 layout_mode = 2
 theme_override_constants/separation = 16
 alignment = 1
 
-[node name="StartGame" type="Button" parent="MarginContainer/VBoxContainer"]
+[node name="StartGame" type="Button" parent="MenuContainer/VBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 text = "Start Game"
 
-[node name="Quit" type="Button" parent="MarginContainer/VBoxContainer"]
+[node name="Controls" type="Button" parent="MenuContainer/VBoxContainer"]
+layout_mode = 2
+text = "Controls"
+
+[node name="Quit" type="Button" parent="MenuContainer/VBoxContainer"]
 layout_mode = 2
 text = "Quit"
 
-[connection signal="pressed" from="MarginContainer/VBoxContainer/StartGame" to="." method="OnStartGamePressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/Quit" to="." method="OnQuitPressed"]
+[connection signal="pressed" from="MenuContainer/VBoxContainer/StartGame" to="." method="_on_start_game_pressed"]
+[connection signal="pressed" from="MenuContainer/VBoxContainer/Controls" to="." method="_on_controls_pressed"]
+[connection signal="pressed" from="MenuContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
