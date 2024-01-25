@@ -1,6 +1,57 @@
-[gd_scene format=3 uid="uid://c63gewo0qeut2"]
+[gd_scene load_steps=6 format=3 uid="uid://d4dmo1ghqk3dw"]
 
-[node name="Node3D" type="Node3D"]
+[ext_resource type="Script" path="res://Manager/ScreenManager.gd" id="1_2cvf0"]
+[ext_resource type="PackedScene" uid="uid://dy2677jy6kas" path="res://Character/Player.tscn" id="2_xgghi"]
+[ext_resource type="Resource" uid="uid://byv7cauq3urrk" path="res://Character/Resource/p1_controls.tres" id="3_0cauv"]
+[ext_resource type="Resource" uid="uid://c84ygr8ja885a" path="res://Character/Resource/p2_controls.tres" id="4_n5wt2"]
+[ext_resource type="PackedScene" uid="uid://di4fhn6ho3bmr" path="res://Painting Room/Level.tscn" id="5_fijp7"]
 
-[node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.953217, 0.302287, 0, -0.302287, 0.953217, 0, 1.0003, 1.15796)
+[node name="Game" type="Node" groups=["players"]]
+script = ExtResource("1_2cvf0")
+
+[node name="SplitScreen" type="GridContainer" parent="."]
+clip_contents = true
+custom_minimum_size = Vector2(1152, 648)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+columns = 2
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="SplitScreen"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+stretch = true
+
+[node name="SubViewport" type="SubViewport" parent="SplitScreen/SubViewportContainer"]
+handle_input_locally = false
+size = Vector2i(574, 648)
+render_target_update_mode = 4
+
+[node name="Player" parent="SplitScreen/SubViewportContainer/SubViewport" groups=["players"] instance=ExtResource("2_xgghi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 2, -2)
+top_level = true
+linear_damp = 3.0
+controls = ExtResource("3_0cauv")
+
+[node name="SubViewportContainer2" type="SubViewportContainer" parent="SplitScreen"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+stretch = true
+
+[node name="SubViewport" type="SubViewport" parent="SplitScreen/SubViewportContainer2"]
+handle_input_locally = false
+size = Vector2i(574, 648)
+render_target_update_mode = 4
+
+[node name="Player2" parent="SplitScreen/SubViewportContainer2/SubViewport" groups=["players"] instance=ExtResource("2_xgghi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 2, -2)
+top_level = true
+linear_damp = 3.0
+controls = ExtResource("4_n5wt2")
+
+[node name="Level" parent="." instance=ExtResource("5_fijp7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3)
