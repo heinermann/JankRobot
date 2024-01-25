@@ -1,9 +1,14 @@
-[gd_scene load_steps=19 format=3 uid="uid://c63gewo0qeut2"]
+[gd_scene load_steps=29 format=3 uid="uid://c63gewo0qeut2"]
 
-[ext_resource type="PackedScene" uid="uid://cyh5y0t2jrpai" path="res://Painting Room/test.tscn" id="1_c5iv3"]
-[ext_resource type="Script" path="res://Painting Room/Target.gd" id="2_k2slv"]
-[ext_resource type="Material" uid="uid://b4pyscbeixkmk" path="res://Materials/new_standard_material_3d.tres" id="2_u2uqy"]
 [ext_resource type="Script" path="res://Painting Room/SkeletonIK3D.gd" id="2_vwkp5"]
+[ext_resource type="Script" path="res://Painting Room/paint.gd" id="3_o3875"]
+[ext_resource type="Script" path="res://Painting Room/SetUVPositionMesh.gd" id="5_edvpv"]
+[ext_resource type="Script" path="res://Painting Room/Brush.gd" id="9_41s0o"]
+[ext_resource type="Script" path="res://Painting Room/DrawViewport.gd" id="9_j2chq"]
+[ext_resource type="Shader" uid="uid://8q2dcbmkx5nc" path="res://Painting Room/paintable.tres" id="11_1hcha"]
+[ext_resource type="Texture2D" uid="uid://dpvfrx004v7tn" path="res://Painting Room/Brush.png" id="11_ndstb"]
+[ext_resource type="Texture2D" uid="uid://dnaqdlpo1r4pd" path="res://Models/Untitled.png" id="12_b4r8j"]
+[ext_resource type="Texture2D" uid="uid://b5acm1oor2xhw" path="res://Models/UV Texture.png" id="13_iut2t"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sipm4"]
 
@@ -104,27 +109,73 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_kyioc"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_30n0y"]
+albedo_color = Color(1, 0, 0, 1)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0dsi8"]
-albedo_color = Color(0.972549, 0, 0.141176, 1)
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_e6vjk"]
+material = SubResource("StandardMaterial3D_30n0y")
 
-[sub_resource type="SphereMesh" id="SphereMesh_hpdg3"]
-material = SubResource("StandardMaterial3D_0dsi8")
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_y3u2f"]
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_4v131"]
-material = ExtResource("2_u2uqy")
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ariys"]
+render_priority = 0
+shader = ExtResource("11_1hcha")
+shader_parameter/MainColor = ExtResource("12_b4r8j")
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_lb1kx"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_kpwnv"]
+_surfaces = [{
+"aabb": AABB(-1, -1, -1, 2, 1, 2.00001),
+"format": 34896613377,
+"index_count": 30,
+"index_data": PackedByteArray(0, 0, 3, 0, 2, 0, 0, 0, 1, 0, 3, 0, 2, 0, 7, 0, 6, 0, 2, 0, 3, 0, 7, 0, 6, 0, 5, 0, 4, 0, 6, 0, 7, 0, 5, 0, 4, 0, 1, 0, 0, 0, 4, 0, 5, 0, 1, 0, 7, 0, 1, 0, 5, 0, 7, 0, 3, 0, 1, 0),
+"name": "Material",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 8,
+"vertex_data": PackedByteArray(0, 0, 0, 0, 254, 255, 0, 0, 0, 0, 255, 255, 254, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 255, 0, 0, 0, 0, 255, 255, 0, 0, 254, 255, 0, 0, 255, 255, 255, 255, 254, 255, 0, 0, 255, 255, 0, 0, 0, 0, 0, 0, 255, 255, 255, 255, 0, 0, 0, 0)
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_6tdf0"]
+resource_name = "Level_Cube_001"
+_surfaces = [{
+"aabb": AABB(-1, -1, -1, 2, 1, 2.00001),
+"attribute_data": PackedByteArray(205, 195, 230, 1, 255, 191, 24, 254, 24, 126, 24, 254, 180, 133, 230, 1, 230, 129, 24, 254, 255, 63, 24, 126, 255, 191, 230, 129, 24, 126, 230, 129, 230, 1, 24, 126, 230, 129, 230, 129, 230, 129, 230, 1, 205, 195, 24, 126, 205, 67, 230, 1, 230, 1, 24, 254, 180, 133, 24, 126, 230, 129, 24, 126, 255, 63, 230, 1, 205, 67, 24, 126, 230, 1, 230, 129, 230, 1, 230, 1),
+"format": 34896613399,
+"index_count": 30,
+"index_data": PackedByteArray(1, 0, 9, 0, 6, 0, 1, 0, 4, 0, 9, 0, 5, 0, 19, 0, 16, 0, 5, 0, 8, 0, 19, 0, 15, 0, 12, 0, 10, 0, 15, 0, 17, 0, 12, 0, 11, 0, 3, 0, 0, 0, 11, 0, 14, 0, 3, 0, 18, 0, 2, 0, 13, 0, 18, 0, 7, 0, 2, 0),
+"material": SubResource("ShaderMaterial_ariys"),
+"name": "Material",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 20,
+"vertex_data": PackedByteArray(0, 0, 0, 0, 254, 255, 255, 255, 0, 0, 0, 0, 254, 255, 84, 213, 0, 0, 255, 255, 254, 255, 255, 255, 0, 0, 255, 255, 254, 255, 255, 255, 0, 0, 255, 255, 254, 255, 84, 213, 0, 0, 0, 0, 0, 0, 255, 191, 0, 0, 0, 0, 0, 0, 84, 213, 0, 0, 255, 255, 0, 0, 255, 255, 0, 0, 255, 255, 0, 0, 255, 191, 0, 0, 255, 255, 0, 0, 84, 213, 255, 255, 0, 0, 254, 255, 84, 213, 255, 255, 0, 0, 254, 255, 255, 255, 255, 255, 255, 255, 254, 255, 84, 213, 255, 255, 255, 255, 254, 255, 255, 255, 255, 255, 255, 255, 254, 255, 255, 255, 255, 255, 0, 0, 0, 0, 84, 213, 255, 255, 0, 0, 0, 0, 255, 191, 255, 255, 255, 255, 0, 0, 84, 213, 255, 255, 255, 255, 0, 0, 255, 255, 255, 255, 255, 255, 0, 0, 255, 191, 255, 63, 255, 191, 170, 170, 84, 85, 255, 127, 255, 63, 255, 63, 255, 191, 170, 170, 84, 85, 255, 127, 255, 127, 170, 170, 84, 85, 255, 127, 255, 63, 255, 127, 255, 127, 170, 170, 84, 85, 84, 85, 170, 170, 255, 63, 255, 191, 84, 85, 170, 170, 255, 127, 255, 63, 255, 63, 255, 191, 84, 85, 170, 170, 255, 127, 255, 127, 84, 85, 170, 170, 255, 127, 255, 63, 255, 127, 255, 127)
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_kpwnv")
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_0upsn"]
+data = PackedVector3Array(-1, -1, 1, -1, 0, -1, -1, -1, -1, -1, -1, 1, -1, 0, 1, -1, 0, -1, -1, -1, -1, 1, 0, -1, 1, -1, -1, -1, -1, -1, -1, 0, -1, 1, 0, -1, 1, -1, -1, 1, 0, 1, 1, -1, 1, 1, -1, -1, 1, 0, -1, 1, 0, 1, 1, -1, 1, -1, 0, 1, -1, -1, 1, 1, -1, 1, 1, 0, 1, -1, 0, 1, 1, 0, -1, -1, 0, 1, 1, 0, 1, 1, 0, -1, -1, 0, -1, -1, 0, 1)
+backface_collision = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_72xn6"]
+render_priority = 0
+shader = ExtResource("11_1hcha")
+shader_parameter/MainColor = ExtResource("13_iut2t")
+
+[sub_resource type="BoxMesh" id="BoxMesh_lrq0x"]
+material = SubResource("ShaderMaterial_72xn6")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_w1w2v"]
 
 [node name="Node3D" type="Node3D"]
 
-[node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.581569, 0.813497, 0, -0.813497, 0.581569, 0, 8.34921, 7.70817)
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.988178, 0.153314, 0, -0.153314, 0.988178, 0, 12.3526, -14.6504)
 
-[node name="test" parent="." instance=ExtResource("1_c5iv3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -7.7079)
-visible = false
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.685615, 0.727965, 0, -0.727965, 0.685615, 0, 9.58309, 9.72149)
+current = true
 
 [node name="Armature_001" type="Node3D" parent="."]
 transform = Transform3D(-6.55671e-08, 0, 1.5, 0, 1.5, 0, -1.5, 0, -6.55671e-08, 0, -0.03841, 4.86458)
@@ -149,8 +200,8 @@ bones/2/parent = 1
 bones/2/rest = Transform3D(-0.986676, 0.0245928, -0.160825, -0.0245928, -0.999696, -0.00199083, -0.160825, 0.00199083, 0.986981, 0, 1.08652, 0)
 bones/2/enabled = true
 bones/2/position = Vector3(0, 1.08652, 0)
-bones/2/rotation = Quaternion(0.0806816, 0, -0.996664, 0.0123376)
-bones/2/scale = Vector3(1, 1, 1)
+bones/2/rotation = Quaternion(-0.0806817, 5.84025e-11, 0.996664, -0.0123376)
+bones/2/scale = Vector3(0.999999, 1, 1)
 bones/3/name = "Bone.003"
 bones/3/parent = 1
 bones/3/rest = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.08652, 0)
@@ -183,65 +234,68 @@ skin = SubResource("Skin_sybaq")
 mesh = SubResource("ArrayMesh_4wcwl")
 skin = SubResource("Skin_sybaq")
 
-[node name="RigidBody3D" type="RigidBody3D" parent="Armature_001/Skeleton3D/Cube_003"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Armature_001/Skeleton3D/Cube_003/RigidBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.72056, 0)
-shape = SubResource("BoxShape3D_kyioc")
-
 [node name="SkeletonIK3D" type="SkeletonIK3D" parent="Armature_001/Skeleton3D"]
 process_priority = 1
 root_bone = &"Bone"
 tip_bone = &"Bone.004"
-target_node = NodePath("../../Target")
+target_node = NodePath("../../Paint")
 script = ExtResource("2_vwkp5")
 
-[node name="Target" type="Node3D" parent="Armature_001"]
-transform = Transform3D(-5.09464e-08, 1.16552, 0, -1.16552, -5.09464e-08, 0, 0, 0, 1.16552, 1.71122, 1.54164, 0.104525)
-script = ExtResource("2_k2slv")
+[node name="Paint" type="CharacterBody3D" parent="Armature_001"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.76806, 1.3236, 7.72845e-08)
+script = ExtResource("3_o3875")
+texture = ExtResource("11_ndstb")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Armature_001/Target"]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
-mesh = SubResource("SphereMesh_hpdg3")
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Armature_001/Paint"]
+mesh = SubResource("CapsuleMesh_e6vjk")
 
-[node name="Node3D" type="Node3D" parent="."]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Armature_001/Paint"]
+shape = SubResource("CapsuleShape3D_y3u2f")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Node3D"]
-transform = Transform3D(9.35858, 0, 0, 0, 1, 0, 0, 0, 9.04759, 0, 0, 0)
-mesh = SubResource("PlaneMesh_4v131")
-skeleton = NodePath("../..")
+[node name="Level" type="Node3D" parent="."]
 
-[node name="Area3D" type="Area3D" parent="Node3D/MeshInstance3D"]
+[node name="Level" type="MeshInstance3D" parent="Level"]
+transform = Transform3D(-15.1966, 0, 0, 0, -15.1966, 0, 0, 0, -15.1966, 0, 0, 0)
+mesh = SubResource("ArrayMesh_6tdf0")
+skeleton = NodePath("")
+script = ExtResource("5_edvpv")
+flip_normals = true
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/MeshInstance3D/Area3D"]
-transform = Transform3D(1.96048, 0, 0, 0, 0.999991, 0, 0, 0, 1.99922, 0, -0.421877, 0)
-shape = SubResource("BoxShape3D_lb1kx")
+[node name="StaticBody3D" type="StaticBody3D" parent="Level/Level"]
 
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="Node3D"]
-transform = Transform3D(-4.67712e-07, -0.122, 0, 10.7, -5.33279e-09, 0, 0, 0, 10, 7.77007, 7.43975, 0.510167)
-visible = false
-mesh = SubResource("PlaneMesh_4v131")
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Level/Level/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_0upsn")
 
-[node name="MeshInstance3D3" type="MeshInstance3D" parent="Node3D"]
-transform = Transform3D(2.04443e-14, 5.33279e-09, -10, 10.7, -5.33279e-09, 0, -4.67712e-07, -0.122, -4.37114e-07, -1.01983, 6.62523, 8.01303)
-visible = false
-mesh = SubResource("PlaneMesh_4v131")
+[node name="DrawViewport" type="SubViewport" parent="Level/Level"]
+transparent_bg = true
+handle_input_locally = false
+render_target_clear_mode = 1
+render_target_update_mode = 4
+script = ExtResource("9_j2chq")
 
-[node name="MeshInstance3D4" type="MeshInstance3D" parent="Node3D"]
-transform = Transform3D(2.04443e-14, 5.33279e-09, 10, 10.7, -5.33279e-09, 0, 4.67712e-07, 0.122, -4.37114e-07, 0.295425, 7.43975, -7.21772)
-visible = false
-mesh = SubResource("PlaneMesh_4v131")
+[node name="Brush" type="Node2D" parent="Level/Level/DrawViewport"]
+script = ExtResource("9_41s0o")
 
-[node name="MeshInstance3D5" type="MeshInstance3D" parent="Node3D"]
-transform = Transform3D(4.67712e-07, 0.122, -8.74228e-07, 10.7, -5.33279e-09, 0, -4.08887e-14, -1.06656e-08, -10, -7.5306, 7.43975, 0.510167)
-visible = false
-mesh = SubResource("PlaneMesh_4v131")
+[node name="Tester" type="Node3D" parent="."]
+transform = Transform3D(10.695, 0, 0, 0, 0.810849, -5.4019, 0, 0.585255, 7.48414, 2.60509, 2.42864, -4.41618)
 
-[node name="MeshInstance3D6" type="MeshInstance3D" parent="Node3D"]
-transform = Transform3D(9.35858, 0, 0, 0, -1, -7.90965e-07, 0, 8.74228e-08, -9.04759, 0, 15.6944, 0)
-visible = false
-mesh = SubResource("PlaneMesh_4v131")
-skeleton = NodePath("../..")
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Tester"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("BoxMesh_lrq0x")
+script = ExtResource("5_edvpv")
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.988178, 0.153314, 0, -0.153314, 0.988178, 0, 12.3526, -14.6504)
+[node name="StaticBody3D" type="StaticBody3D" parent="Tester/MeshInstance3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tester/MeshInstance3D/StaticBody3D"]
+shape = SubResource("BoxShape3D_w1w2v")
+
+[node name="DrawViewport" type="SubViewport" parent="Tester/MeshInstance3D"]
+transparent_bg = true
+handle_input_locally = false
+render_target_clear_mode = 1
+render_target_update_mode = 4
+script = ExtResource("9_j2chq")
+
+[node name="Brush" type="Node2D" parent="Tester/MeshInstance3D/DrawViewport"]
+script = ExtResource("9_41s0o")
