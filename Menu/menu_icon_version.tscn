@@ -1,0 +1,128 @@
+[gd_scene load_steps=10 format=3 uid="uid://c2fk4tjse7tl8"]
+
+[ext_resource type="Script" path="res://Menu/menu.cs" id="1_nm6jr"]
+[ext_resource type="Texture2D" uid="uid://dqa1msx46hk8c" path="res://Menu/backdrop_placeholder.jpg" id="2_a118a"]
+[ext_resource type="Script" path="res://Menu/grab_focus.gd" id="3_fub21"]
+[ext_resource type="ButtonGroup" uid="uid://ddb25c42b1awi" path="res://Buttons/ui_buttons.tres" id="4_1r7ej"]
+[ext_resource type="Texture2D" uid="uid://ksdepxe3lbwt" path="res://Icons/start game placeholder.svg" id="5_5bl4f"]
+[ext_resource type="Script" path="res://Buttons/ui_buttons_icon_version.gd" id="5_wqmac"]
+[ext_resource type="Texture2D" uid="uid://3ga5yqmsptm2" path="res://Icons/help_placeholder.svg" id="6_ixtcu"]
+[ext_resource type="Texture2D" uid="uid://b75fg2y051bkf" path="res://Icons/options_placeholder.svg" id="7_np1bb"]
+[ext_resource type="Texture2D" uid="uid://q3b2qmqpr0qp" path="res://Icons/quit_placeholder.svg" id="8_5hri1"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_nm6jr")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.834783, 0.790244)
+texture = ExtResource("2_a118a")
+centered = false
+
+[node name="TitleContainer" type="MarginContainer" parent="."]
+custom_minimum_size = Vector2(200, 100)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -0.5
+offset_top = -34.5
+offset_right = 0.5
+offset_bottom = 34.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_bottom = 100
+
+[node name="Title" type="Label" parent="TitleContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 80
+text = "Jankbot"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MenuContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -448.0
+offset_top = -222.0
+offset_right = 448.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/margin_left = 350
+theme_override_constants/margin_right = 350
+theme_override_constants/margin_bottom = 100
+
+[node name="MenuVBoxContainer" type="VBoxContainer" parent="MenuContainer"]
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_constants/separation = 16
+alignment = 1
+script = ExtResource("3_fub21")
+
+[node name="StartGame" type="Button" parent="MenuContainer/MenuVBoxContainer"]
+custom_minimum_size = Vector2(200, 80)
+layout_mode = 2
+toggle_mode = true
+button_group = ExtResource("4_1r7ej")
+icon = ExtResource("5_5bl4f")
+icon_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -40.0
+offset_bottom = 40.0
+grow_horizontal = 0
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+script = ExtResource("5_wqmac")
+button_group = ExtResource("4_1r7ej")
+
+[node name="Controls" type="Button" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+toggle_mode = true
+button_group = ExtResource("4_1r7ej")
+text = "
+"
+icon = ExtResource("6_ixtcu")
+icon_alignment = 1
+
+[node name="Options" type="Button" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+toggle_mode = true
+button_group = ExtResource("4_1r7ej")
+text = "
+"
+icon = ExtResource("7_np1bb")
+icon_alignment = 1
+
+[node name="Quit" type="Button" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+toggle_mode = true
+button_group = ExtResource("4_1r7ej")
+text = "
+"
+icon = ExtResource("8_5hri1")
+icon_alignment = 1
+
+[connection signal="pressed" from="MenuContainer/MenuVBoxContainer/StartGame" to="." method="OnStartGamePressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/Controls" to="." method="OnControlsPressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/Options" to="." method="OnOptionsPressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/Quit" to="." method="OnQuitPressed"]
