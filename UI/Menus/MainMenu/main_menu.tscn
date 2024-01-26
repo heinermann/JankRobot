@@ -1,13 +1,13 @@
 [gd_scene load_steps=9 format=3 uid="uid://4tc1kq1idr1p"]
 
-[ext_resource type="Script" path="res://Menus/MainMenu/main_menu.gd" id="1_1f8iv"]
-[ext_resource type="Texture2D" uid="uid://dqa1msx46hk8c" path="res://Menus/MainMenu/backdrop_placeholder.jpg" id="2_a118a"]
-[ext_resource type="ButtonGroup" uid="uid://ddb25c42b1awi" path="res://Buttons/ui_buttons.tres" id="4_1r7ej"]
-[ext_resource type="Texture2D" uid="uid://ksdepxe3lbwt" path="res://Icons/start game placeholder.svg" id="5_5bl4f"]
-[ext_resource type="Script" path="res://Buttons/ui_buttons_icon_version.gd" id="5_wqmac"]
-[ext_resource type="Texture2D" uid="uid://3ga5yqmsptm2" path="res://Icons/help_placeholder.svg" id="6_ixtcu"]
-[ext_resource type="Texture2D" uid="uid://b75fg2y051bkf" path="res://Icons/options_placeholder.svg" id="7_np1bb"]
-[ext_resource type="Texture2D" uid="uid://q3b2qmqpr0qp" path="res://Icons/quit_placeholder.svg" id="8_5hri1"]
+[ext_resource type="Script" path="res://UI/Menus/MainMenu/main_menu.gd" id="1_1f8iv"]
+[ext_resource type="Texture2D" uid="uid://dqa1msx46hk8c" path="res://UI/Menus/MainMenu/backdrop_placeholder.jpg" id="2_a118a"]
+[ext_resource type="ButtonGroup" uid="uid://ddb25c42b1awi" path="res://UI/Buttons/ui_buttons.tres" id="4_1r7ej"]
+[ext_resource type="Texture2D" uid="uid://ksdepxe3lbwt" path="res://UI/Icons/start game placeholder.svg" id="5_5bl4f"]
+[ext_resource type="Script" path="res://UI/Buttons/ui_buttons_icon_version.gd" id="5_wqmac"]
+[ext_resource type="Texture2D" uid="uid://3ga5yqmsptm2" path="res://UI/Icons/help_placeholder.svg" id="6_ixtcu"]
+[ext_resource type="Texture2D" uid="uid://b75fg2y051bkf" path="res://UI/Icons/options_placeholder.svg" id="7_np1bb"]
+[ext_resource type="Texture2D" uid="uid://q3b2qmqpr0qp" path="res://UI/Icons/quit_placeholder.svg" id="8_5hri1"]
 
 [node name="Menu" type="Control"]
 layout_mode = 3

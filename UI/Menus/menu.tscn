@@ -1,8 +1,8 @@
 [gd_scene load_steps=7 format=3 uid="uid://bojm2io7eoq7h"]
 
-[ext_resource type="Script" path="res://Menus/menu_manager.gd" id="1_bcsv8"]
-[ext_resource type="PackedScene" uid="uid://4tc1kq1idr1p" path="res://Menus/MainMenu/main_menu.tscn" id="2_mc7mt"]
-[ext_resource type="PackedScene" uid="uid://yl2ex6llvpyh" path="res://Menus/ControlsMenu/controls_menu.tscn" id="3_vluar"]
+[ext_resource type="Script" path="res://UI/Menus/menu_manager.gd" id="1_bcsv8"]
+[ext_resource type="PackedScene" uid="uid://4tc1kq1idr1p" path="res://UI/Menus/MainMenu/main_menu.tscn" id="2_mc7mt"]
+[ext_resource type="PackedScene" uid="uid://yl2ex6llvpyh" path="res://UI/Menus/ControlsMenu/controls_menu.tscn" id="3_vluar"]
 
 [sub_resource type="ButtonGroup" id="ButtonGroup_wo47o"]
 

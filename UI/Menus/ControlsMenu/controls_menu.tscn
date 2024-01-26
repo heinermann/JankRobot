@@ -1,10 +1,10 @@
 [gd_scene load_steps=13 format=3 uid="uid://yl2ex6llvpyh"]
 
 [ext_resource type="Script" path="res://addons/controller_icons/objects/Button.gd" id="1_2am1g"]
-[ext_resource type="Script" path="res://Menus/ControlsMenu/controls.gd" id="1_ld0w4"]
+[ext_resource type="Script" path="res://UI/Menus/ControlsMenu/controls.gd" id="1_ld0w4"]
 [ext_resource type="Texture2D" uid="uid://casmdw1resubx" path="res://addons/controller_icons/assets/key/w.png" id="1_yi2m3"]
 [ext_resource type="Texture2D" uid="uid://u3k75sn1tb83" path="res://addons/controller_icons/assets/mouse/simple.png" id="2_ik11l"]
-[ext_resource type="ButtonGroup" uid="uid://dsxm418bhvri1" path="res://Menus/ControlsMenu/controls_button_group.tres" id="2_qgaql"]
+[ext_resource type="ButtonGroup" uid="uid://dsxm418bhvri1" path="res://UI/Menus/ControlsMenu/controls_button_group.tres" id="2_qgaql"]
 [ext_resource type="Texture2D" uid="uid://bptg6u6b4y5no" path="res://addons/controller_icons/assets/key/a.png" id="3_n2jvj"]
 [ext_resource type="Texture2D" uid="uid://db6nbed6w2fis" path="res://addons/controller_icons/assets/key/s.png" id="4_1rjo7"]
 [ext_resource type="Texture2D" uid="uid://dlwamiuq1f5t6" path="res://addons/controller_icons/assets/key/d.png" id="5_ayu15"]
