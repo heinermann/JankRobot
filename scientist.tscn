@@ -1,0 +1,26 @@
+[gd_scene load_steps=2 format=3 uid="uid://cfbrwe0v6ulkf"]
+
+[ext_resource type="PackedScene" uid="uid://c335el2sf5rcc" path="res://3D Assests/Scientist.glb" id="1_b660e"]
+
+[node name="Scientist" instance=ExtResource("1_b660e")]
+
+[node name="Skeleton3D" parent="Armature" index="0"]
+bones/0/position = Vector3(4.20161e-05, -0.438534, -53.1434)
+bones/8/rotation = Quaternion(0.5822, 0.0457183, 0.0230438, 0.811432)
+bones/9/rotation = Quaternion(0.0144279, 0.00837801, 0.00336362, 0.999855)
+bones/16/position = Vector3(-0.00326256, 2.07897, 1.22189e-05)
+bones/21/position = Vector3(-0.128136, 2.17541, -1.60113e-05)
+bones/24/rotation = Quaternion(0.573746, -0.0386764, -0.0208237, 0.817855)
+bones/25/position = Vector3(-5.01728e-07, 18.3562, 2.72587e-05)
+bones/25/rotation = Quaternion(0.0286724, -0.0101098, 0.000331033, 0.999538)
+bones/26/position = Vector3(-1.8294e-06, 18.6184, -2.95519e-06)
+bones/27/position = Vector3(1.9048, 2.09352, 0.84788)
+bones/28/position = Vector3(0.582091, 2.29092, -9.78332e-06)
+bones/31/position = Vector3(1.65594, 7.70716, -0.296792)
+bones/32/position = Vector3(-0.00380826, 2.19841, -1.60039e-05)
+bones/36/position = Vector3(-0.157432, 0.687951, 8.64069e-06)
+bones/37/position = Vector3(0.074303, 1.92384, -1.69722e-05)
+bones/39/rotation = Quaternion(0.0227287, 0.124349, 0.991907, -0.0119198)
+bones/40/rotation = Quaternion(-0.287306, 0.000454582, -0.0171973, 0.957684)
+bones/41/rotation = Quaternion(0.598, 0.0124694, 0.0196722, 0.801157)
+bones/49/position = Vector3(9.7438, 20.0278, -27.8265)

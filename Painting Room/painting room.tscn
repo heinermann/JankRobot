@@ -1,6 +1,52 @@
-[gd_scene format=3 uid="uid://c63gewo0qeut2"]
+[gd_scene load_steps=9 format=3 uid="uid://c63gewo0qeut2"]
+
+[ext_resource type="PackedScene" uid="uid://cfbrwe0v6ulkf" path="res://scientist.tscn" id="1_wfx3d"]
+[ext_resource type="PackedScene" uid="uid://cqvuawo0x37ol" path="res://3D Assests/paintbrush.glb" id="2_h7yvm"]
+[ext_resource type="PackedScene" uid="uid://clj2wb47evxmp" path="res://3D Assests/JankRobotArmLeft_RIG.glb" id="3_o1tqj"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_y8jjb"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_5mmhn"]
+sky_material = SubResource("ProceduralSkyMaterial_y8jjb")
+
+[sub_resource type="Environment" id="Environment_nacvg"]
+background_mode = 2
+sky = SubResource("Sky_5mmhn")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_27k0s"]
+size = Vector2(20, 20)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_h6fo4"]
+data = PackedVector3Array(10, 0, 10, -10, 0, 10, 10, 0, -10, -10, 0, 10, -10, 0, -10, 10, 0, -10)
 
 [node name="Node3D" type="Node3D"]
 
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_nacvg")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.940881, -0.212715, 0.26362, 0, 0.778243, 0.627963, -0.338738, -0.590838, 0.732234, 0, 0, 0)
+shadow_enabled = true
+
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.953217, 0.302287, 0, -0.302287, 0.953217, 0, 1.0003, 1.15796)
+
+[node name="Floor" type="MeshInstance3D" parent="."]
+mesh = SubResource("PlaneMesh_27k0s")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Floor"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_h6fo4")
+
+[node name="Scientist" parent="." instance=ExtResource("1_wfx3d")]
+
+[node name="paintbrush" parent="." instance=ExtResource("2_h7yvm")]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0.1888, 0.618797, 0.375379)
+
+[node name="JankRobotArmLeft_RIG" parent="." instance=ExtResource("3_o1tqj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.520984, 2.18884, 4.05616)
