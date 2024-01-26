@@ -8,7 +8,6 @@ var initial_mouse_pos
 @export var down_speed = 8
  
 @export var color: Color = Color.RED
-@export var brush_size: int = 10
 @export var texture: Texture2D
  
 #@onready var draw_viewport: Viewport = $"/root/Node3D/DrawViewport"
@@ -54,7 +53,7 @@ func handle_collisions():
 			var uv = uv_pos.get_uv_coords(pos, local_normal, true)
 			if uv and viewport:
 				print(uv)
-				viewport.paint(uv, color, brush_size, texture)
+				viewport.paint(uv, color, texture)
 		
 func handle_mouse_movement():
 	if Input.is_action_pressed("left_click"):

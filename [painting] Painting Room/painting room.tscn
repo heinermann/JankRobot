@@ -275,6 +275,7 @@ script = ExtResource("2_vwkp5")
 [node name="Paint" type="CharacterBody3D" parent="Armature_001"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.76806, 1.3236, 7.72845e-08)
 script = ExtResource("3_o3875")
+color = Color(0.666667, 0.196078, 0.196078, 1)
 texture = ExtResource("11_ndstb")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Armature_001/Paint"]
@@ -311,11 +312,14 @@ script = ExtResource("9_41s0o")
 transform = Transform3D(1, 0, 0, 0, 0.908486, 0.417915, 0, -0.417915, 0.908486, 0, 2.21403, -2.0344)
 script = ExtResource("9_seay1")
 canvas_texture = ExtResource("10_yxib0")
+canvas_top_left = Vector2(1, 319)
+canvas_bottom_right = Vector2(489, 1022)
 painting_texture = ExtResource("12_68kyr")
-painting_origin = Vector2(1, 958)
-painting_position = Vector2(200, 200)
+painting_origin = Vector2(1, 1022)
 painting_scale = Vector2(4, 4)
 flip_y = true
+scoring_colors = Array[Color]([Color(0.666667, 0.196078, 0.196078, 1), Color(0.247059, 0.247059, 0.454902, 1), Color(0.933333, 0.764706, 0.603922, 1), Color(1, 1, 1, 1)])
+empty_colors = Array[Color]([Color(0.796078, 0.796078, 0.796078, 0.25098)])
 
 [node name="Canvas" type="MeshInstance3D" parent="canvas"]
 mesh = SubResource("ArrayMesh_c3emt")
@@ -330,14 +334,11 @@ shape = SubResource("ConcavePolygonShape3D_uxs44")
 [node name="DrawViewport" type="SubViewport" parent="canvas/Canvas"]
 transparent_bg = true
 handle_input_locally = false
+size = Vector2i(1024, 1024)
 render_target_clear_mode = 1
 render_target_update_mode = 4
 script = ExtResource("9_j2chq")
+brush_size = 50
 
 [node name="Brush" type="Node2D" parent="canvas/Canvas/DrawViewport"]
 script = ExtResource("9_41s0o")
-
-[node name="Sprite3D" type="Sprite3D" parent="canvas"]
-unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.50311, 1.91765)
-visible = false
