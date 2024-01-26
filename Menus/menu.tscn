@@ -29,12 +29,15 @@ button_group = SubResource("ButtonGroup_wo47o")
 button_group = SubResource("ButtonGroup_wo47o")
 
 [node name="Controls" parent="MainMenu/MenuContainer2/HBoxContainer" index="0"]
+custom_minimum_size = Vector2(50, 50)
 button_group = SubResource("ButtonGroup_wo47o")
 
 [node name="Options" parent="MainMenu/MenuContainer2/HBoxContainer" index="1"]
+custom_minimum_size = Vector2(50, 50)
 button_group = SubResource("ButtonGroup_wo47o")
 
 [node name="Quit" parent="MainMenu/MenuContainer2/HBoxContainer" index="2"]
+custom_minimum_size = Vector2(50, 50)
 button_group = SubResource("ButtonGroup_wo47o")
 
 [node name="ControlsMenu" parent="." instance=ExtResource("3_vluar")]
