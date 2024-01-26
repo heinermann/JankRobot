@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://3ga5yqmsptm2"
-path="res://.godot/imported/help_placeholder.svg-2a91cdef9e529823a740fea9dad7dac7.ctex"
+uid="uid://dqa1msx46hk8c"
+path="res://.godot/imported/backdrop_placeholder.jpg-5b49edb9425eedba8fc9032009b2d5c2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Icons/help_placeholder.svg"
-dest_files=["res://.godot/imported/help_placeholder.svg-2a91cdef9e529823a740fea9dad7dac7.ctex"]
+source_file="res://UI/Menus/MainMenu/backdrop_placeholder.jpg"
+dest_files=["res://.godot/imported/backdrop_placeholder.jpg-5b49edb9425eedba8fc9032009b2d5c2.ctex"]
 
 [params]
 
@@ -32,6 +32,3 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
-svg/scale=1.0
-editor/scale_with_editor_scale=false
-editor/convert_colors_with_editor_theme=false

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ksdepxe3lbwt"
-path="res://.godot/imported/start game placeholder.svg-bd33116e5d3d1083186e5be96bb0095e.ctex"
+uid="uid://3ga5yqmsptm2"
+path="res://.godot/imported/help_placeholder.svg-041ece0e6aec92ff900ca5ec875c791b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Icons/start game placeholder.svg"
-dest_files=["res://.godot/imported/start game placeholder.svg-bd33116e5d3d1083186e5be96bb0095e.ctex"]
+source_file="res://UI/Icons/help_placeholder.svg"
+dest_files=["res://.godot/imported/help_placeholder.svg-041ece0e6aec92ff900ca5ec875c791b.ctex"]
 
 [params]
 
