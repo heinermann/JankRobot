@@ -35,6 +35,10 @@ func handle_collisions():
 			var path_to = "/" + body.get_parent().get_path().get_concatenated_names()
 			var viewport = get_node(path_to + "/DrawViewport")
 			
+			if !viewport:
+				continue
+				print('hi')
+			
 			path_to = "/" + body.get_parent().get_path().get_concatenated_names()
 			var uv_pos = get_node(path_to).uv_pos
 			
