@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://c63gewo0qeut2"]
+[gd_scene load_steps=10 format=3 uid="uid://c63gewo0qeut2"]
 
 [ext_resource type="PackedScene" uid="uid://cfbrwe0v6ulkf" path="res://scientist.tscn" id="1_wfx3d"]
 [ext_resource type="PackedScene" uid="uid://cqvuawo0x37ol" path="res://3D Assests/paintbrush.glb" id="2_h7yvm"]
 [ext_resource type="PackedScene" uid="uid://clj2wb47evxmp" path="res://3D Assests/JankRobotArmLeft_RIG.glb" id="3_o1tqj"]
+[ext_resource type="PackedScene" uid="uid://c842bmncjac7f" path="res://3D Assests/JankRobotArmRight_RIG.glb" id="4_14epe"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_y8jjb"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -33,9 +34,10 @@ transform = Transform3D(0.940881, -0.212715, 0.26362, 0, 0.778243, 0.627963, -0.
 shadow_enabled = true
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.953217, 0.302287, 0, -0.302287, 0.953217, 0, 1.0003, 1.15796)
+transform = Transform3D(1, 0, 0, 0, 0.983201, 0.182528, 0, -0.182528, 0.983201, 0, 0.924841, 1.18213)
 
 [node name="Floor" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.00442147, 0)
 mesh = SubResource("PlaneMesh_27k0s")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Floor"]
@@ -46,7 +48,10 @@ shape = SubResource("ConcavePolygonShape3D_h6fo4")
 [node name="Scientist" parent="." instance=ExtResource("1_wfx3d")]
 
 [node name="paintbrush" parent="." instance=ExtResource("2_h7yvm")]
-transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0.1888, 0.618797, 0.375379)
+transform = Transform3D(0.4, 0, 0, 0, 0.361851, -0.170482, 0, 0.170482, 0.361851, 0.369705, 0.441854, 0.307045)
+
+[node name="JankRobotArmRight_RIG" parent="." instance=ExtResource("4_14epe")]
+transform = Transform3D(-0.0356146, 0, -0.999366, 0, 1, 0, 0.999366, 0, -0.0356146, 0.435845, 0.500812, 0.527866)
 
 [node name="JankRobotArmLeft_RIG" parent="." instance=ExtResource("3_o1tqj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.520984, 2.18884, 4.05616)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.385231, 0.523754, 0.497422)
