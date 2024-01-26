@@ -6,10 +6,10 @@
 [ext_resource type="Script" path="res://[painting] Painting Room/Brush.gd" id="9_41s0o"]
 [ext_resource type="Script" path="res://[painting] Painting Room/DrawViewport.gd" id="9_j2chq"]
 [ext_resource type="Script" path="res://[painting] Painting Room/canvas.gd" id="9_seay1"]
-[ext_resource type="Texture2D" uid="uid://bw1lly1diyv2p" path="res://Models/canvas/Canvas.png" id="10_yxib0"]
+[ext_resource type="Texture2D" uid="uid://bnhi1hi6mv7b2" path="res://Models/canvas/Canvas.png" id="10_yxib0"]
 [ext_resource type="Shader" uid="uid://8q2dcbmkx5nc" path="res://[painting] Painting Room/paintable.tres" id="11_1hcha"]
 [ext_resource type="Texture2D" uid="uid://dpvfrx004v7tn" path="res://[painting] Painting Room/Brush.png" id="11_ndstb"]
-[ext_resource type="Texture2D" uid="uid://cqcrs41ovwyk8" path="res://Models/canvas/bloofus.png" id="12_68kyr"]
+[ext_resource type="Texture2D" uid="uid://b15ql2ewvkq4a" path="res://Models/canvas/bloofus.png" id="12_68kyr"]
 [ext_resource type="Texture2D" uid="uid://dnaqdlpo1r4pd" path="res://Models/Untitled.png" id="12_b4r8j"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sipm4"]
@@ -318,8 +318,8 @@ painting_texture = ExtResource("12_68kyr")
 painting_origin = Vector2(1, 1022)
 painting_scale = Vector2(4, 4)
 flip_y = true
-scoring_colors = Array[Color]([Color(0.666667, 0.196078, 0.196078, 1), Color(0.247059, 0.247059, 0.454902, 1), Color(0.933333, 0.764706, 0.603922, 1), Color(1, 1, 1, 1)])
-empty_colors = Array[Color]([Color(0.796078, 0.796078, 0.796078, 0.25098)])
+scoring_colors = Array[Color]([Color(0.666667, 0.196078, 0.196078, 1)])
+empty_colors = Array[Color]([Color(0.796078, 0.796078, 0.796078, 0.25098), Color(0.247059, 0.247059, 0.454902, 1), Color(0.933333, 0.764706, 0.603922, 1), Color(1, 1, 1, 1)])
 
 [node name="Canvas" type="MeshInstance3D" parent="canvas"]
 mesh = SubResource("ArrayMesh_c3emt")
@@ -338,7 +338,7 @@ size = Vector2i(1024, 1024)
 render_target_clear_mode = 1
 render_target_update_mode = 4
 script = ExtResource("9_j2chq")
-brush_size = 50
+brush_size = 100
 
 [node name="Brush" type="Node2D" parent="canvas/Canvas/DrawViewport"]
 script = ExtResource("9_41s0o")
