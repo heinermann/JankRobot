@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://cmt04gouwf8x7"]
 
-[ext_resource type="Texture2D" uid="uid://dqa1msx46hk8c" path="res://Menu/backdrop_placeholder.jpg" id="2_3rpja"]
+[ext_resource type="Texture2D" uid="uid://dqa1msx46hk8c" path="res://Menus/MainMenu/backdrop_placeholder.jpg" id="2_3rpja"]
 [ext_resource type="Script" path="res://Buttons/ui_buttons_text_version.gd" id="3_hj58l"]
 [ext_resource type="ButtonGroup" uid="uid://ddb25c42b1awi" path="res://Buttons/ui_buttons.tres" id="4_i3cdi"]
 

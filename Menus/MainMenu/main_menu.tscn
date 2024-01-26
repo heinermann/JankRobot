@@ -1,8 +1,7 @@
-[gd_scene load_steps=10 format=3 uid="uid://4tc1kq1idr1p"]
+[gd_scene load_steps=9 format=3 uid="uid://4tc1kq1idr1p"]
 
-[ext_resource type="Script" path="res://Menu/menu.gd" id="1_1f8iv"]
-[ext_resource type="Texture2D" uid="uid://dqa1msx46hk8c" path="res://Menu/backdrop_placeholder.jpg" id="2_a118a"]
-[ext_resource type="Script" path="res://Menu/grab_focus.gd" id="3_fub21"]
+[ext_resource type="Script" path="res://Menus/MainMenu/main_menu.gd" id="1_1f8iv"]
+[ext_resource type="Texture2D" uid="uid://dqa1msx46hk8c" path="res://Menus/MainMenu/backdrop_placeholder.jpg" id="2_a118a"]
 [ext_resource type="ButtonGroup" uid="uid://ddb25c42b1awi" path="res://Buttons/ui_buttons.tres" id="4_1r7ej"]
 [ext_resource type="Texture2D" uid="uid://ksdepxe3lbwt" path="res://Icons/start game placeholder.svg" id="5_5bl4f"]
 [ext_resource type="Script" path="res://Buttons/ui_buttons_icon_version.gd" id="5_wqmac"]
@@ -10,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://b75fg2y051bkf" path="res://Icons/options_placeholder.svg" id="7_np1bb"]
 [ext_resource type="Texture2D" uid="uid://q3b2qmqpr0qp" path="res://Icons/quit_placeholder.svg" id="8_5hri1"]
 
-[node name="MainMenu" type="Control"]
+[node name="Menu" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -21,11 +20,11 @@ script = ExtResource("1_1f8iv")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_right = 1355.0
+offset_bottom = 762.0
 scale = Vector2(0.85, 0.85)
 texture = ExtResource("2_a118a")
-stretch_mode = 4
+expand_mode = 1
 
 [node name="TitleContainer" type="MarginContainer" parent="."]
 custom_minimum_size = Vector2(200, 100)
@@ -71,7 +70,6 @@ layout_mode = 2
 size_flags_vertical = 8
 theme_override_constants/separation = 16
 alignment = 1
-script = ExtResource("3_fub21")
 
 [node name="StartGame" type="Button" parent="MenuContainer/MenuVBoxContainer"]
 custom_minimum_size = Vector2(200, 80)
