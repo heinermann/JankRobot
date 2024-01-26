@@ -1,20 +1,12 @@
-[gd_scene load_steps=32 format=3 uid="uid://c63gewo0qeut2"]
+[gd_scene load_steps=16 format=3 uid="uid://bhyu26c4gngd7"]
 
-[ext_resource type="Script" path="res://[painting] Painting Room/SkeletonIK3D.gd" id="2_vwkp5"]
-[ext_resource type="Script" path="res://[painting] Painting Room/paint.gd" id="3_o3875"]
-[ext_resource type="Script" path="res://[painting] Painting Room/SetUVPositionMesh.gd" id="5_edvpv"]
-[ext_resource type="Script" path="res://[painting] Painting Room/Brush.gd" id="9_41s0o"]
-[ext_resource type="Script" path="res://[painting] Painting Room/DrawViewport.gd" id="9_j2chq"]
-[ext_resource type="Script" path="res://[painting] Painting Room/canvas.gd" id="9_seay1"]
-[ext_resource type="Texture2D" uid="uid://bnhi1hi6mv7b2" path="res://Models/canvas/Canvas.png" id="10_yxib0"]
-[ext_resource type="Shader" uid="uid://8q2dcbmkx5nc" path="res://[painting] Painting Room/paintable.tres" id="11_1hcha"]
-[ext_resource type="Texture2D" uid="uid://dpvfrx004v7tn" path="res://[painting] Painting Room/Brush.png" id="11_ndstb"]
-[ext_resource type="Texture2D" uid="uid://b15ql2ewvkq4a" path="res://Models/canvas/bloofus.png" id="12_68kyr"]
-[ext_resource type="Texture2D" uid="uid://dnaqdlpo1r4pd" path="res://Models/Untitled.png" id="12_b4r8j"]
+[ext_resource type="Script" path="res://[painting] Painting Room/SkeletonIK3D.gd" id="1_pt4ko"]
+[ext_resource type="Script" path="res://[painting] Painting Room/paint.gd" id="2_yavl3"]
+[ext_resource type="Texture2D" uid="uid://dpvfrx004v7tn" path="res://[painting] Painting Room/Brush.png" id="3_xku41"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sipm4"]
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_ix2w2"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_6pho3"]
 resource_name = "test_Cube_001"
 _surfaces = [{
 "aabb": AABB(-0.128802, -0.128802, -0.128802, 0.257604, 0.94252, 0.257614),
@@ -32,7 +24,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="Skin" id="Skin_sybaq"]
+[sub_resource type="Skin" id="Skin_qxmib"]
 resource_name = "Skin"
 bind_count = 5
 bind/0/name = &"Bone"
@@ -53,7 +45,7 @@ bind/4/pose = Transform3D(1.16552, 0, 0, 0, 1.16552, 0, 0, 0, 1.16552, 0, -3.125
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a4eb1"]
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_dp3dx"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_xkelv"]
 resource_name = "test_Cube_002"
 _surfaces = [{
 "aabb": AABB(-0.128802, 0.814167, -0.128802, 0.257604, 0.94252, 0.257614),
@@ -73,7 +65,7 @@ blend_shape_mode = 0
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_g30yo"]
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_ybtit"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_5yxwj"]
 resource_name = "test_Cube_003"
 _surfaces = [{
 "aabb": AABB(-0.128802, 1.75749, -0.128802, 0.257604, 0.94252, 0.257614),
@@ -93,7 +85,7 @@ blend_shape_mode = 0
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lm713"]
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_4wcwl"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_kdc5x"]
 resource_name = "test_Cube_004"
 _surfaces = [{
 "aabb": AABB(-0.128802, 2.69974, -0.340587, 0.257604, 0.915603, 0.681183),
@@ -114,104 +106,21 @@ blend_shape_mode = 0
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_30n0y"]
 albedo_color = Color(1, 0, 0, 1)
 
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_e6vjk"]
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_t43ed"]
 material = SubResource("StandardMaterial3D_30n0y")
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_y3u2f"]
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_jrtmw"]
+radius = 0.1
+height = 0.2
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_ariys"]
-render_priority = 0
-shader = ExtResource("11_1hcha")
-shader_parameter/MainColor = ExtResource("12_b4r8j")
-
-[sub_resource type="ArrayMesh" id="ArrayMesh_kpwnv"]
-_surfaces = [{
-"aabb": AABB(-1, -1, -1, 2, 1, 2.00001),
-"format": 34896613377,
-"index_count": 30,
-"index_data": PackedByteArray(0, 0, 3, 0, 2, 0, 0, 0, 1, 0, 3, 0, 2, 0, 7, 0, 6, 0, 2, 0, 3, 0, 7, 0, 6, 0, 5, 0, 4, 0, 6, 0, 7, 0, 5, 0, 4, 0, 1, 0, 0, 0, 4, 0, 5, 0, 1, 0, 7, 0, 1, 0, 5, 0, 7, 0, 3, 0, 1, 0),
-"name": "Material",
-"primitive": 3,
-"uv_scale": Vector4(0, 0, 0, 0),
-"vertex_count": 8,
-"vertex_data": PackedByteArray(0, 0, 0, 0, 254, 255, 0, 0, 0, 0, 255, 255, 254, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 255, 0, 0, 0, 0, 255, 255, 0, 0, 254, 255, 0, 0, 255, 255, 255, 255, 254, 255, 0, 0, 255, 255, 0, 0, 0, 0, 0, 0, 255, 255, 255, 255, 0, 0, 0, 0)
-}]
-blend_shape_mode = 0
-
-[sub_resource type="ArrayMesh" id="ArrayMesh_6tdf0"]
-resource_name = "Level_Cube_001"
-_surfaces = [{
-"aabb": AABB(-1, -1, -1, 2, 1, 2.00001),
-"attribute_data": PackedByteArray(205, 195, 230, 1, 255, 191, 24, 254, 24, 126, 24, 254, 180, 133, 230, 1, 230, 129, 24, 254, 255, 63, 24, 126, 255, 191, 230, 129, 24, 126, 230, 129, 230, 1, 24, 126, 230, 129, 230, 129, 230, 129, 230, 1, 205, 195, 24, 126, 205, 67, 230, 1, 230, 1, 24, 254, 180, 133, 24, 126, 230, 129, 24, 126, 255, 63, 230, 1, 205, 67, 24, 126, 230, 1, 230, 129, 230, 1, 230, 1),
-"format": 34896613399,
-"index_count": 30,
-"index_data": PackedByteArray(1, 0, 9, 0, 6, 0, 1, 0, 4, 0, 9, 0, 5, 0, 19, 0, 16, 0, 5, 0, 8, 0, 19, 0, 15, 0, 12, 0, 10, 0, 15, 0, 17, 0, 12, 0, 11, 0, 3, 0, 0, 0, 11, 0, 14, 0, 3, 0, 18, 0, 2, 0, 13, 0, 18, 0, 7, 0, 2, 0),
-"material": SubResource("ShaderMaterial_ariys"),
-"name": "Material",
-"primitive": 3,
-"uv_scale": Vector4(0, 0, 0, 0),
-"vertex_count": 20,
-"vertex_data": PackedByteArray(0, 0, 0, 0, 254, 255, 255, 255, 0, 0, 0, 0, 254, 255, 84, 213, 0, 0, 255, 255, 254, 255, 255, 255, 0, 0, 255, 255, 254, 255, 255, 255, 0, 0, 255, 255, 254, 255, 84, 213, 0, 0, 0, 0, 0, 0, 255, 191, 0, 0, 0, 0, 0, 0, 84, 213, 0, 0, 255, 255, 0, 0, 255, 255, 0, 0, 255, 255, 0, 0, 255, 191, 0, 0, 255, 255, 0, 0, 84, 213, 255, 255, 0, 0, 254, 255, 84, 213, 255, 255, 0, 0, 254, 255, 255, 255, 255, 255, 255, 255, 254, 255, 84, 213, 255, 255, 255, 255, 254, 255, 255, 255, 255, 255, 255, 255, 254, 255, 255, 255, 255, 255, 0, 0, 0, 0, 84, 213, 255, 255, 0, 0, 0, 0, 255, 191, 255, 255, 255, 255, 0, 0, 84, 213, 255, 255, 255, 255, 0, 0, 255, 255, 255, 255, 255, 255, 0, 0, 255, 191, 255, 63, 255, 191, 170, 170, 84, 85, 255, 127, 255, 63, 255, 63, 255, 191, 170, 170, 84, 85, 255, 127, 255, 127, 170, 170, 84, 85, 255, 127, 255, 63, 255, 127, 255, 127, 170, 170, 84, 85, 84, 85, 170, 170, 255, 63, 255, 191, 84, 85, 170, 170, 255, 127, 255, 63, 255, 63, 255, 191, 84, 85, 170, 170, 255, 127, 255, 127, 84, 85, 170, 170, 255, 127, 255, 63, 255, 127, 255, 127)
-}]
-blend_shape_mode = 0
-shadow_mesh = SubResource("ArrayMesh_kpwnv")
-
-[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_0upsn"]
-data = PackedVector3Array(-1, -1, 1, -1, 0, -1, -1, -1, -1, -1, -1, 1, -1, 0, 1, -1, 0, -1, -1, -1, -1, 1, 0, -1, 1, -1, -1, -1, -1, -1, -1, 0, -1, 1, 0, -1, 1, -1, -1, 1, 0, 1, 1, -1, 1, 1, -1, -1, 1, 0, -1, 1, 0, 1, 1, -1, 1, -1, 0, 1, -1, -1, 1, 1, -1, 1, 1, 0, 1, -1, 0, 1, 1, 0, -1, -1, 0, 1, 1, 0, 1, 1, 0, -1, -1, 0, -1, -1, 0, 1)
-backface_collision = true
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_xh8vn"]
-render_priority = 0
-shader = ExtResource("11_1hcha")
-
-[sub_resource type="ArrayMesh" id="ArrayMesh_ulcj1"]
-_surfaces = [{
-"aabb": AABB(-2.29573, -3.32303, -0.0872374, 4.59146, 6.64606, 0.174475),
-"format": 34896613377,
-"index_count": 36,
-"index_data": PackedByteArray(0, 0, 3, 0, 2, 0, 0, 0, 1, 0, 3, 0, 2, 0, 7, 0, 6, 0, 2, 0, 3, 0, 7, 0, 6, 0, 5, 0, 4, 0, 6, 0, 7, 0, 5, 0, 4, 0, 1, 0, 0, 0, 4, 0, 5, 0, 1, 0, 2, 0, 4, 0, 0, 0, 2, 0, 6, 0, 4, 0, 7, 0, 1, 0, 5, 0, 7, 0, 3, 0, 1, 0),
-"name": "Material.001",
-"primitive": 3,
-"uv_scale": Vector4(0, 0, 0, 0),
-"vertex_count": 8,
-"vertex_data": PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 255, 255, 0, 0, 0, 0, 255, 255, 255, 255, 0, 0, 255, 255, 0, 0, 0, 0, 0, 0, 255, 255, 255, 255, 0, 0, 0, 0, 255, 255, 0, 0, 255, 255, 0, 0, 255, 255, 255, 255, 255, 255, 0, 0)
-}]
-blend_shape_mode = 0
-
-[sub_resource type="ArrayMesh" id="ArrayMesh_c3emt"]
-resource_name = "canvas_Cube_001"
-_surfaces = [{
-"aabb": AABB(-2.29573, -3.32303, -0.0872374, 4.59146, 6.64606, 0.174475),
-"attribute_data": PackedByteArray(48, 242, 182, 80, 255, 255, 230, 134, 48, 242, 182, 80, 48, 242, 255, 255, 48, 242, 255, 255, 255, 255, 230, 134, 202, 246, 182, 80, 100, 251, 230, 134, 0, 0, 182, 80, 202, 246, 255, 255, 0, 0, 255, 255, 100, 251, 230, 134, 254, 255, 255, 255, 24, 121, 182, 80, 100, 251, 182, 80, 24, 121, 255, 255, 255, 255, 206, 13, 100, 251, 255, 255, 100, 251, 255, 255, 24, 121, 182, 80, 202, 246, 182, 80, 24, 121, 255, 255, 100, 251, 206, 13, 202, 246, 255, 255),
-"format": 34896613399,
-"index_count": 36,
-"index_data": PackedByteArray(0, 0, 9, 0, 6, 0, 0, 0, 3, 0, 9, 0, 8, 0, 21, 0, 19, 0, 8, 0, 10, 0, 21, 0, 20, 0, 17, 0, 14, 0, 20, 0, 23, 0, 17, 0, 13, 0, 4, 0, 2, 0, 13, 0, 15, 0, 4, 0, 7, 0, 12, 0, 1, 0, 7, 0, 18, 0, 12, 0, 22, 0, 5, 0, 16, 0, 22, 0, 11, 0, 5, 0),
-"material": SubResource("ShaderMaterial_xh8vn"),
-"name": "Material.001",
-"primitive": 3,
-"uv_scale": Vector4(0, 0, 0, 0),
-"vertex_count": 24,
-"vertex_data": PackedByteArray(0, 0, 0, 0, 0, 0, 255, 63, 0, 0, 0, 0, 0, 0, 170, 42, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 255, 0, 0, 255, 63, 0, 0, 255, 255, 0, 0, 0, 0, 0, 0, 255, 255, 0, 0, 170, 42, 0, 0, 0, 0, 255, 255, 255, 63, 0, 0, 0, 0, 255, 255, 170, 42, 0, 0, 0, 0, 255, 255, 254, 127, 0, 0, 255, 255, 255, 255, 255, 63, 0, 0, 255, 255, 255, 255, 254, 127, 0, 0, 255, 255, 255, 255, 170, 42, 255, 255, 0, 0, 0, 0, 170, 42, 255, 255, 0, 0, 0, 0, 0, 0, 255, 255, 0, 0, 0, 0, 255, 63, 255, 255, 255, 255, 0, 0, 0, 0, 255, 255, 255, 255, 0, 0, 170, 42, 255, 255, 255, 255, 0, 0, 255, 63, 255, 255, 0, 0, 255, 255, 170, 42, 255, 255, 0, 0, 255, 255, 254, 127, 255, 255, 0, 0, 255, 255, 255, 63, 255, 255, 255, 255, 255, 255, 254, 127, 255, 255, 255, 255, 255, 255, 170, 42, 255, 255, 255, 255, 255, 255, 255, 63, 255, 127, 255, 255, 84, 85, 84, 85, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 84, 213, 170, 42, 255, 127, 255, 255, 84, 85, 84, 85, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 84, 213, 170, 42, 84, 85, 84, 85, 255, 127, 255, 255, 255, 127, 0, 0, 255, 127, 255, 255, 84, 213, 170, 42, 255, 127, 0, 0, 84, 85, 84, 85, 255, 127, 255, 255, 255, 127, 0, 0, 255, 127, 255, 255, 84, 213, 170, 42, 255, 127, 0, 0)
-}]
-blend_shape_mode = 0
-shadow_mesh = SubResource("ArrayMesh_ulcj1")
-
-[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_uxs44"]
-data = PackedVector3Array(-2.29573, -3.32303, -0.0872374, -2.29573, 3.32303, 0.0872374, -2.29573, -3.32303, 0.0872374, -2.29573, -3.32303, -0.0872374, -2.29573, 3.32303, -0.0872374, -2.29573, 3.32303, 0.0872374, -2.29573, -3.32303, 0.0872374, 2.29573, 3.32303, 0.0872374, 2.29573, -3.32303, 0.0872374, -2.29573, -3.32303, 0.0872374, -2.29573, 3.32303, 0.0872374, 2.29573, 3.32303, 0.0872374, 2.29573, -3.32303, 0.0872374, 2.29573, 3.32303, -0.0872374, 2.29573, -3.32303, -0.0872374, 2.29573, -3.32303, 0.0872374, 2.29573, 3.32303, 0.0872374, 2.29573, 3.32303, -0.0872374, 2.29573, -3.32303, -0.0872374, -2.29573, 3.32303, -0.0872374, -2.29573, -3.32303, -0.0872374, 2.29573, -3.32303, -0.0872374, 2.29573, 3.32303, -0.0872374, -2.29573, 3.32303, -0.0872374, -2.29573, -3.32303, 0.0872374, 2.29573, -3.32303, -0.0872374, -2.29573, -3.32303, -0.0872374, -2.29573, -3.32303, 0.0872374, 2.29573, -3.32303, 0.0872374, 2.29573, -3.32303, -0.0872374, 2.29573, 3.32303, 0.0872374, -2.29573, 3.32303, -0.0872374, 2.29573, 3.32303, -0.0872374, 2.29573, 3.32303, 0.0872374, -2.29573, 3.32303, 0.0872374, -2.29573, 3.32303, -0.0872374)
-
-[node name="Node3D" type="Node3D"]
-
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.988178, 0.153314, 0, -0.153314, 0.988178, 0, 12.3526, -14.6504)
-
-[node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.992319, 0.123706, 0, -0.123706, 0.992319, 0, 9.58309, 9.72149)
-current = true
+[node name="GoAway" type="Node3D"]
 
 [node name="Armature_001" type="Node3D" parent="."]
-transform = Transform3D(-6.55671e-08, 0, 1.5, 0, 1.5, 0, -1.5, 0, -6.55671e-08, 0, -0.03841, 4.86458)
+transform = Transform3D(-6.55671e-08, 0, 1.5, 0, 1.5, 0, -1.5, 0, -6.55671e-08, 0, 0, 2.6118)
+visible = false
 
 [node name="Skeleton3D" type="Skeleton3D" parent="Armature_001"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, 1.5)
 bones/0/name = "Bone"
 bones/0/parent = -1
 bones/0/rest = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
@@ -250,95 +159,36 @@ bones/4/scale = Vector3(1, 1, 1)
 
 [node name="Cube" type="MeshInstance3D" parent="Armature_001/Skeleton3D"]
 transform = Transform3D(1, 0, -3.55271e-15, 0, 1, 0, 3.55271e-15, 0, 1, 0, 0, 0)
-mesh = SubResource("ArrayMesh_ix2w2")
-skin = SubResource("Skin_sybaq")
+mesh = SubResource("ArrayMesh_6pho3")
+skin = SubResource("Skin_qxmib")
 
 [node name="Cube_001" type="MeshInstance3D" parent="Armature_001/Skeleton3D"]
-mesh = SubResource("ArrayMesh_dp3dx")
-skin = SubResource("Skin_sybaq")
+mesh = SubResource("ArrayMesh_xkelv")
+skin = SubResource("Skin_qxmib")
 
 [node name="Cube_002" type="MeshInstance3D" parent="Armature_001/Skeleton3D"]
-mesh = SubResource("ArrayMesh_ybtit")
-skin = SubResource("Skin_sybaq")
+mesh = SubResource("ArrayMesh_5yxwj")
+skin = SubResource("Skin_qxmib")
 
 [node name="Cube_003" type="MeshInstance3D" parent="Armature_001/Skeleton3D"]
-mesh = SubResource("ArrayMesh_4wcwl")
-skin = SubResource("Skin_sybaq")
+mesh = SubResource("ArrayMesh_kdc5x")
+skin = SubResource("Skin_qxmib")
 
 [node name="SkeletonIK3D" type="SkeletonIK3D" parent="Armature_001/Skeleton3D"]
 process_priority = 1
 root_bone = &"Bone"
 tip_bone = &"Bone.004"
 target_node = NodePath("../../Paint")
-script = ExtResource("2_vwkp5")
+script = ExtResource("1_pt4ko")
 
 [node name="Paint" type="CharacterBody3D" parent="Armature_001"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.76806, 1.3236, 7.72845e-08)
-script = ExtResource("3_o3875")
-color = Color(0.666667, 0.196078, 0.196078, 1)
-texture = ExtResource("11_ndstb")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.800011, 1.99413, 3.49697e-08)
+script = ExtResource("2_yavl3")
+texture = ExtResource("3_xku41")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Armature_001/Paint"]
-mesh = SubResource("CapsuleMesh_e6vjk")
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0)
+mesh = SubResource("CapsuleMesh_t43ed")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Armature_001/Paint"]
-shape = SubResource("CapsuleShape3D_y3u2f")
-
-[node name="Level" type="Node3D" parent="."]
-
-[node name="Level" type="MeshInstance3D" parent="Level"]
-transform = Transform3D(-15.1966, 0, 0, 0, -15.1966, 0, 0, 0, -15.1966, 0, 0, 0)
-mesh = SubResource("ArrayMesh_6tdf0")
-skeleton = NodePath("")
-script = ExtResource("5_edvpv")
-flip_normals = true
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Level/Level"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Level/Level/StaticBody3D"]
-shape = SubResource("ConcavePolygonShape3D_0upsn")
-
-[node name="DrawViewport" type="SubViewport" parent="Level/Level"]
-transparent_bg = true
-handle_input_locally = false
-render_target_clear_mode = 1
-render_target_update_mode = 4
-script = ExtResource("9_j2chq")
-
-[node name="Brush" type="Node2D" parent="Level/Level/DrawViewport"]
-script = ExtResource("9_41s0o")
-
-[node name="canvas" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.908486, 0.417915, 0, -0.417915, 0.908486, 0, 2.21403, -2.0344)
-script = ExtResource("9_seay1")
-canvas_texture = ExtResource("10_yxib0")
-canvas_top_left = Vector2(1, 319)
-canvas_bottom_right = Vector2(489, 1022)
-painting_texture = ExtResource("12_68kyr")
-painting_origin = Vector2(1, 1022)
-painting_scale = Vector2(4, 4)
-flip_y = true
-scoring_colors = Array[Color]([Color(0.666667, 0.196078, 0.196078, 1)])
-empty_colors = Array[Color]([Color(0.796078, 0.796078, 0.796078, 0.25098), Color(0.247059, 0.247059, 0.454902, 1), Color(0.933333, 0.764706, 0.603922, 1), Color(1, 1, 1, 1)])
-
-[node name="Canvas" type="MeshInstance3D" parent="canvas"]
-mesh = SubResource("ArrayMesh_c3emt")
-skeleton = NodePath("")
-script = ExtResource("5_edvpv")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="canvas/Canvas"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="canvas/Canvas/StaticBody3D"]
-shape = SubResource("ConcavePolygonShape3D_uxs44")
-
-[node name="DrawViewport" type="SubViewport" parent="canvas/Canvas"]
-transparent_bg = true
-handle_input_locally = false
-size = Vector2i(1024, 1024)
-render_target_clear_mode = 1
-render_target_update_mode = 4
-script = ExtResource("9_j2chq")
-brush_size = 100
-
-[node name="Brush" type="Node2D" parent="canvas/Canvas/DrawViewport"]
-script = ExtResource("9_41s0o")
+shape = SubResource("CapsuleShape3D_jrtmw")
