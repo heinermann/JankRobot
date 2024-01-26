@@ -1,0 +1,130 @@
+[gd_scene load_steps=5 format=3 uid="uid://cmt04gouwf8x7"]
+
+[ext_resource type="Texture2D" uid="uid://dqa1msx46hk8c" path="res://UI/Menus/MainMenu/backdrop_placeholder.jpg" id="2_3rpja"]
+[ext_resource type="Script" path="res://UI/Buttons/ui_buttons_text_version.gd" id="3_hj58l"]
+[ext_resource type="ButtonGroup" uid="uid://ddb25c42b1awi" path="res://UI/Buttons/ui_buttons.tres" id="4_i3cdi"]
+
+[sub_resource type="CSharpScript" id="CSharpScript_et4xx"]
+script/source = "using Godot;
+using System;
+
+public partial class menu : Control
+{
+	private void OnStartGamePressed()
+	{
+		GetTree().ChangeSceneToFile(\"res://[painting] Painting Room/painting room.tscn\");
+	}
+	
+	private void OnControlsPressed()
+	{
+		GD.Print(\"Controls button pressed\");
+		GetNode(\"MenuContainer\").Hide();
+		GetNode(\"MenuContainer2\").Hide();
+		GetTree().root.AddChild(controls);
+		// toggle controls menu
+	}
+	
+	private void OnOptionsPressed()
+	{
+		GD.Print(\"Options button pressed\");
+		// toggle options menu
+	}
+	
+	private void OnQuitPressed()
+	{
+		GetTree().Quit();
+	}
+}
+"
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = SubResource("CSharpScript_et4xx")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.834783, 0.790244)
+texture = ExtResource("2_3rpja")
+centered = false
+
+[node name="TitleContainer" type="MarginContainer" parent="."]
+custom_minimum_size = Vector2(200, 100)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -0.5
+offset_top = -34.5
+offset_right = 0.5
+offset_bottom = 34.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_bottom = 100
+
+[node name="Title" type="Label" parent="TitleContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 80
+text = "Jankbot"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MenuContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -448.0
+offset_top = -222.0
+offset_right = 448.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/margin_left = 400
+theme_override_constants/margin_right = 400
+theme_override_constants/margin_bottom = 50
+
+[node name="MenuVBoxContainer" type="VBoxContainer" parent="MenuContainer" node_paths=PackedStringArray("first_button", "last_button")]
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_constants/separation = 16
+alignment = 1
+script = ExtResource("3_hj58l")
+first_button = NodePath("StartGame")
+last_button = NodePath("Quit")
+button_group = ExtResource("4_i3cdi")
+
+[node name="StartGame" type="Button" parent="MenuContainer/MenuVBoxContainer"]
+layout_mode = 2
+toggle_mode = true
+button_group = ExtResource("4_i3cdi")
+text = "Start Game"
+
+[node name="Controls" type="Button" parent="MenuContainer/MenuVBoxContainer"]
+layout_mode = 2
+toggle_mode = true
+button_group = ExtResource("4_i3cdi")
+text = "Controls"
+
+[node name="Options" type="Button" parent="MenuContainer/MenuVBoxContainer"]
+layout_mode = 2
+toggle_mode = true
+button_group = ExtResource("4_i3cdi")
+text = "Options"
+
+[node name="Quit" type="Button" parent="MenuContainer/MenuVBoxContainer"]
+layout_mode = 2
+toggle_mode = true
+button_group = ExtResource("4_i3cdi")
+text = "Quit"
+
+[connection signal="pressed" from="MenuContainer/MenuVBoxContainer/StartGame" to="." method="OnStartGamePressed"]
+[connection signal="pressed" from="MenuContainer/MenuVBoxContainer/Controls" to="." method="OnControlsPressed"]
+[connection signal="pressed" from="MenuContainer/MenuVBoxContainer/Options" to="." method="OnOptionsPressed"]
+[connection signal="pressed" from="MenuContainer/MenuVBoxContainer/Quit" to="." method="OnQuitPressed"]
