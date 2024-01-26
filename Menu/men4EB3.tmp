@@ -19,13 +19,10 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_1f8iv")
 
-[node name="TextureRect" type="TextureRect" parent="."]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-scale = Vector2(0.85, 0.85)
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.834783, 0.790244)
 texture = ExtResource("2_a118a")
-stretch_mode = 4
+centered = false
 
 [node name="TitleContainer" type="MarginContainer" parent="."]
 custom_minimum_size = Vector2(200, 100)
@@ -128,4 +125,4 @@ icon_alignment = 1
 [connection signal="pressed" from="MenuContainer/MenuVBoxContainer/StartGame" to="." method="_on_start_game_pressed"]
 [connection signal="pressed" from="MenuContainer2/HBoxContainer/Controls" to="." method="_on_controls_pressed"]
 [connection signal="pressed" from="MenuContainer2/HBoxContainer/Options" to="." method="_on_options_pressed"]
-[connection signal="pressed" from="MenuContainer2/HBoxContainer/Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="MenuContainer2/HBoxContainer/Quit" to="." method="_on_options_pressed"]
