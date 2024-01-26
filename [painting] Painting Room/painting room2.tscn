@@ -1,15 +1,16 @@
-[gd_scene load_steps=28 format=3 uid="uid://b1lb2vkafim3l"]
+[gd_scene load_steps=29 format=3 uid="uid://1jo2j6nmel70"]
 
+[ext_resource type="Script" path="res://[painting] Painting Room/painting room2.gd" id="1_ia77t"]
 [ext_resource type="Script" path="res://[painting] Painting Room/RobotArm.gd" id="1_serdl"]
 [ext_resource type="PackedScene" uid="uid://cohgvxcrm2y43" path="res://Models/Model Assets/JankRobotArmRight_RIG.glb" id="1_wtmx1"]
 [ext_resource type="Script" path="res://[painting] Painting Room/SetUVPositionMesh.gd" id="5_edvpv"]
-[ext_resource type="PackedScene" path="res://[painting] Painting Room/scientist.tscn" id="8_uum8u"]
+[ext_resource type="PackedScene" uid="uid://bl1mjgfldx7re" path="res://[painting] Painting Room/scientist.tscn" id="8_uum8u"]
 [ext_resource type="Script" path="res://[painting] Painting Room/Brush.gd" id="9_41s0o"]
 [ext_resource type="Script" path="res://[painting] Painting Room/DrawViewport.gd" id="9_j2chq"]
 [ext_resource type="Script" path="res://[painting] Painting Room/canvas.gd" id="9_kq04p"]
 [ext_resource type="PackedScene" uid="uid://dusu3eao85bmh" path="res://Models/Model Assets/paintbrush.glb" id="10_arn3n"]
 [ext_resource type="Texture2D" uid="uid://bnhi1hi6mv7b2" path="res://Models/canvas/Canvas.png" id="10_ayqtt"]
-[ext_resource type="Script" path="res://[painting] Painting Room/Area3D.gd" id="10_m3elr"]
+[ext_resource type="Script" path="res://[painting] Painting Room/FloorCollector.gd" id="10_m3elr"]
 [ext_resource type="Shader" uid="uid://8q2dcbmkx5nc" path="res://[painting] Painting Room/paintable.tres" id="11_1hcha"]
 [ext_resource type="Texture2D" uid="uid://b15ql2ewvkq4a" path="res://Models/canvas/bloofus.png" id="11_jnmhd"]
 [ext_resource type="Texture2D" uid="uid://dnaqdlpo1r4pd" path="res://Models/Untitled.png" id="12_b4r8j"]
@@ -110,6 +111,7 @@ material = SubResource("ShaderMaterial_hjxdy")
 [sub_resource type="BoxShape3D" id="BoxShape3D_p8v3l"]
 
 [node name="PaintingRoom" type="Node3D"]
+script = ExtResource("1_ia77t")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.988178, 0.153314, 0, -0.153314, 0.988178, 0, 12.3526, -14.6504)
@@ -164,7 +166,7 @@ script = ExtResource("9_41s0o")
 transform = Transform3D(7.93914, 0, -4.23911, 0, 9, 0, 4.23911, 0, 7.93914, 1.845, 0, -1.56)
 
 [node name="canvas" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.984808, 0.173648, 0, -0.173648, 0.984808, 0, 5, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)
 script = ExtResource("9_kq04p")
 canvas_texture = ExtResource("10_ayqtt")
 canvas_top_left = Vector2(1, 319)
