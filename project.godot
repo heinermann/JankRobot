@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Jank Robot"
-run/main_scene="res://Menu/menu.tscn"
+run/main_scene="res://[painting] Painting Room/painting room2.tscn"
 config/features=PackedStringArray("4.2", "C#", "Forward Plus")
 config/icon="res://icon.svg"
 
