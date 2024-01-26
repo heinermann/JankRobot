@@ -1,9 +1,41 @@
-[gd_scene load_steps=5 format=3 uid="uid://cu1jxtqyapcx0"]
+[gd_scene load_steps=5 format=3 uid="uid://cmt04gouwf8x7"]
 
-[ext_resource type="Script" path="res://Menu/menu.cs" id="1_p7kbq"]
 [ext_resource type="Texture2D" uid="uid://dqa1msx46hk8c" path="res://Menu/backdrop_placeholder.jpg" id="2_3rpja"]
 [ext_resource type="Script" path="res://Buttons/ui_buttons_text_version.gd" id="3_hj58l"]
 [ext_resource type="ButtonGroup" uid="uid://ddb25c42b1awi" path="res://Buttons/ui_buttons.tres" id="4_i3cdi"]
+
+[sub_resource type="CSharpScript" id="CSharpScript_et4xx"]
+script/source = "using Godot;
+using System;
+
+public partial class menu : Control
+{
+	private void OnStartGamePressed()
+	{
+		GetTree().ChangeSceneToFile(\"res://[painting] Painting Room/painting room.tscn\");
+	}
+	
+	private void OnControlsPressed()
+	{
+		GD.Print(\"Controls button pressed\");
+		GetNode(\"MenuContainer\").Hide();
+		GetNode(\"MenuContainer2\").Hide();
+		GetTree().root.AddChild(controls);
+		// toggle controls menu
+	}
+	
+	private void OnOptionsPressed()
+	{
+		GD.Print(\"Options button pressed\");
+		// toggle options menu
+	}
+	
+	private void OnQuitPressed()
+	{
+		GetTree().Quit();
+	}
+}
+"
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -12,7 +44,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_p7kbq")
+script = SubResource("CSharpScript_et4xx")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.834783, 0.790244)

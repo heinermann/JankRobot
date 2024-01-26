@@ -6,7 +6,7 @@ var mouse_icon = preload("res://addons/controller_icons/assets/mouse/simple.png"
 func _ready():
 	_on_input_type_changed(ControllerIcons._last_input_type)
 	ControllerIcons.input_type_changed.connect(_on_input_type_changed)
-
+	
 func _on_input_type_changed(input_type):
 	match input_type:
 		ControllerIcons.InputType.CONTROLLER:
