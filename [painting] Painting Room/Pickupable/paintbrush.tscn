@@ -7,6 +7,8 @@
 
 [node name="Paintbrush" instance=ExtResource("1_r0hm6")]
 disable_mode = 1
+center_of_mass_mode = 1
+center_of_mass = Vector3(0, 0, -0.05)
 
 [node name="paintbrush" parent="." index="0" instance=ExtResource("2_mbvi6")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, -1, 0)
