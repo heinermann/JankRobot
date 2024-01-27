@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://c63gewo0qeut2"]
+[gd_scene load_steps=15 format=3 uid="uid://c63gewo0qeut2"]
 
 [ext_resource type="PackedScene" uid="uid://cfbrwe0v6ulkf" path="res://scientist.tscn" id="1_wfx3d"]
 [ext_resource type="PackedScene" uid="uid://cqvuawo0x37ol" path="res://3D Assests/paintbrush.glb" id="2_h7yvm"]
@@ -7,7 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://cqvlyoyjb0u47" path="res://paint_bucket_2.tscn" id="5_ojcuw"]
 [ext_resource type="PackedScene" uid="uid://yih63hs1l7na" path="res://3D Assests/Table.glb" id="6_5q1gi"]
 [ext_resource type="PackedScene" uid="uid://bp06ebjm3da6" path="res://3D Assests/PaintBucket_v2.glb" id="7_f1rng"]
-[ext_resource type="PackedScene" path="res://3D Assests/RoomWall.glb" id="8_wn3nj"]
+[ext_resource type="PackedScene" uid="uid://b7cjv3hwiv7ni" path="res://3D Assests/RoomWall.glb" id="8_wn3nj"]
+[ext_resource type="PackedScene" uid="uid://nyee4ki32o1b" path="res://room_fan.tscn" id="9_gsbnc"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_y8jjb"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -34,11 +35,11 @@ data = PackedVector3Array(10, 0, 10, -10, 0, 10, 10, 0, -10, -10, 0, 10, -10, 0,
 environment = SubResource("Environment_nacvg")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(0.940881, -0.212715, 0.26362, 0, 0.778243, 0.627963, -0.338738, -0.590838, 0.732234, 0, 0, 0)
+transform = Transform3D(0.971918, -0.234982, 0.0125785, 0.13412, 0.597077, 0.790892, -0.193355, -0.766996, 0.611826, -0.00712299, 0.062758, -0.0637589)
 shadow_enabled = true
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.983201, 0.182528, 0, -0.182528, 0.983201, 0, 0.924841, 1.18213)
+transform = Transform3D(1, 0, 0, 0, 0.998582, 0.053243, 0, -0.053243, 0.998582, 0, 0.869708, 1.35328)
 
 [node name="Floor" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.00442147, 0)
@@ -50,7 +51,6 @@ mesh = SubResource("PlaneMesh_27k0s")
 shape = SubResource("ConcavePolygonShape3D_h6fo4")
 
 [node name="Scientist" parent="." instance=ExtResource("1_wfx3d")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 
 [node name="paintbrush" parent="." instance=ExtResource("2_h7yvm")]
 transform = Transform3D(0.2, 0, 0, 0, 0.180925, -0.0852413, 0, 0.0852413, 0.180925, 0.251098, 0.565667, 0.307045)
@@ -78,3 +78,18 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.98597, -0.00442195, -0.189
 
 [node name="RoomWall3" parent="." instance=ExtResource("8_wn3nj")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 2.16816, -0.0126309, -0.189642)
+
+[node name="RoomWall4" parent="." instance=ExtResource("8_wn3nj")]
+transform = Transform3D(0.000184289, -0.0280955, 0.999605, -0.999978, -0.00656235, -8.74209e-08, 0.00655976, -0.999584, -0.0280962, 0.112046, 2.33311, -0.94301)
+
+[node name="RoomFan" parent="." instance=ExtResource("9_gsbnc")]
+transform = Transform3D(0.45, 0, 0, 0, 0.45, 0, 0, 0, 0.45, -0.942477, 1.96215, -0.793183)
+
+[node name="RoomFan3" parent="." instance=ExtResource("9_gsbnc")]
+transform = Transform3D(0.45, 0, 0, 0, 0.45, 0, 0, 0, 0.45, -0.942477, 1.96215, 1.29159)
+
+[node name="RoomFan4" parent="." instance=ExtResource("9_gsbnc")]
+transform = Transform3D(0.45, 0, 0, 0, 0.45, 0, 0, 0, 0.45, 1.10494, 1.96215, 1.29159)
+
+[node name="RoomFan2" parent="." instance=ExtResource("9_gsbnc")]
+transform = Transform3D(0.45, 0, 0, 0, 0.45, 0, 0, 0, 0.45, 1.12272, 1.95814, -0.791948)

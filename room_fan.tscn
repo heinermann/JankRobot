@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://nyee4ki32o1b"]
+
+[ext_resource type="PackedScene" uid="uid://4oeqmpb140j0" path="res://3D Assests/RoomFan.glb" id="1_st67b"]
+
+[node name="RoomFan" instance=ExtResource("1_st67b")]
+
+[node name="Fan_001" parent="Fan" index="0"]
+transform = Transform3D(0.987921, 0, 0.154957, 0, 1, 0, -0.154957, 0, 0.987921, 0, 0, 0)
