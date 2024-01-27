@@ -1,19 +1,19 @@
-[gd_scene load_steps=29 format=3 uid="uid://1jo2j6nmel70"]
+[gd_scene load_steps=28 format=3 uid="uid://1jo2j6nmel70"]
 
 [ext_resource type="Script" path="res://[painting] Painting Room/painting room2.gd" id="1_ia77t"]
 [ext_resource type="Script" path="res://[painting] Painting Room/RobotArm.gd" id="1_serdl"]
-[ext_resource type="PackedScene" uid="uid://cohgvxcrm2y43" path="res://Models/Model Assets/JankRobotArmRight_RIG.glb" id="1_wtmx1"]
+[ext_resource type="PackedScene" uid="uid://c842bmncjac7f" path="res://Models/Model Assets/JankRobotArmRight_RIG.glb" id="1_wtmx1"]
 [ext_resource type="Script" path="res://[painting] Painting Room/SetUVPositionMesh.gd" id="5_edvpv"]
 [ext_resource type="PackedScene" uid="uid://bl1mjgfldx7re" path="res://[painting] Painting Room/scientist.tscn" id="8_uum8u"]
 [ext_resource type="Script" path="res://[painting] Painting Room/Brush.gd" id="9_41s0o"]
 [ext_resource type="Script" path="res://[painting] Painting Room/DrawViewport.gd" id="9_j2chq"]
 [ext_resource type="Script" path="res://[painting] Painting Room/canvas.gd" id="9_kq04p"]
-[ext_resource type="PackedScene" uid="uid://dusu3eao85bmh" path="res://Models/Model Assets/paintbrush.glb" id="10_arn3n"]
 [ext_resource type="Texture2D" uid="uid://bnhi1hi6mv7b2" path="res://Models/canvas/Canvas.png" id="10_ayqtt"]
 [ext_resource type="Script" path="res://[painting] Painting Room/FloorCollector.gd" id="10_m3elr"]
 [ext_resource type="Shader" uid="uid://8q2dcbmkx5nc" path="res://[painting] Painting Room/paintable.tres" id="11_1hcha"]
 [ext_resource type="Texture2D" uid="uid://b15ql2ewvkq4a" path="res://Models/canvas/bloofus.png" id="11_jnmhd"]
 [ext_resource type="Texture2D" uid="uid://dnaqdlpo1r4pd" path="res://Models/Untitled.png" id="12_b4r8j"]
+[ext_resource type="PackedScene" uid="uid://ctoo1b64qlqw6" path="res://[painting] Painting Room/Pickupable/paintbrush.tscn" id="13_30e0q"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_p6ks8"]
 
@@ -106,8 +106,6 @@ material = SubResource("ShaderMaterial_hjxdy")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_bors1"]
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_qh2ds"]
-
 [sub_resource type="BoxShape3D" id="BoxShape3D_p8v3l"]
 
 [node name="PaintingRoom" type="Node3D"]
@@ -121,7 +119,7 @@ transform = Transform3D(1, 0, 0, 0, 0.984808, 0.173648, 0, -0.173648, 0.984808, 
 current = true
 
 [node name="ArmP1" type="Node3D" parent="."]
-transform = Transform3D(0.05, 0, -0.0866025, 0, 0.1, 0, 0.0866025, 0, 0.05, 2, 3, 1.7)
+transform = Transform3D(0.5, 0, -0.866025, 0, 1, 0, 0.866025, 0, 0.5, 2, 3, 1.9)
 
 [node name="RobotArm" type="CharacterBody3D" parent="ArmP1"]
 motion_mode = 1
@@ -129,14 +127,22 @@ script = ExtResource("1_serdl")
 metadata/player = 1
 
 [node name="JankRobotArm_RIG" parent="ArmP1/RobotArm" instance=ExtResource("1_wtmx1")]
+transform = Transform3D(15, 0, 0, 0, 15, 0, 0, 0, 15, 0, 0, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="ArmP1/RobotArm"]
-transform = Transform3D(10, 4.76837e-07, 1.19209e-07, 2.38419e-07, 8, 5.96046e-08, 2.38419e-07, 2.38419e-07, 2, 0, 2, 0)
+transform = Transform3D(0.8, -1.78814e-08, 0, 1.90735e-08, 0.75, -5.36443e-09, -2.98023e-08, 2.23518e-08, 0.18, -0.344595, 0, -0.0870719)
 shape = SubResource("BoxShape3D_p6ks8")
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="ArmP1/RobotArm"]
-transform = Transform3D(5.19615, 4.76837e-07, 1, 2.38419e-07, 8, -1.19209e-07, -3, 2.38419e-07, 1.73205, -7, 2, 1.99999)
+transform = Transform3D(0.562917, -4.95514e-09, 0.075, 2.58287e-08, 0.75, -8.34179e-09, -0.325, 5.10222e-08, 0.129904, -1.0254, 0, 0.0563639)
 shape = SubResource("BoxShape3D_p6ks8")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="ArmP1/RobotArm"]
+transform = Transform3D(0.424264, 0, -0.127279, 0, 0.75, 0, 0.424264, 0, 0.127279, 0.15, 0, 0.1)
+shape = SubResource("BoxShape3D_p6ks8")
+
+[node name="AttachmentPoint" type="Node3D" parent="ArmP1/RobotArm"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.773826, 0, 0.232899)
 
 [node name="Level" type="Node3D" parent="."]
 
@@ -223,20 +229,13 @@ script = ExtResource("9_j2chq")
 [node name="Brush" type="Node2D" parent="Table/MeshInstance3D/DrawViewport"]
 script = ExtResource("9_41s0o")
 
-[node name="Brush1" type="Node3D" parent="."]
-transform = Transform3D(0.866025, 0.5, 0, -0.5, 0.866025, 0, 0, 0, 1, 0, 3, 2)
-
-[node name="Brush1" type="RigidBody3D" parent="Brush1"]
-
-[node name="paintbrush" parent="Brush1/Brush1" instance=ExtResource("10_arn3n")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Brush1/Brush1"]
-transform = Transform3D(0.2, 0, 0, 0, 1.15, 0, 0, 0, 0.2, 0, 0.7, 0)
-shape = SubResource("CapsuleShape3D_qh2ds")
+[node name="Paintbrush" parent="." instance=ExtResource("13_30e0q")]
+transform = Transform3D(0.776673, 0.629903, 0, -0.629903, 0.776673, 0, 0, 0, 1, 0, 2.88477, 1.56482)
 
 [node name="Floor Collector" type="Area3D" parent="."]
 transform = Transform3D(30, 0, 0, 0, 30, 0, 0, 0, 30, 0, -14.5, 0)
+collision_layer = 2
+collision_mask = 2
 script = ExtResource("10_m3elr")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Floor Collector"]

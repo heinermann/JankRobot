@@ -24,8 +24,6 @@ func handle_movement_input(delta):
 	var input_dir = Input.get_vector("move_hand_left", "move_hand_right", "move_hand_down", "move_hand_up")
 
 	if input_dir == Vector2.ZERO:
-		# TODO For this to work better we need to lock the mouse cursor to the game and hide it
-		# But that has its own problems...
 		input_dir = Input.get_last_mouse_velocity()
 		input_dir.y *= -1
 
@@ -40,7 +38,7 @@ func handle_movement_input(delta):
 
 func handle_other_input(delta):
 	if Input.is_action_pressed("close_hand"):
-		play_anim("hand_closed")
+		play_anim("default") # was hand_closed
 		if _last_collided and _last_collided.global_position.distance_to(self.global_position) < DISTANCE_TO_CLAMP:
 			pick_up(_last_collided)
 	else:
@@ -48,20 +46,21 @@ func handle_other_input(delta):
 		drop_held()
 
 
-func pick_up(object):
+func pick_up(object: RigidBody3D):
 	if _held_object: return
+	if not object or not object.has_method("pick_up"): return
 
 	print("Grabbed a " + object.name)
+	object.pick_up(self)
 	_held_object = object
-	#TODO disable its physics and strap it to the hand
 
 
 func drop_held():
 	if not _held_object: return
 
 	print("Dropped a " + _held_object.name)
+	_held_object.let_go()
 	_held_object = null
-	#TODO reenable physics and unstrap it from hand
 
 
 func play_anim(anim_name):

@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://ctoo1b64qlqw6"]
+
+[ext_resource type="PackedScene" uid="uid://cotsj81ekdc8a" path="res://[painting] Painting Room/Pickupable/Pickupable.tscn" id="1_r0hm6"]
+[ext_resource type="PackedScene" uid="uid://dusu3eao85bmh" path="res://Models/Model Assets/paintbrush.glb" id="2_mbvi6"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_japm7"]
+
+[node name="Paintbrush" instance=ExtResource("1_r0hm6")]
+disable_mode = 1
+
+[node name="paintbrush" parent="." index="0" instance=ExtResource("2_mbvi6")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, -1, 0)
+
+[node name="CollisionShape3D" parent="." index="1"]
+transform = Transform3D(0.2, 0, 0, 0, 1.15, 0, 0, 0, 0.2, 0, -0.3, 0)
+shape = SubResource("CapsuleShape3D_japm7")
