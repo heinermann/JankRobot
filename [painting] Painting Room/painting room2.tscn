@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://1jo2j6nmel70"]
+[gd_scene load_steps=28 format=3 uid="uid://1jo2j6nmel70"]
 
 [ext_resource type="Script" path="res://[painting] Painting Room/painting room2.gd" id="1_ia77t"]
 [ext_resource type="Script" path="res://[painting] Painting Room/RobotArm.gd" id="1_serdl"]
@@ -8,12 +8,12 @@
 [ext_resource type="Script" path="res://[painting] Painting Room/Brush.gd" id="9_41s0o"]
 [ext_resource type="Script" path="res://[painting] Painting Room/DrawViewport.gd" id="9_j2chq"]
 [ext_resource type="Script" path="res://[painting] Painting Room/canvas.gd" id="9_kq04p"]
-[ext_resource type="PackedScene" uid="uid://dusu3eao85bmh" path="res://Models/Model Assets/paintbrush.glb" id="10_arn3n"]
 [ext_resource type="Texture2D" uid="uid://bnhi1hi6mv7b2" path="res://Models/canvas/Canvas.png" id="10_ayqtt"]
 [ext_resource type="Script" path="res://[painting] Painting Room/FloorCollector.gd" id="10_m3elr"]
 [ext_resource type="Shader" uid="uid://8q2dcbmkx5nc" path="res://[painting] Painting Room/paintable.tres" id="11_1hcha"]
 [ext_resource type="Texture2D" uid="uid://b15ql2ewvkq4a" path="res://Models/canvas/bloofus.png" id="11_jnmhd"]
 [ext_resource type="Texture2D" uid="uid://dnaqdlpo1r4pd" path="res://Models/Untitled.png" id="12_b4r8j"]
+[ext_resource type="PackedScene" uid="uid://ctoo1b64qlqw6" path="res://[painting] Painting Room/Pickupable/paintbrush.tscn" id="13_30e0q"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_p6ks8"]
 
@@ -105,8 +105,6 @@ shader = ExtResource("11_1hcha")
 material = SubResource("ShaderMaterial_hjxdy")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_bors1"]
-
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_qh2ds"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_p8v3l"]
 
@@ -223,20 +221,13 @@ script = ExtResource("9_j2chq")
 [node name="Brush" type="Node2D" parent="Table/MeshInstance3D/DrawViewport"]
 script = ExtResource("9_41s0o")
 
-[node name="Brush1" type="Node3D" parent="."]
-transform = Transform3D(0.866025, 0.5, 0, -0.5, 0.866025, 0, 0, 0, 1, 0, 3, 2)
-
-[node name="Brush1" type="RigidBody3D" parent="Brush1"]
-
-[node name="paintbrush" parent="Brush1/Brush1" instance=ExtResource("10_arn3n")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Brush1/Brush1"]
-transform = Transform3D(0.2, 0, 0, 0, 1.15, 0, 0, 0, 0.2, 0, 0.7, 0)
-shape = SubResource("CapsuleShape3D_qh2ds")
+[node name="Paintbrush" parent="." instance=ExtResource("13_30e0q")]
+transform = Transform3D(0.776673, 0.629903, 0, -0.629903, 0.776673, 0, 0, 0, 1, 0, 2.88477, 1.56482)
 
 [node name="Floor Collector" type="Area3D" parent="."]
 transform = Transform3D(30, 0, 0, 0, 30, 0, 0, 0, 30, 0, -14.5, 0)
+collision_layer = 2
+collision_mask = 2
 script = ExtResource("10_m3elr")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Floor Collector"]
