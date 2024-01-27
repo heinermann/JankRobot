@@ -20,18 +20,43 @@ func _physics_process(delta):
 	var collision = move_and_collide(velocity * delta)
 	handle_collision(collision)
 
-func handle_movement_input(delta):
-	var input_dir = Input.get_vector("move_hand_left", "move_hand_right", "move_hand_down", "move_hand_up")
 
+func handle_movement_input(delta):
+	var direction = get_movement_direction()
+	
+	if Input.is_action_pressed("switch_to_hand_rotation"):
+		rotate_hand(direction)
+	else:
+		move_hand(direction)
+
+
+func get_movement_direction():
+	var input_dir = Input.get_vector("move_hand_left", "move_hand_right", "move_hand_down", "move_hand_up")
 	if input_dir == Vector2.ZERO:
 		input_dir = Input.get_last_mouse_velocity()
 		input_dir.y *= -1
 
-	var direction = (transform.basis * Vector3(input_dir.x, input_dir.y, 0)).normalized()
+	return Vector3(input_dir.x, input_dir.y, 0).normalized()
+
+
+func rotate_hand(direction):
+	#TODO rotate towards canvas instead of this primitive jank
+	if direction:
+		rotation.x += direction.y * 0.1
+
+	kill_movement()
+
+
+func move_hand(direction):
+	#TODO movement limitations
 	if direction:
 		velocity.x = direction.x * SPEED
 		velocity.y = direction.y * SPEED
 	else:
+		kill_movement()
+
+
+func kill_movement():
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		velocity.y = move_toward(velocity.y, 0, SPEED)
 
