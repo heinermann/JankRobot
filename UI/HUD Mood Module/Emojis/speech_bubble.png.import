@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b5ge2ogvtet5w"
-path="res://.godot/imported/mood_module_gauge.png-9f5d649364cb6d4a28d36511206e0ecf.ctex"
+uid="uid://pmfcqjw6pq5q"
+path="res://.godot/imported/speech_bubble.png-ee77631a4be4b466f4f0ed5e97b0066e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://UI/HUD Mood Module/mood_module_gauge.png"
-dest_files=["res://.godot/imported/mood_module_gauge.png-9f5d649364cb6d4a28d36511206e0ecf.ctex"]
+source_file="res://UI/HUD Mood Module/Emojis/speech_bubble.png"
+dest_files=["res://.godot/imported/speech_bubble.png-ee77631a4be4b466f4f0ed5e97b0066e.ctex"]
 
 [params]
 
