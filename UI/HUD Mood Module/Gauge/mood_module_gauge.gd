@@ -14,9 +14,9 @@ func _on_mood_changed(mood): # mood is a numeral measurement for the mood of sci
 	# 25-50 stressed
 	# 50-75 confused
 	# 75-100 happy
-	for range in ranges:
-		var start = range[0]
-		var end = range[1]
+	for interval in ranges:
+		var start = interval[0]
+		var end = interval[1]
 		if (mood >= start and mood <= end) and (previous_mood >= start and previous_mood <= end):
 			previous_mood = mood
 			return

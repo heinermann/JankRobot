@@ -92,28 +92,6 @@ libraries = {
 "": SubResource("AnimationLibrary_5yv3v")
 }
 
-[node name="emoji" type="TextureRect" parent="."]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = 190.0
-offset_top = -25.0
-offset_right = 1726.0
-offset_bottom = 839.0
-grow_horizontal = 2
-scale = Vector2(0.300829, 0.293844)
-texture = ExtResource("4_inniw")
-
-[node name="emoji" type="Sprite2D" parent="emoji" node_paths=PackedStringArray("mood_placeholder")]
-texture_filter = 1
-position = Vector2(787.931, 412.069)
-scale = Vector2(0.85, 0.85)
-texture = ExtResource("5_e7ijt")
-hframes = 4
-script = ExtResource("6_at0mf")
-mood_placeholder = NodePath("../../mood_placeholder")
-
 [node name="mood_placeholder" type="HSlider" parent="."]
 custom_minimum_size = Vector2(400, 200)
 layout_mode = 2
@@ -126,3 +104,27 @@ value = 100.0
 rounded = true
 tick_count = 5
 script = ExtResource("3_ndh75")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 190.0
+offset_top = -25.0
+offset_right = 1726.0
+offset_bottom = 839.0
+grow_horizontal = 2
+scale = Vector2(0.300829, 0.293844)
+texture = ExtResource("4_inniw")
+
+[node name="emoji" type="Sprite2D" parent="TextureRect" node_paths=PackedStringArray("mood_placeholder")]
+texture_filter = 1
+position = Vector2(787.931, 412.069)
+scale = Vector2(0.85, 0.85)
+texture = ExtResource("5_e7ijt")
+hframes = 4
+script = ExtResource("6_at0mf")
+mood_placeholder = NodePath("../../mood_placeholder")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="TextureRect/emoji"]

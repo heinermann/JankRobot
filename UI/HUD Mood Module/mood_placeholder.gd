@@ -5,5 +5,5 @@ signal mood_changed
 func _ready():
 	connect("value_changed", _on_value_changed)
 	
-func _on_value_changed(value):
-	emit_signal("mood_changed", value)
+func _on_value_changed(mood):
+	emit_signal("mood_changed", mood)
