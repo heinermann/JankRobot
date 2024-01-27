@@ -33,6 +33,7 @@ func create_texture_with_overlay(input_texture: Texture2D, overlay_texture: Text
 	var size = overlay_image.get_size()
 	overlay_image.resize(size.x * painting_scale.x, size.y * painting_scale.y, 0)
 	overlay_image.rotate_180()
+	overlay_image.flip_x()
 	
 	# Calculate the position to center the overlay on the input image
 	
