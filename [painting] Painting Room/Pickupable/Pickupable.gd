@@ -39,3 +39,5 @@ func let_go():
 	self.global_transform = pos
 	self.collision_mask = original_collision_mask
 	self.collision_layer = original_collision_layer
+	
+	picked_up_by = null
