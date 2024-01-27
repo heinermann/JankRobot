@@ -38,7 +38,7 @@ func handle_movement_input(delta):
 
 func handle_other_input(delta):
 	if Input.is_action_pressed("close_hand"):
-		play_anim("hand_closed")
+		play_anim("default") # was hand_closed
 		if _last_collided and _last_collided.global_position.distance_to(self.global_position) < DISTANCE_TO_CLAMP:
 			pick_up(_last_collided)
 	else:
