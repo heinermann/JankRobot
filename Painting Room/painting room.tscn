@@ -1,10 +1,13 @@
-[gd_scene load_steps=11 format=3 uid="uid://c63gewo0qeut2"]
+[gd_scene load_steps=14 format=3 uid="uid://c63gewo0qeut2"]
 
 [ext_resource type="PackedScene" uid="uid://cfbrwe0v6ulkf" path="res://scientist.tscn" id="1_wfx3d"]
 [ext_resource type="PackedScene" uid="uid://cqvuawo0x37ol" path="res://3D Assests/paintbrush.glb" id="2_h7yvm"]
 [ext_resource type="PackedScene" uid="uid://vbvnwbedskhw" path="res://jank_robot_arm_left_rig.tscn" id="3_hfigv"]
 [ext_resource type="PackedScene" uid="uid://bdc30nubl680" path="res://jank_robot_arm_right_rig.tscn" id="4_ykq6v"]
 [ext_resource type="PackedScene" uid="uid://cqvlyoyjb0u47" path="res://paint_bucket_2.tscn" id="5_ojcuw"]
+[ext_resource type="PackedScene" uid="uid://yih63hs1l7na" path="res://3D Assests/Table.glb" id="6_5q1gi"]
+[ext_resource type="PackedScene" uid="uid://bp06ebjm3da6" path="res://3D Assests/PaintBucket_v2.glb" id="7_f1rng"]
+[ext_resource type="PackedScene" path="res://3D Assests/RoomWall.glb" id="8_wn3nj"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_y8jjb"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -47,9 +50,10 @@ mesh = SubResource("PlaneMesh_27k0s")
 shape = SubResource("ConcavePolygonShape3D_h6fo4")
 
 [node name="Scientist" parent="." instance=ExtResource("1_wfx3d")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 
 [node name="paintbrush" parent="." instance=ExtResource("2_h7yvm")]
-transform = Transform3D(0.3, 0, 0, 0, 0.271388, -0.127862, 0, 0.127862, 0.271388, 0.251098, 0.441854, 0.307045)
+transform = Transform3D(0.2, 0, 0, 0, 0.180925, -0.0852413, 0, 0.0852413, 0.180925, 0.251098, 0.565667, 0.307045)
 
 [node name="JankRobotArmLeft_RIG" parent="." instance=ExtResource("3_hfigv")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.224641, 0.618519, 0.454333)
@@ -58,4 +62,19 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.224
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.251726, 0.618519, 0.455626)
 
 [node name="PaintBucket2" parent="." instance=ExtResource("5_ojcuw")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0109063, 0, 0.389364)
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -0.398937, 0.5007, 0.468832)
+
+[node name="Table" parent="." instance=ExtResource("6_5q1gi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0286836, 0.443857, 0.572365)
+
+[node name="PaintBucket_v22" parent="." instance=ExtResource("7_f1rng")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0134363, 0.483884, 0.487402)
+
+[node name="RoomWall" parent="." instance=ExtResource("8_wn3nj")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.0801489, -0.00442135, -2.27406)
+
+[node name="RoomWall2" parent="." instance=ExtResource("8_wn3nj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.98597, -0.00442195, -0.189489)
+
+[node name="RoomWall3" parent="." instance=ExtResource("8_wn3nj")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 2.16816, -0.0126309, -0.189642)
