@@ -22,8 +22,8 @@ func pick_up(by):
 	self.collision_layer = 0
 	self.freeze = true
 	
-	original_parent.remove_child(self)
-	picked_up_by.add_child(self)
+	self.get_parent().remove_child(self)
+	picked_up_by.find_child("AttachmentPoint").add_child(self)
 	
 	self.transform = Transform3D()
 
@@ -32,7 +32,7 @@ func let_go():
 	
 	var pos = self.global_transform
 	
-	picked_up_by.remove_child(self)
+	self.get_parent().remove_child(self)
 	original_parent.add_child(self)
 	
 	self.freeze = false
