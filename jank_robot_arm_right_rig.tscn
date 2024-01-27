@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://bdc30nubl680"]
+
+[ext_resource type="PackedScene" uid="uid://c842bmncjac7f" path="res://3D Assests/JankRobotArmRight_RIG.glb" id="1_vr3dg"]
+
+[node name="JankRobotArmRight_RIG" instance=ExtResource("1_vr3dg")]
+
+[node name="Skeleton3D" parent="Armature" index="0"]
+bones/3/rotation = Quaternion(0.901587, 0.0281926, 0.0230181, 0.431063)
