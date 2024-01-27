@@ -1,0 +1,11 @@
+[gd_resource type="StyleBoxTexture" load_steps=2 format=3 uid="uid://jptv8wqyh6pd"]
+
+[ext_resource type="Texture2D" uid="uid://cqt343heg553y" path="res://UI/Emojis/emoji_and_boxes_sprite_sheet.png" id="1_stu4i"]
+
+[resource]
+texture = ExtResource("1_stu4i")
+expand_margin_left = 10.0
+expand_margin_right = 10.0
+axis_stretch_horizontal = 2
+axis_stretch_vertical = 2
+region_rect = Rect2(1208, 232, 1016, 736)

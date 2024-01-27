@@ -1,5 +1,6 @@
-[gd_scene load_steps=28 format=3 uid="uid://b1lb2vkafim3l"]
+[gd_scene load_steps=29 format=3 uid="uid://b1lb2vkafim3l"]
 
+[ext_resource type="PackedScene" uid="uid://bfwlxhomlwo31" path="res://UI/HUD Mood Module/mood_module.tscn" id="1_c0v0m"]
 [ext_resource type="Script" path="res://[painting] Painting Room/RobotArm.gd" id="1_serdl"]
 [ext_resource type="PackedScene" uid="uid://cohgvxcrm2y43" path="res://Models/Model Assets/JankRobotArmRight_RIG.glb" id="1_wtmx1"]
 [ext_resource type="Script" path="res://[painting] Painting Room/SetUVPositionMesh.gd" id="5_edvpv"]
@@ -110,6 +111,8 @@ material = SubResource("ShaderMaterial_hjxdy")
 [sub_resource type="BoxShape3D" id="BoxShape3D_p8v3l"]
 
 [node name="PaintingRoom" type="Node3D"]
+
+[node name="MoodModuleGauge" parent="." instance=ExtResource("1_c0v0m")]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.988178, 0.153314, 0, -0.153314, 0.988178, 0, 12.3526, -14.6504)
