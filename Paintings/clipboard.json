@@ -3,6 +3,6 @@
 	"pos_y": 4,
 	"scale_x": 0.4,
 	"scale_y": 0.4,
-	"scoring": ["7f3600"],
+	"scoring": ["ff0000", "0000ff", "ffff00", "00ff00"],
 	"empty": []
 }

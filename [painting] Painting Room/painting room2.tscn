@@ -341,9 +341,12 @@ transform = Transform3D(3.3, 0, 0, 0, 3.3, 0, 0, 0, 3.3, 7.5, 15, 7.5)
 [node name="Scientist" parent="." instance=ExtResource("8_uum8u")]
 transform = Transform3D(7.93914, 0, -4.23911, 0, 9, 0, 4.23911, 0, 7.93914, 1.845, 0, -1.56)
 
-[node name="canvas" type="Node3D" parent="."]
+[node name="canvas" type="Node3D" parent="." node_paths=PackedStringArray("paintbucket_pos")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, -0.180866)
 script = ExtResource("9_kq04p")
+paintbucket = ExtResource("18_48idl")
+paintbucket_pos = NodePath("../PaintbucketPos")
+distance_between_paints = Vector3(0.75, 0, 0)
 canvas_texture = ExtResource("10_ayqtt")
 canvas_top_left = Vector2(1, 319)
 canvas_bottom_right = Vector2(489, 1022)
@@ -351,7 +354,7 @@ painting_texture = ExtResource("21_qblll")
 painting_origin = Vector2(1, 1022)
 painting_scale = Vector2(4, 4)
 flip_y = true
-scoring_colors = Array[Color]([Color(0.666667, 0.196078, 0.196078, 1)])
+scoring_colors = Array[Color]([Color(0.666667, 0.196078, 0.196078, 1), Color(0, 1, 0, 1)])
 empty_colors = Array[Color]([Color(0.796078, 0.796078, 0.796078, 0.25098), Color(0.247059, 0.247059, 0.454902, 1), Color(0.933333, 0.764706, 0.603922, 1), Color(1, 1, 1, 1)])
 
 [node name="Canvas" type="MeshInstance3D" parent="canvas"]
@@ -404,20 +407,7 @@ script = ExtResource("9_41s0o")
 [node name="Paintbrush" parent="." instance=ExtResource("13_30e0q")]
 transform = Transform3D(0.776673, 0.629903, 0, -0.629903, 0.776673, 0, 0, 0, 1, 0, 3.45974, 1.56482)
 
-[node name="RedPaint" parent="." instance=ExtResource("18_48idl")]
+[node name="PaintbucketPos" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.44, 2, 0.83)
-color = Color(1, 0, 0, 1)
-
-[node name="BluePaint" parent="." instance=ExtResource("18_48idl")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.6693, 2, 0.83)
-color = Color(0, 0, 1, 1)
-
-[node name="YellowPaint" parent="." instance=ExtResource("18_48idl")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.934, 2, 0.83)
-color = Color(1, 1, 0, 1)
-
-[node name="GreenPaint" parent="." instance=ExtResource("18_48idl")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.189, 2, 0.83)
-color = Color(0, 0.639216, 0, 1)
 
 [connection signal="body_entered" from="Level/Floor Collector" to="Level/Floor Collector" method="_on_body_entered"]

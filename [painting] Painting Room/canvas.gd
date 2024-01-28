@@ -1,5 +1,9 @@
 extends Node3D
 
+@export var paintbucket: Resource
+@export var paintbucket_pos: Node3D
+@export var distance_between_paints: Vector3
+
 @export var canvas_texture: Texture2D
 @export var canvas_top_left: Vector2
 @export var canvas_bottom_right: Vector2
@@ -139,16 +143,32 @@ func choose_painting():
 	
 	painting_texture = ImageTexture.create_from_image(Image.load_from_file("res://Paintings/" + files[chosen]))
 
+func make_paintbuckets():
+	var root = get_node("/root/PaintingRoom")
+	var start_pos = paintbucket_pos.position
+	
+	var paint = load(paintbucket.resource_path)
+	
+	var cur = 0
+	for col in scoring_colors:
+		var pos = start_pos + cur * distance_between_paints
+		var _paint = paint.instantiate()
+		_paint.position = pos
+		_paint.color = col
+		root.add_child.call_deferred(_paint)
+		cur += 1
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	var material = ($Canvas.mesh.surface_get_material(0) as ShaderMaterial)
 	
 	if choose_random:
-		print('rand')
 		choose_painting()
+		make_paintbuckets()
 	else:
 		if choose_file != "":
 			read_painting_file(choose_file)
+			make_paintbuckets()
 	
 	material.set_shader_parameter("MainColor", create_texture_with_overlay(canvas_texture, painting_texture, painting_origin, painting_position, painting_scale))
 
