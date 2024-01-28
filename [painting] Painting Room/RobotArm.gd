@@ -58,15 +58,15 @@ func get_movement_direction():
 
 
 func rotate_hand(direction):
-	#TODO rotate towards canvas instead of this primitive jank
 	if direction:
-		rotation.x += direction.y * 0.1
+		var new_rotation = rotation.x + direction.y * 0.1
+		if new_rotation >= 0 and new_rotation < 1.5:
+			rotation = Vector3(new_rotation, new_rotation * .8, 0)
 
 	kill_movement()
 
 
 func move_hand(direction):
-	#TODO movement limitations
 	if direction:
 		velocity.x = direction.x * SPEED
 		velocity.y = direction.y * SPEED
