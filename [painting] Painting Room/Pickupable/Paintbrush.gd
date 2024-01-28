@@ -30,7 +30,7 @@ func handle_collisions():
 				continue
 			
 			var path_to = "/" + body.get_parent().get_path().get_concatenated_names()
-			var viewport = get_node(path_to + "/DrawViewport")
+			var viewport = get_node_or_null(path_to + "/DrawViewport")
 			
 			if !viewport:
 				continue
