@@ -55,3 +55,7 @@ func handle_collisions():
 				viewport.paint(uv, color, texture)
 	else:
 		globals.is_collided = false
+
+
+func set_brush_color(new_color: Color):
+	color = new_color
