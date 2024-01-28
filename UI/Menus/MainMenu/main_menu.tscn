@@ -1,11 +1,12 @@
-[gd_scene load_steps=9 format=3 uid="uid://4tc1kq1idr1p"]
+[gd_scene load_steps=10 format=3 uid="uid://4tc1kq1idr1p"]
 
 [ext_resource type="Script" path="res://UI/Menus/MainMenu/main_menu.gd" id="1_1f8iv"]
-[ext_resource type="Texture2D" uid="uid://dqa1msx46hk8c" path="res://UI/Menus/MainMenu/backdrop_placeholder.jpg" id="2_a118a"]
+[ext_resource type="Texture2D" uid="uid://ciak1t2kwvjk5" path="res://UI/Menus/MainMenu/backgroundImage.jpg" id="2_rcolv"]
 [ext_resource type="ButtonGroup" uid="uid://ddb25c42b1awi" path="res://UI/Buttons/ui_buttons.tres" id="4_1r7ej"]
-[ext_resource type="Texture2D" uid="uid://ksdepxe3lbwt" path="res://UI/Icons/start game placeholder.svg" id="5_5bl4f"]
+[ext_resource type="Texture2D" uid="uid://dpsrwfgh8gcuj" path="res://UI/Buttons/JankBotTextBoxes_button_small.png" id="5_ofgxs"]
 [ext_resource type="Script" path="res://UI/Buttons/ui_buttons_icon_version.gd" id="5_wqmac"]
 [ext_resource type="Texture2D" uid="uid://3ga5yqmsptm2" path="res://UI/Icons/help_placeholder.svg" id="6_ixtcu"]
+[ext_resource type="Texture2D" uid="uid://cgrgjbq73knh" path="res://UI/Buttons/JankBotTextBoxes_button_small_pressed.png" id="6_t1o0v"]
 [ext_resource type="Texture2D" uid="uid://b75fg2y051bkf" path="res://UI/Icons/options_placeholder.svg" id="7_np1bb"]
 [ext_resource type="Texture2D" uid="uid://q3b2qmqpr0qp" path="res://UI/Icons/quit_placeholder.svg" id="8_5hri1"]
 
@@ -23,7 +24,7 @@ layout_mode = 0
 offset_right = 1355.0
 offset_bottom = 762.0
 scale = Vector2(0.85, 0.85)
-texture = ExtResource("2_a118a")
+texture = ExtResource("2_rcolv")
 expand_mode = 1
 
 [node name="TitleContainer" type="MarginContainer" parent="."]
@@ -71,14 +72,14 @@ size_flags_vertical = 8
 theme_override_constants/separation = 16
 alignment = 1
 
-[node name="StartGame" type="Button" parent="MenuContainer/MenuVBoxContainer"]
+[node name="StartGame" type="TextureButton" parent="MenuContainer/MenuVBoxContainer"]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(200, 80)
 layout_mode = 2
+tooltip_text = "Play Game"
 toggle_mode = true
 button_group = ExtResource("4_1r7ej")
-icon = ExtResource("5_5bl4f")
-icon_alignment = 1
+texture_normal = ExtResource("5_ofgxs")
+texture_pressed = ExtResource("6_t1o0v")
 
 [node name="MenuContainer2" type="MarginContainer" parent="."]
 layout_mode = 1
