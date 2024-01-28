@@ -1,12 +1,15 @@
-[gd_scene load_steps=9 format=3 uid="uid://yl2ex6llvpyh"]
+[gd_scene load_steps=12 format=3 uid="uid://yl2ex6llvpyh"]
 
 [ext_resource type="Script" path="res://addons/controller_icons/objects/Button.gd" id="1_2am1g"]
 [ext_resource type="Script" path="res://UI/Menus/ControlsMenu/controls.gd" id="1_ld0w4"]
-[ext_resource type="Texture2D" uid="uid://fxgoiilpipsd" path="res://addons/controller_icons/assets/xbox360/l_stick.png" id="2_vds56"]
-[ext_resource type="Texture2D" uid="uid://d6jwqg6mq8dk" path="res://addons/controller_icons/assets/xbox360/r_stick.png" id="4_kpygn"]
-[ext_resource type="Texture2D" uid="uid://dhhjoq01cc2oh" path="res://addons/controller_icons/assets/xbox360/lt.png" id="5_swj5y"]
-[ext_resource type="Texture2D" uid="uid://d2qha4gd4x604" path="res://addons/controller_icons/assets/xbox360/rt.png" id="6_0wpx8"]
-[ext_resource type="Texture2D" uid="uid://coxp4sapp4g8n" path="res://addons/controller_icons/assets/xbox360/start.png" id="7_32d1d"]
+[ext_resource type="Texture2D" uid="uid://puc614rf26im" path="res://addons/controller_icons/assets/key/arrow_left.png" id="2_kqsth"]
+[ext_resource type="Texture2D" uid="uid://casmdw1resubx" path="res://addons/controller_icons/assets/key/w.png" id="4_lk5kd"]
+[ext_resource type="Texture2D" uid="uid://bptg6u6b4y5no" path="res://addons/controller_icons/assets/key/a.png" id="5_6rccn"]
+[ext_resource type="Texture2D" uid="uid://db6nbed6w2fis" path="res://addons/controller_icons/assets/key/s.png" id="6_rdyu4"]
+[ext_resource type="Texture2D" uid="uid://dlwamiuq1f5t6" path="res://addons/controller_icons/assets/key/d.png" id="7_mgsn1"]
+[ext_resource type="Texture2D" uid="uid://cy7e67qj2flir" path="res://addons/controller_icons/assets/mouse/right.png" id="8_5w3nv"]
+[ext_resource type="Texture2D" uid="uid://b8vuy7l8npt6w" path="res://addons/controller_icons/assets/mouse/left.png" id="9_48b4x"]
+[ext_resource type="Texture2D" uid="uid://cnghdqiitl0fu" path="res://addons/controller_icons/assets/key/esc.png" id="10_t2wf5"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vry1y"]
 bg_color = Color(0.211765, 0.211765, 0.211765, 1)
@@ -55,7 +58,7 @@ theme_override_colors/font_disabled_color = Color(0.811765, 0.811765, 0.811765, 
 theme_override_colors/icon_disabled_color = Color(1, 1, 1, 1)
 disabled = true
 text = "Move Hand"
-icon = ExtResource("2_vds56")
+icon = ExtResource("2_kqsth")
 flat = true
 alignment = 2
 script = ExtResource("1_2am1g")
@@ -70,7 +73,7 @@ focus_mode = 0
 theme_override_colors/font_disabled_color = Color(0.811765, 0.811765, 0.811765, 1)
 theme_override_colors/icon_disabled_color = Color(1, 1, 1, 1)
 disabled = true
-icon = ExtResource("4_kpygn")
+icon = ExtResource("4_lk5kd")
 flat = true
 alignment = 2
 script = ExtResource("1_2am1g")
@@ -82,7 +85,7 @@ focus_mode = 0
 theme_override_colors/font_disabled_color = Color(0.811765, 0.811765, 0.811765, 1)
 theme_override_colors/icon_disabled_color = Color(1, 1, 1, 1)
 disabled = true
-icon = ExtResource("4_kpygn")
+icon = ExtResource("5_6rccn")
 flat = true
 alignment = 2
 script = ExtResource("1_2am1g")
@@ -94,7 +97,7 @@ focus_mode = 0
 theme_override_colors/font_disabled_color = Color(0.811765, 0.811765, 0.811765, 1)
 theme_override_colors/icon_disabled_color = Color(1, 1, 1, 1)
 disabled = true
-icon = ExtResource("4_kpygn")
+icon = ExtResource("6_rdyu4")
 flat = true
 alignment = 2
 script = ExtResource("1_2am1g")
@@ -108,7 +111,7 @@ theme_override_colors/font_disabled_color = Color(0.811765, 0.811765, 0.811765, 
 theme_override_colors/icon_disabled_color = Color(1, 1, 1, 1)
 disabled = true
 text = "Move Camera"
-icon = ExtResource("4_kpygn")
+icon = ExtResource("7_mgsn1")
 flat = true
 alignment = 2
 script = ExtResource("1_2am1g")
@@ -121,7 +124,7 @@ theme_override_colors/font_disabled_color = Color(0.811765, 0.811765, 0.811765, 
 theme_override_colors/icon_disabled_color = Color(1, 1, 1, 1)
 disabled = true
 text = "Switch to Hand Rotation (Hold)"
-icon = ExtResource("5_swj5y")
+icon = ExtResource("8_5w3nv")
 flat = true
 alignment = 2
 script = ExtResource("1_2am1g")
@@ -134,7 +137,7 @@ theme_override_colors/font_disabled_color = Color(0.811765, 0.811765, 0.811765, 
 theme_override_colors/icon_disabled_color = Color(1, 1, 1, 1)
 disabled = true
 text = "Close Hand (Hold)"
-icon = ExtResource("6_0wpx8")
+icon = ExtResource("9_48b4x")
 flat = true
 alignment = 2
 script = ExtResource("1_2am1g")
@@ -147,7 +150,7 @@ theme_override_colors/font_disabled_color = Color(0.811765, 0.811765, 0.811765, 
 theme_override_colors/icon_disabled_color = Color(1, 1, 1, 1)
 disabled = true
 text = "Pause Game"
-icon = ExtResource("7_32d1d")
+icon = ExtResource("10_t2wf5")
 flat = true
 alignment = 2
 script = ExtResource("1_2am1g")
