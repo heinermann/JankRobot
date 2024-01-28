@@ -129,6 +129,7 @@ icon = ExtResource("6_ixtcu")
 icon_alignment = 1
 
 [node name="Options" type="Button" parent="MenuContainer2/HBoxContainer"]
+visible = false
 layout_mode = 2
 toggle_mode = true
 button_group = ExtResource("4_1r7ej")

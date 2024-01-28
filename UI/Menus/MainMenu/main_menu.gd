@@ -3,7 +3,6 @@ extends Control
 signal show_controls_menu
 
 func _ready():
-	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	%StartGame.grab_focus()
 
 func _on_start_game_pressed():
@@ -16,6 +15,6 @@ func _on_controls_pressed():
 	#print("Controls button pressed");
 	emit_signal("show_controls_menu")
 		
-func _on_options_pressed():
-	print("Options button pressed");
-	#toggle options menu
+#func _on_options_pressed():
+	#print("Options button pressed");
+	##toggle options menu

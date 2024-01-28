@@ -1,10 +1,12 @@
 extends Control
 var delay = 0.05
 var paused = false
+var painting_room
 @onready var focus_button := $MarginContainer/Panel/MarginContainer/VBoxContainer/Resume
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	hide()
+	painting_room = get_tree().get_root()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -27,7 +29,7 @@ func toggle_pause_menu():
 
 func _on_return_to_main_menu_pressed():
 	toggle_pause_menu()
-	get_tree().change_scene_to_file("res://UI/Menus/MainMenu/main_menu.tscn")
+	get_tree().change_scene_to_file("res://UI/Menus/menu.tscn")
 
 func _on_quit_pressed():
 	get_tree().quit()
