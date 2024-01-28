@@ -4,6 +4,9 @@ extends Node3D
 @export var canvas_top_left: Vector2
 @export var canvas_bottom_right: Vector2
 
+@export var choose_random: bool = true
+@export var choose_file: String = ""
+
 @export var painting_texture: Texture2D
 @export var painting_origin: Vector2
 @export var painting_position: Vector2
@@ -44,22 +47,6 @@ func create_texture_with_overlay(input_texture: Texture2D, overlay_texture: Text
 	
 	# Draw the overlay image on top of the input image at the specified position
 	input_image.blit_rect(overlay_image, Rect2(Vector2.ZERO, overlay_image.get_size()), painting_origin + painting_position)
-	
-	# test colour scoring
-	#print(are_colors_equal_with_error(input_image.get_pixelv(Vector2(170, 920)), scoring_colors[0], 0.05))
-	#print(input_image.get_pixelv(Vector2(170, 920)) * 255)
-	#
-	#print(are_colors_equal_with_error(input_image.get_pixelv(Vector2(161, 845)), scoring_colors[1], 0.05))
-	#print(input_image.get_pixelv(Vector2(161, 845)) * 255)
-	#
-	#print(are_colors_equal_with_error(input_image.get_pixelv(Vector2(170, 890)), scoring_colors[2], 0.05))
-	#print(input_image.get_pixelv(Vector2(170, 890)) * 255)
-	#
-	#print(are_colors_equal_with_error(input_image.get_pixelv(Vector2(170, 800)), scoring_colors[3], 0.05))
-	#print(input_image.get_pixelv(Vector2(170, 800)) * 255)
-	#
-	#print(are_colors_equal_with_error(input_image.get_pixelv(Vector2(170, 600)), empty_colors[0], 0.05))
-	#print(input_image.get_pixelv(Vector2(170, 600)) * 255)
 	
 	#input_image.get_region(Rect2(canvas_top_left, canvas_bottom_right - canvas_top_left)).save_png('res://yes.png')
 	score_image = get_region(input_image)
@@ -116,9 +103,52 @@ func get_score():
 	var count = count_pixels(score_image, painted_image)
 	return [count, calculate_score(100, count[0], count[1], count[2], []), painted_image]
 
+func read_painting_file(path):
+	var config = FileAccess.open("res://Paintings/" + path.replace(".png", ".json"), FileAccess.READ)
+	var config_parse = JSON.parse_string(config.get_as_text())
+	
+	painting_position = Vector2(config_parse["pos_x"], config_parse["pos_y"])
+	painting_scale = Vector2(config_parse["scale_x"], config_parse["scale_y"])
+	
+	var new_scoring_colors: Array[Color] = []
+	for hex in config_parse["scoring"]:
+		new_scoring_colors.push_back(Color(hex))
+	scoring_colors = new_scoring_colors
+	
+	var new_empty_colors: Array[Color] = []
+	for hex in config_parse["empty"]:
+		new_empty_colors.push_back(Color(hex))
+	empty_colors = new_empty_colors
+	
+func choose_painting():
+	var dir = DirAccess.open("res://Paintings")
+	
+	var files = []
+	
+	if dir:
+		dir.list_dir_begin()
+		var file_name = dir.get_next()
+		while file_name != "":
+			if !dir.current_is_dir() and file_name.ends_with(".png"):
+				files.push_back(file_name)
+			file_name = dir.get_next()
+	
+	var chosen: int = randi_range(0, files.size() - 1)
+	
+	read_painting_file(files[chosen])
+	
+	painting_texture = ImageTexture.create_from_image(Image.load_from_file("res://Paintings/" + files[chosen]))
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	var material = ($Canvas.mesh.surface_get_material(0) as ShaderMaterial)
+	
+	if choose_random:
+		print('rand')
+		choose_painting()
+	else:
+		if choose_file != "":
+			read_painting_file(choose_file)
 	
 	material.set_shader_parameter("MainColor", create_texture_with_overlay(canvas_texture, painting_texture, painting_origin, painting_position, painting_scale))
 
