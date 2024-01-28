@@ -29,7 +29,7 @@ func _ready():
 	img = score[2]
 	img.flip_y()
 	
-	var mood_penalty = mood - 100
+	var mood_penalty = (mood - 100) * 0.3
 	var rest: String = body_string % [count[0], mood_penalty, score[1] + mood_penalty]
 	get_node("%Body").set_text(top_text + rest)
 		
