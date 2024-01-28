@@ -12,7 +12,16 @@ var img: Image
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	var top_text = "Sorry, you took too long!\n\n"
+	var top_text = ""
+	
+	if victory:
+		victory_music.play()
+		top_text = "Congratulations!\n\n"
+		result.set_text("VICTORY")
+	else:
+		loss_music.play()
+		top_text = "Sorry, you took too long!\n\n"
+		result.set_text("LOSS")
 	
 	var count = score[0]
 	var body_string = "Pixels painted correctly: %d\nPixels drawn outside the lines: %d\n\nScore: %f"
@@ -21,14 +30,6 @@ func _ready():
 	
 	var rest: String = body_string % [count[0], count[1], score[1]]
 	get_node("%Body").set_text(top_text + rest)
-	
-	if victory:
-		victory_music.play()
-		get_node("%Body").set_text(body_string % [count[0], count[1], score[1]])
-		result.set_text("VICTORY")
-	else:
-		loss_music.play()
-		result.set_text("LOSS")
 		
 		
 	$Sprite2D.set_texture(ImageTexture.create_from_image(img))
