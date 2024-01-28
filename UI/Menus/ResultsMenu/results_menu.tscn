@@ -64,6 +64,30 @@ tracks/3/keys = {
 "update": 0,
 "values": [Vector2(505, 508)]
 }
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Sprite2D:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"update": 0,
+"values": []
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Save:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(711, 1018)]
+}
 
 [sub_resource type="Animation" id="Animation_d6ua3"]
 resource_name = "slide_in"
@@ -116,6 +140,30 @@ tracks/3/keys = {
 "update": 0,
 "values": [Vector2(505, 1153), Vector2(505, 508)]
 }
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Sprite2D:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(562, 1045), Vector2(562, 400)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Save:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(711, 1018), Vector2(711, 375)]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_dto0q"]
 _data = {
@@ -149,7 +197,7 @@ anchor_bottom = 0.5
 offset_left = -216.0
 offset_top = -299.0
 offset_right = 420.0
-offset_bottom = 701.0
+offset_bottom = 701.002
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.65, 0.65)
@@ -181,6 +229,24 @@ unique_name_in_owner = true
 layout_mode = 2
 label_settings = SubResource("LabelSettings_nvyop")
 
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(562, 400)
+scale = Vector2(0.25, 0.25)
+
+[node name="Save" type="Button" parent="."]
+layout_mode = 0
+offset_left = 711.0
+offset_top = 1018.0
+offset_right = 743.0
+offset_bottom = 1050.0
+rotation = 1.5708
+toggle_mode = true
+button_group = ExtResource("2_d1621")
+text = "
+"
+icon = ExtResource("7_cwaqm")
+icon_alignment = 1
+
 [node name="MenuContainer2" type="MarginContainer" parent="."]
 layout_mode = 1
 anchors_preset = 7
@@ -191,7 +257,7 @@ anchor_bottom = 1.0
 offset_left = -71.0
 offset_top = -140.0
 offset_right = 55.0
-offset_bottom = -98.0
+offset_bottom = -97.9999
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_constants/margin_top = 10
@@ -226,5 +292,6 @@ libraries = {
 }
 autoplay = "slide_in"
 
+[connection signal="pressed" from="Save" to="." method="_on_save_pressed"]
 [connection signal="pressed" from="MenuContainer2/HBoxContainer/Controls" to="." method="_on_controls_pressed"]
 [connection signal="pressed" from="MenuContainer2/HBoxContainer/Quit" to="." method="_on_quit_pressed"]
