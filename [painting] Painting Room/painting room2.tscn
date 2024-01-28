@@ -341,7 +341,7 @@ transform = Transform3D(3.3, 0, 0, 0, 3.3, 0, 0, 0, 3.3, 7.5, 15, 7.5)
 transform = Transform3D(7.93914, 0, -4.23911, 0, 9, 0, 4.23911, 0, 7.93914, 1.845, 0, -1.56)
 
 [node name="canvas" type="Node3D" parent="." node_paths=PackedStringArray("paintbucket_pos")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, -0.180866)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 5, -0.181)
 script = ExtResource("9_kq04p")
 paintbucket = ExtResource("18_48idl")
 paintbucket_pos = NodePath("../PaintbucketPos")
