@@ -351,7 +351,6 @@ distance_between_paints = Vector3(0.75, 0, 0)
 canvas_texture = ExtResource("10_ayqtt")
 canvas_top_left = Vector2(1, 319)
 canvas_bottom_right = Vector2(489, 1022)
-painting_texture = ExtResource("21_qblll")
 painting_origin = Vector2(1, 1022)
 painting_scale = Vector2(4, 4)
 flip_y = true

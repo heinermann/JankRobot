@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://e4utc82nnkv6"
-path="res://.godot/imported/bloofus.png-9507b83278a9b5cb2046c1d72c2fac11.ctex"
+uid="uid://c5t3dmwclkiuk"
+path="res://.godot/imported/Truck.png-2deafe80847a5c0559fc8a584fd50f51.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Paintings/bloofus.png"
-dest_files=["res://.godot/imported/bloofus.png-9507b83278a9b5cb2046c1d72c2fac11.ctex"]
+source_file="res://Paintings/Truck.png"
+dest_files=["res://.godot/imported/Truck.png-2deafe80847a5c0559fc8a584fd50f51.ctex"]
 
 [params]
 

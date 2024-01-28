@@ -1,8 +1,0 @@
-{
-	"pos_x": 4,
-	"pos_y": 4,
-	"scale_x": 0.4,
-	"scale_y": 0.4,
-	"scoring": ["ff0000", "0000ff", "ffff00", "00ff00"],
-	"empty": []
-}
