@@ -35,6 +35,9 @@ func _process(delta):
 	if !finished_game and decrease_mood_over_time:
 		mood -= mood_down_over_time * delta
 		slider.value = mood
+		
+	if Input.is_action_just_pressed("ui_page_down"):
+		finish_game()
 	
 
 func finish_game():
