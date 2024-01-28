@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://c335el2sf5rcc"
-path="res://.godot/imported/Scientist.glb-12d84c83b899faf51d5fb517889ee6eb.scn"
+uid="uid://4oeqmpb140j0"
+path="res://.godot/imported/RoomFan.glb-3a8d5b5b7b6970ff2a593daa34df615a.scn"
 
 [deps]
 
-source_file="res://Models/Model Assets/Scientist.glb"
-dest_files=["res://.godot/imported/Scientist.glb-12d84c83b899faf51d5fb517889ee6eb.scn"]
+source_file="res://Models/Model Assets/RoomFan.glb"
+dest_files=["res://.godot/imported/RoomFan.glb-3a8d5b5b7b6970ff2a593daa34df615a.scn"]
 
 [params]
 
