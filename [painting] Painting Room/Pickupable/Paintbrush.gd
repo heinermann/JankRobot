@@ -12,7 +12,7 @@ var initial_mouse_pos
 
 @export var is_collided: bool = false
  
-#@onready var draw_viewport: Viewport = $"/root/Node3D/DrawViewport"
+@onready var globals: Node = get_node("/root/PaintingRoom/Globals")
 
 func _physics_process(delta):
 	position = Vector3.ZERO
@@ -35,7 +35,7 @@ func handle_collisions():
 			if !viewport:
 				continue
 				
-			is_collided = true
+			globals.is_collided = true
 			
 			path_to = "/" + body.get_parent().get_path().get_concatenated_names()
 			var uv_pos = get_node(path_to).uv_pos
@@ -54,4 +54,4 @@ func handle_collisions():
 				print(uv)
 				viewport.paint(uv, color, texture)
 	else:
-		is_collided = false
+		globals.is_collided = false

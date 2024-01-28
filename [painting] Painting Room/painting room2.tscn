@@ -1,8 +1,9 @@
-[gd_scene load_steps=33 format=3 uid="uid://1jo2j6nmel70"]
+[gd_scene load_steps=34 format=3 uid="uid://1jo2j6nmel70"]
 
 [ext_resource type="Script" path="res://[painting] Painting Room/painting room2.gd" id="1_ia77t"]
 [ext_resource type="Script" path="res://[painting] Painting Room/RobotArm.gd" id="1_serdl"]
 [ext_resource type="PackedScene" uid="uid://c842bmncjac7f" path="res://Models/Model Assets/JankRobotArmRight_RIG.glb" id="1_wtmx1"]
+[ext_resource type="Script" path="res://[painting] Painting Room/Globals.gd" id="2_40k3t"]
 [ext_resource type="Script" path="res://[painting] Painting Room/SetUVPositionMesh.gd" id="5_edvpv"]
 [ext_resource type="PackedScene" uid="uid://bl1mjgfldx7re" path="res://[painting] Painting Room/scientist.tscn" id="8_uum8u"]
 [ext_resource type="PackedScene" uid="uid://b7cjv3hwiv7ni" path="res://Models/Model Assets/RoomWall.glb" id="9_5gqxm"]
@@ -175,6 +176,9 @@ shadow_mesh = SubResource("ArrayMesh_k4jbt")
 
 [node name="PaintingRoom" type="Node3D"]
 script = ExtResource("1_ia77t")
+
+[node name="Globals" type="Node" parent="."]
+script = ExtResource("2_40k3t")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.988178, 0.153314, 0, -0.153314, 0.988178, 0, 12.3526, -14.6504)
@@ -352,7 +356,6 @@ script = ExtResource("9_j2chq")
 script = ExtResource("9_41s0o")
 
 [node name="Paintbrush" parent="." instance=ExtResource("13_30e0q")]
-unique_name_in_owner = true
 transform = Transform3D(0.776673, 0.629903, 0, -0.629903, 0.776673, 0, 0, 0, 1, 0, 3.45974, 1.56482)
 
 [connection signal="body_entered" from="Level/Floor Collector" to="Level/Floor Collector" method="_on_body_entered"]
