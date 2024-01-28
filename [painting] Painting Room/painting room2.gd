@@ -10,7 +10,7 @@ var mood: float = 100.0
 @export var max_time_in_seconds: float
 var current_time: float = 0
 
-@onready var slider: HSlider = get_node("MoodModule/mood_placeholder")
+@onready var slider: HSlider = get_node("UI/MoodModule/mood_placeholder")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
