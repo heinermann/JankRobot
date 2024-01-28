@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://c63gewo0qeut2"]
+[gd_scene load_steps=16 format=3 uid="uid://c63gewo0qeut2"]
 
 [ext_resource type="PackedScene" uid="uid://cfbrwe0v6ulkf" path="res://scientist.tscn" id="1_wfx3d"]
 [ext_resource type="PackedScene" uid="uid://cqvuawo0x37ol" path="res://3D Assests/paintbrush.glb" id="2_h7yvm"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://bp06ebjm3da6" path="res://3D Assests/PaintBucket_v2.glb" id="7_f1rng"]
 [ext_resource type="PackedScene" uid="uid://b7cjv3hwiv7ni" path="res://3D Assests/RoomWall.glb" id="8_wn3nj"]
 [ext_resource type="PackedScene" uid="uid://nyee4ki32o1b" path="res://room_fan.tscn" id="9_gsbnc"]
+[ext_resource type="PackedScene" uid="uid://6n40ijh5ihqh" path="res://3D Assests/SecurityCam.glb" id="10_7pvao"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_y8jjb"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -39,10 +40,10 @@ transform = Transform3D(0.971918, -0.234982, 0.0125785, 0.13412, 0.597077, 0.790
 shadow_enabled = true
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.998582, 0.053243, 0, -0.053243, 0.998582, 0, 0.869708, 1.35328)
+transform = Transform3D(1, 0, 0, 0, 0.999684, -0.0251468, 0, 0.0251468, 0.999684, 0.00575912, 0.674691, 1.53725)
 
 [node name="Floor" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.00442147, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0125445, -0.0410809, 0.00577629)
 mesh = SubResource("PlaneMesh_27k0s")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Floor"]
@@ -51,24 +52,29 @@ mesh = SubResource("PlaneMesh_27k0s")
 shape = SubResource("ConcavePolygonShape3D_h6fo4")
 
 [node name="Scientist" parent="." instance=ExtResource("1_wfx3d")]
+visible = false
 
 [node name="paintbrush" parent="." instance=ExtResource("2_h7yvm")]
 transform = Transform3D(0.2, 0, 0, 0, 0.180925, -0.0852413, 0, 0.0852413, 0.180925, 0.251098, 0.565667, 0.307045)
+visible = false
 
 [node name="JankRobotArmLeft_RIG" parent="." instance=ExtResource("3_hfigv")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.224641, 0.618519, 0.454333)
+visible = false
 
 [node name="JankRobotArmRight_RIG" parent="." instance=ExtResource("4_ykq6v")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.251726, 0.618519, 0.455626)
+visible = false
 
 [node name="PaintBucket2" parent="." instance=ExtResource("5_ojcuw")]
 transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -0.398937, 0.5007, 0.468832)
+visible = false
 
 [node name="Table" parent="." instance=ExtResource("6_5q1gi")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0286836, 0.443857, 0.572365)
 
 [node name="PaintBucket_v22" parent="." instance=ExtResource("7_f1rng")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0134363, 0.483884, 0.487402)
+transform = Transform3D(1, 0, 0, 0, 0.979498, -0.201454, 0, 0.201454, 0.979498, -0.438821, 0.479861, 0.487402)
 
 [node name="RoomWall" parent="." instance=ExtResource("8_wn3nj")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.0801489, -0.00442135, -2.27406)
@@ -93,3 +99,9 @@ transform = Transform3D(0.45, 0, 0, 0, 0.45, 0, 0, 0, 0.45, 1.10494, 1.96215, 1.
 
 [node name="RoomFan2" parent="." instance=ExtResource("9_gsbnc")]
 transform = Transform3D(0.45, 0, 0, 0, 0.45, 0, 0, 0, 0.45, 1.12272, 1.95814, -0.791948)
+
+[node name="SecurityCam" parent="." instance=ExtResource("10_7pvao")]
+transform = Transform3D(0.879235, 0.0715488, 0.470985, 0.0178923, 0.983, -0.182732, -0.476052, 0.169092, 0.863008, -1.64429, 1.80794, -1.66535)
+
+[node name="SecurityCam2" parent="." instance=ExtResource("10_7pvao")]
+transform = Transform3D(0.746291, -0.226432, -0.625923, 0.0814742, 0.964364, -0.251723, 0.660615, 0.136862, 0.738144, 1.74377, 1.85742, -1.5698)
