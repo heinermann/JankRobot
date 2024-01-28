@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://cstl2kpl5wfow"]
+[gd_scene load_steps=13 format=3 uid="uid://cstl2kpl5wfow"]
 
 [ext_resource type="Script" path="res://addons/controller_icons/objects/Button.gd" id="1_2am1g"]
 [ext_resource type="Script" path="res://UI/Menus/ControlsMenu/controls.gd" id="1_ld0w4"]
@@ -7,6 +7,7 @@
 [ext_resource type="Theme" uid="uid://drw5rwouf8i5f" path="res://UI/ui_theme.tres" id="3_755f7"]
 [ext_resource type="Texture2D" uid="uid://bptg6u6b4y5no" path="res://addons/controller_icons/assets/key/a.png" id="3_n2jvj"]
 [ext_resource type="Texture2D" uid="uid://db6nbed6w2fis" path="res://addons/controller_icons/assets/key/s.png" id="4_1rjo7"]
+[ext_resource type="Texture2D" uid="uid://puc614rf26im" path="res://addons/controller_icons/assets/key/arrow_left.png" id="4_gxgjo"]
 [ext_resource type="Texture2D" uid="uid://dlwamiuq1f5t6" path="res://addons/controller_icons/assets/key/d.png" id="5_ayu15"]
 [ext_resource type="Texture2D" uid="uid://cy7e67qj2flir" path="res://addons/controller_icons/assets/mouse/right.png" id="6_ou8yi"]
 [ext_resource type="Texture2D" uid="uid://b8vuy7l8npt6w" path="res://addons/controller_icons/assets/mouse/left.png" id="7_a2mou"]
@@ -58,6 +59,7 @@ disabled = true
 toggle_mode = true
 button_group = ExtResource("2_qgaql")
 text = "Move Hand"
+icon = ExtResource("4_gxgjo")
 flat = true
 alignment = 2
 script = ExtResource("1_2am1g")
