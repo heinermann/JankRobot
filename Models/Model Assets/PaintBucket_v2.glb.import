@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://c335el2sf5rcc"
-path="res://.godot/imported/Scientist.glb-12d84c83b899faf51d5fb517889ee6eb.scn"
+uid="uid://bp06ebjm3da6"
+path="res://.godot/imported/PaintBucket_v2.glb-2fc074b9f8bf7dc501496ed4a1342a78.scn"
 
 [deps]
 
-source_file="res://Models/Model Assets/Scientist.glb"
-dest_files=["res://.godot/imported/Scientist.glb-12d84c83b899faf51d5fb517889ee6eb.scn"]
+source_file="res://Models/Model Assets/PaintBucket_v2.glb"
+dest_files=["res://.godot/imported/PaintBucket_v2.glb-2fc074b9f8bf7dc501496ed4a1342a78.scn"]
 
 [params]
 
