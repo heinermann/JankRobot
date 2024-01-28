@@ -1,0 +1,230 @@
+[gd_scene load_steps=11 format=3 uid="uid://ckgmp4utsfu0j"]
+
+[ext_resource type="Script" path="res://UI/Menus/ResultsMenu/results_menu.gd" id="1_k06bg"]
+[ext_resource type="Texture2D" uid="uid://dcjlsvhpcu4xo" path="res://UI/Menus/ResultsMenu/clipboard.png" id="1_tud27"]
+[ext_resource type="ButtonGroup" uid="uid://ddb25c42b1awi" path="res://UI/Buttons/ui_buttons.tres" id="2_d1621"]
+[ext_resource type="Texture2D" uid="uid://ksdepxe3lbwt" path="res://UI/Icons/start game placeholder.svg" id="3_toqvb"]
+[ext_resource type="Texture2D" uid="uid://q3b2qmqpr0qp" path="res://UI/Icons/quit_placeholder.svg" id="7_cwaqm"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_5s5x8"]
+font_size = 52
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_nvyop"]
+line_spacing = 0.0
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="Animation" id="Animation_avwb6"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Background:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.196078, 0.196078, 0.196078, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Clipboard:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(360, 25)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("MarginContainer:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(408, 112)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("MenuContainer2:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(505, 508)]
+}
+
+[sub_resource type="Animation" id="Animation_d6ua3"]
+resource_name = "slide_in"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Background:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0.196078, 0.196078, 0.196078, 0), Color(0.196078, 0.196078, 0.196078, 0.509804)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Clipboard:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(360, 670), Vector2(360, 25)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("MarginContainer:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(408, 757), Vector2(408, 112)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("MenuContainer2:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(505, 1153), Vector2(505, 508)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_dto0q"]
+_data = {
+"RESET": SubResource("Animation_avwb6"),
+"slide_in": SubResource("Animation_d6ua3")
+}
+
+[node name="ResultsMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_k06bg")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+color = Color(0.196078, 0.196078, 0.196078, 0)
+
+[node name="Clipboard" type="MarginContainer" parent="."]
+custom_minimum_size = Vector2(200, 100)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -216.0
+offset_top = -299.0
+offset_right = 420.0
+offset_bottom = 701.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.65, 0.65)
+theme_override_constants/margin_bottom = 100
+
+[node name="TextureRect" type="TextureRect" parent="Clipboard"]
+layout_mode = 2
+texture = ExtResource("1_tud27")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+offset_left = 408.0
+offset_top = 112.0
+offset_right = 718.0
+offset_bottom = 512.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="Title" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 80
+text = "Results"
+label_settings = SubResource("LabelSettings_5s5x8")
+vertical_alignment = 1
+
+[node name="Body" type="Label" parent="MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+label_settings = SubResource("LabelSettings_nvyop")
+
+[node name="MenuContainer2" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -71.0
+offset_top = -140.0
+offset_right = 55.0
+offset_bottom = -98.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MenuContainer2"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 10
+
+[node name="Controls" type="Button" parent="MenuContainer2/HBoxContainer"]
+layout_mode = 2
+toggle_mode = true
+button_group = ExtResource("2_d1621")
+text = "
+"
+icon = ExtResource("3_toqvb")
+icon_alignment = 1
+
+[node name="Quit" type="Button" parent="MenuContainer2/HBoxContainer"]
+layout_mode = 2
+toggle_mode = true
+button_group = ExtResource("2_d1621")
+text = "
+"
+icon = ExtResource("7_cwaqm")
+icon_alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_dto0q")
+}
+autoplay = "slide_in"
+
+[connection signal="pressed" from="MenuContainer2/HBoxContainer/Controls" to="." method="_on_controls_pressed"]
+[connection signal="pressed" from="MenuContainer2/HBoxContainer/Quit" to="." method="_on_quit_pressed"]

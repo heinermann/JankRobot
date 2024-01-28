@@ -9,6 +9,9 @@ var _last_collided: RigidBody3D
 var _held_object: RigidBody3D
 
 
+@onready var globals = get_node("/root/PaintingRoom/Globals")
+
+
 func _ready():
 	play_anim("hand_open")
 
@@ -24,6 +27,21 @@ func _physics_process(delta):
 func handle_movement_input(delta):
 	var direction = get_movement_direction()
 	
+
+	var z_moving := false
+	
+	if Input.is_action_pressed("move_up_p1") and !globals.is_collided:
+		z_moving = true
+		velocity.z = -1 * SPEED
+		
+	if Input.is_action_pressed("move_down_p1") and global_position.z < 1.9:
+		z_moving = true
+		velocity.z = 1 * SPEED
+	
+	if !z_moving:
+		velocity.z = move_toward(velocity.z, 0, SPEED)
+	
+
 	if Input.is_action_pressed("switch_to_hand_rotation"):
 		rotate_hand(direction)
 	else:
