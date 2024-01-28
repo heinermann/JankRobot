@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://c63gewo0qeut2"]
+[gd_scene load_steps=21 format=3 uid="uid://c63gewo0qeut2"]
 
 [ext_resource type="PackedScene" uid="uid://cfbrwe0v6ulkf" path="res://scientist.tscn" id="1_wfx3d"]
 [ext_resource type="PackedScene" uid="uid://cqvuawo0x37ol" path="res://3D Assests/paintbrush.glb" id="2_h7yvm"]
@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://d01bgwrevvi1f" path="res://3D Assests/paintbrush_thick.glb" id="12_vt2d1"]
 [ext_resource type="PackedScene" uid="uid://btycdbwcgx4r6" path="res://3D Assests/paintbrush_sausage.glb" id="13_vtuc0"]
 [ext_resource type="PackedScene" uid="uid://nqpexca4fva8" path="res://3D Assests/paintcan_2.glb" id="14_67hsq"]
+[ext_resource type="PackedScene" path="res://3D Assests/RoomFloor.glb" id="15_05tb0"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_y8jjb"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -47,7 +48,7 @@ shadow_enabled = true
 transform = Transform3D(1, 0, 0, 0, 0.99975, 0.0223566, 0, -0.0223566, 0.99975, 0.0103704, 0.681668, 1.46715)
 
 [node name="Floor" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0125445, -0.0410809, 0.00577629)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0125445, -0.107868, 0.00577629)
 mesh = SubResource("PlaneMesh_27k0s")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Floor"]
@@ -119,3 +120,6 @@ transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, -0.0612174, 0.488663, 0
 
 [node name="paintcan_3" parent="." instance=ExtResource("14_67hsq")]
 transform = Transform3D(0.363231, 0.165819, 0.023821, 0.0138401, 0.0269803, -0.398849, -0.166948, 0.36301, 0.0187629, -0.226845, 0.53565, 0.587592)
+
+[node name="RoomFloor" parent="." instance=ExtResource("15_05tb0")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -0.020231, -0.0740779, 0.0451233)
