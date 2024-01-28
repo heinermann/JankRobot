@@ -29,6 +29,9 @@ func _process(delta):
 	if current_time > max_time_in_seconds:
 		finish_game()
 		
+	if current_time > max_time_in_seconds / 2:
+		decrease_mood_over_time = true
+		
 	if !finished_game and decrease_mood_over_time:
 		mood -= mood_down_over_time * delta
 		slider.value = mood
