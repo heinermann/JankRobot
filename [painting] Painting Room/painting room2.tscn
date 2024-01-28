@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=3 uid="uid://b1lb2vkafim3l"]
+[gd_scene load_steps=39 format=3 uid="uid://b1lb2vkafim3l"]
 
 [ext_resource type="Script" path="res://[painting] Painting Room/painting room2.gd" id="1_ia77t"]
 [ext_resource type="Script" path="res://[painting] Painting Room/RobotArm.gd" id="1_serdl"]
@@ -22,7 +22,6 @@
 [ext_resource type="Texture2D" uid="uid://dnaqdlpo1r4pd" path="res://Models/Untitled.png" id="12_b4r8j"]
 [ext_resource type="PackedScene" uid="uid://ctoo1b64qlqw6" path="res://[painting] Painting Room/Pickupable/paintbrush.tscn" id="13_30e0q"]
 [ext_resource type="PackedScene" uid="uid://dkxanr36swtn0" path="res://[painting] Painting Room/Pickupable/paintbucket.tscn" id="18_48idl"]
-[ext_resource type="Texture2D" uid="uid://e4utc82nnkv6" path="res://Paintings/bloofus.png" id="21_qblll"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_p6ks8"]
 
@@ -350,7 +349,6 @@ distance_between_paints = Vector3(0.75, 0, 0)
 canvas_texture = ExtResource("10_ayqtt")
 canvas_top_left = Vector2(1, 319)
 canvas_bottom_right = Vector2(489, 1022)
-painting_texture = ExtResource("21_qblll")
 painting_origin = Vector2(1, 1022)
 painting_scale = Vector2(4, 4)
 flip_y = true

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://r73sjwmwg7hs"
-path="res://.godot/imported/clipboard.png-753929a96067e803479974f0c205782b.ctex"
+uid="uid://bdrxcxxtis3qx"
+path="res://.godot/imported/Candy.png-264075e535d3654c48d1d15b56d6a5d9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Paintings/clipboard.png"
-dest_files=["res://.godot/imported/clipboard.png-753929a96067e803479974f0c205782b.ctex"]
+source_file="res://Paintings/Candy.png"
+dest_files=["res://.godot/imported/Candy.png-264075e535d3654c48d1d15b56d6a5d9.ctex"]
 
 [params]
 
