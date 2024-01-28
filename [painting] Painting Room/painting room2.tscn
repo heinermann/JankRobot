@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=3 uid="uid://b1lb2vkafim3l"]
+[gd_scene load_steps=44 format=3 uid="uid://b1lb2vkafim3l"]
 
 [ext_resource type="Script" path="res://[painting] Painting Room/painting room2.gd" id="1_ia77t"]
 [ext_resource type="Script" path="res://[painting] Painting Room/RobotArm.gd" id="1_serdl"]
@@ -24,6 +24,8 @@
 [ext_resource type="PackedScene" uid="uid://dkxanr36swtn0" path="res://[painting] Painting Room/Pickupable/paintbucket.tscn" id="18_48idl"]
 [ext_resource type="PackedScene" uid="uid://dmdowvbhqs2m6" path="res://[painting] Painting Room/finish_button.tscn" id="24_7nm75"]
 [ext_resource type="PackedScene" uid="uid://ii7ojwly8qf1" path="res://[painting] Painting Room/Pickupable/paintbrush_wide.tscn" id="24_031j1"]
+[ext_resource type="PackedScene" uid="uid://cy3foeqo5koch" path="res://music_manager.tscn" id="25_ohpjo"]
+[ext_resource type="AudioStream" uid="uid://buygv3qphd5he" path="res://Music/Someones_Watching_Main_Game.ogg" id="26_l8ge1"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_2p2er"]
 font_size = 24
@@ -434,5 +436,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.44, 2, 0.83)
 
 [node name="FinishButton" parent="." instance=ExtResource("24_7nm75")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.15137, 2.01005, 1.42572)
+
+[node name="MusicManager" parent="." instance=ExtResource("25_ohpjo")]
+stream = ExtResource("26_l8ge1")
 
 [connection signal="body_entered" from="Level/Floor Collector" to="Level/Floor Collector" method="_on_body_entered"]

@@ -1,17 +1,20 @@
-[gd_scene load_steps=11 format=3 uid="uid://ckgmp4utsfu0j"]
+[gd_scene load_steps=15 format=3 uid="uid://ckgmp4utsfu0j"]
 
 [ext_resource type="Script" path="res://UI/Menus/ResultsMenu/results_menu.gd" id="1_k06bg"]
 [ext_resource type="Texture2D" uid="uid://dcjlsvhpcu4xo" path="res://UI/Menus/ResultsMenu/clipboard.png" id="1_tud27"]
 [ext_resource type="ButtonGroup" uid="uid://ddb25c42b1awi" path="res://UI/Buttons/ui_buttons.tres" id="2_d1621"]
 [ext_resource type="Texture2D" uid="uid://ksdepxe3lbwt" path="res://UI/Icons/start game placeholder.svg" id="3_toqvb"]
+[ext_resource type="PackedScene" uid="uid://cy3foeqo5koch" path="res://music_manager.tscn" id="6_5x8se"]
+[ext_resource type="AudioStream" uid="uid://d4i0uch5tyobj" path="res://Music/Where_Did_I_Go_Wrong__Loss_Screen.ogg" id="7_6ajtm"]
 [ext_resource type="Texture2D" uid="uid://q3b2qmqpr0qp" path="res://UI/Icons/quit_placeholder.svg" id="7_cwaqm"]
+[ext_resource type="AudioStream" uid="uid://cyanxbvyrq16n" path="res://Music/Things_Are_Looking_Brighter_Victory_Screen.ogg" id="8_iymu4"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_5s5x8"]
 font_size = 52
 font_color = Color(0, 0, 0, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_nvyop"]
-line_spacing = 0.0
+line_spacing = -5.0
 font_color = Color(0, 0, 0, 1)
 
 [sub_resource type="Animation" id="Animation_avwb6"]
@@ -87,6 +90,18 @@ tracks/5/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector2(711, 1018)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Result:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(603, 64)]
 }
 
 [sub_resource type="Animation" id="Animation_d6ua3"]
@@ -164,12 +179,30 @@ tracks/5/keys = {
 "update": 0,
 "values": [Vector2(711, 1018), Vector2(711, 375)]
 }
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Result:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(603, 707), Vector2(603, 64)]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_dto0q"]
 _data = {
 "RESET": SubResource("Animation_avwb6"),
 "slide_in": SubResource("Animation_d6ua3")
 }
+
+[sub_resource type="LabelSettings" id="LabelSettings_o1fn0"]
+font_size = 48
+font_color = Color(1, 0, 0, 1)
+outline_size = 5
+outline_color = Color(0.435294, 0, 0, 1)
 
 [node name="ResultsMenu" type="Control"]
 layout_mode = 3
@@ -194,10 +227,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 360.0
-offset_top = 25.0
-offset_right = 996.0
-offset_bottom = 1025.0
+offset_left = -216.0
+offset_top = -299.0
+offset_right = 420.0
+offset_bottom = 701.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.65, 0.65)
@@ -230,7 +263,7 @@ layout_mode = 2
 label_settings = SubResource("LabelSettings_nvyop")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(562, 400)
+position = Vector2(562, 1045)
 scale = Vector2(0.25, 0.25)
 
 [node name="Save" type="Button" parent="."]
@@ -254,10 +287,10 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = 505.0
-offset_top = 508.0
-offset_right = 631.0
-offset_bottom = 550.0
+offset_left = -71.0
+offset_top = -140.0
+offset_right = 55.0
+offset_bottom = -98.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_constants/margin_top = 10
@@ -291,6 +324,24 @@ libraries = {
 "": SubResource("AnimationLibrary_dto0q")
 }
 autoplay = "slide_in"
+
+[node name="Loss" parent="." instance=ExtResource("6_5x8se")]
+stream = ExtResource("7_6ajtm")
+autoplay = false
+
+[node name="Victory" parent="." instance=ExtResource("6_5x8se")]
+stream = ExtResource("8_iymu4")
+autoplay = false
+
+[node name="Result" type="Label" parent="."]
+layout_mode = 0
+offset_left = 603.0
+offset_top = 64.0
+offset_right = 802.0
+offset_bottom = 131.0
+rotation = 0.455564
+label_settings = SubResource("LabelSettings_o1fn0")
+horizontal_alignment = 1
 
 [connection signal="pressed" from="Save" to="." method="_on_save_pressed"]
 [connection signal="pressed" from="MenuContainer2/HBoxContainer/Controls" to="." method="_on_controls_pressed"]

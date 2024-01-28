@@ -18,7 +18,7 @@ func _process(delta):
 		button_anim.stop()
 		
 	if current_time > hold_time:
-		get_node("/root/PaintingRoom").finish_game()
+		get_node("/root/PaintingRoom").finish_game(true)
 
 
 func _on_area_3d_body_entered(body):
