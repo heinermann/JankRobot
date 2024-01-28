@@ -14,6 +14,8 @@ var current_time: float = 0
 
 @onready var slider: HSlider = get_node("UI/MoodModule/mood_placeholder")
 
+@onready var music_manager = $MusicManager
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 
@@ -29,7 +31,7 @@ func _process(delta):
 	
 	current_time += delta
 	if current_time > max_time_in_seconds:
-		finish_game()
+		finish_game(false)
 		
 	if current_time > max_time_in_seconds / 2:
 		decrease_mood_over_time = true
@@ -39,7 +41,7 @@ func _process(delta):
 		slider.value = mood
 		
 	if Input.is_action_just_pressed("ui_page_down"):
-		finish_game()
+		finish_game(false)
 	
 
 func decrease_mood(amount: float):
@@ -48,12 +50,14 @@ func decrease_mood(amount: float):
 	print("Mood: ", mood)
 	
 
-func finish_game():
+func finish_game(victory: bool):
 	finished_game = true
+	music_manager.stop()
 	var exists = get_node_or_null("/root/PaintingRoom/ResultsMenu")
 	if !exists:
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 		var results_menu = load("res://UI/Menus/ResultsMenu/results_menu.tscn")
 		var instance = results_menu.instantiate()
 		instance.score = $canvas.get_score()
+		instance.victory = victory
 		add_child(instance)

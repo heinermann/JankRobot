@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://4tc1kq1idr1p"]
+[gd_scene load_steps=16 format=3 uid="uid://4tc1kq1idr1p"]
 
 [ext_resource type="Script" path="res://UI/Menus/MainMenu/main_menu.gd" id="1_1f8iv"]
 [ext_resource type="Theme" uid="uid://drw5rwouf8i5f" path="res://UI/ui_theme.tres" id="1_v28rf"]
@@ -13,6 +13,8 @@
 [ext_resource type="Texture2D" uid="uid://b75fg2y051bkf" path="res://UI/Icons/options_placeholder.svg" id="7_np1bb"]
 [ext_resource type="Texture2D" uid="uid://q3b2qmqpr0qp" path="res://UI/Icons/quit_placeholder.svg" id="8_5hri1"]
 [ext_resource type="Texture2D" uid="uid://cu2t1sn1dwai" path="res://UI/Buttons/JankBotTextBoxes_button_small_hover.png" id="8_rxbmc"]
+[ext_resource type="PackedScene" uid="uid://cy3foeqo5koch" path="res://music_manager.tscn" id="14_m4rm6"]
+[ext_resource type="AudioStream" uid="uid://b6gjxv843b0xb" path="res://Music/Life_or_Death_Title_Screen.ogg" id="15_3xs1n"]
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -146,6 +148,9 @@ text = "
 "
 icon = ExtResource("8_5hri1")
 icon_alignment = 1
+
+[node name="MusicManager" parent="." instance=ExtResource("14_m4rm6")]
+stream = ExtResource("15_3xs1n")
 
 [connection signal="pressed" from="MenuContainer/MenuVBoxContainer/StartGame" to="." method="_on_start_game_pressed"]
 [connection signal="pressed" from="MenuContainer2/HBoxContainer/Controls" to="." method="_on_controls_pressed"]
