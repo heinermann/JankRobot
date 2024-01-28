@@ -8,12 +8,16 @@ var _last_anim: String
 var _last_collided: RigidBody3D
 var _held_object: RigidBody3D
 
+var original_z: float
+var expected_z: float
 
 @onready var globals = get_node("/root/PaintingRoom/Globals")
 
 
 func _ready():
 	play_anim("hand_open")
+	original_z = global_position.z
+	expected_z = original_z
 
 
 func _physics_process(delta):
@@ -47,6 +51,10 @@ func handle_movement_input(delta):
 	else:
 		move_hand(direction)
 
+	# Override Z position with what we expect, since things can push the arm off the expected Z
+	global_position.z = expected_z
+
+
 
 func get_movement_direction():
 	var input_dir = Input.get_vector("move_hand_left", "move_hand_right", "move_hand_down", "move_hand_up")
@@ -62,6 +70,7 @@ func rotate_hand(direction):
 		var new_rotation = rotation.x + direction.y * 0.1
 		if new_rotation >= 0 and new_rotation < 1.5:
 			rotation = Vector3(new_rotation, new_rotation * .8, 0)
+			expected_z = original_z - new_rotation * 0.49
 
 	kill_movement()
 
