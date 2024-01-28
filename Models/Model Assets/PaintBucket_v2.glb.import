@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://clj2wb47evxmp"
-path="res://.godot/imported/JankRobotArmLeft_RIG.glb-da7bd661780f84f713ccffef47b3d0e0.scn"
+uid="uid://bp06ebjm3da6"
+path="res://.godot/imported/PaintBucket_v2.glb-2fc074b9f8bf7dc501496ed4a1342a78.scn"
 
 [deps]
 
-source_file="res://Models/Model Assets/JankRobotArmLeft_RIG.glb"
-dest_files=["res://.godot/imported/JankRobotArmLeft_RIG.glb-da7bd661780f84f713ccffef47b3d0e0.scn"]
+source_file="res://Models/Model Assets/PaintBucket_v2.glb"
+dest_files=["res://.godot/imported/PaintBucket_v2.glb-2fc074b9f8bf7dc501496ed4a1342a78.scn"]
 
 [params]
 

@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://clj2wb47evxmp"
-path="res://.godot/imported/JankRobotArmLeft_RIG.glb-da7bd661780f84f713ccffef47b3d0e0.scn"
+uid="uid://4oeqmpb140j0"
+path="res://.godot/imported/RoomFan.glb-3a8d5b5b7b6970ff2a593daa34df615a.scn"
 
 [deps]
 
-source_file="res://Models/Model Assets/JankRobotArmLeft_RIG.glb"
-dest_files=["res://.godot/imported/JankRobotArmLeft_RIG.glb-da7bd661780f84f713ccffef47b3d0e0.scn"]
+source_file="res://Models/Model Assets/RoomFan.glb"
+dest_files=["res://.godot/imported/RoomFan.glb-3a8d5b5b7b6970ff2a593daa34df615a.scn"]
 
 [params]
 
