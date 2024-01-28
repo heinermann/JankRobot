@@ -1,13 +1,17 @@
-[gd_scene load_steps=9 format=3 uid="uid://4tc1kq1idr1p"]
+[gd_scene load_steps=13 format=3 uid="uid://4tc1kq1idr1p"]
 
 [ext_resource type="Script" path="res://UI/Menus/MainMenu/main_menu.gd" id="1_1f8iv"]
-[ext_resource type="Texture2D" uid="uid://dqa1msx46hk8c" path="res://UI/Menus/MainMenu/backdrop_placeholder.jpg" id="2_a118a"]
+[ext_resource type="Texture2D" uid="uid://ciak1t2kwvjk5" path="res://UI/Menus/MainMenu/backgroundImage.jpg" id="2_rcolv"]
+[ext_resource type="Texture2D" uid="uid://csunoswur3jwe" path="res://UI/Menus/MainMenu/JankBot_small_bg.png" id="3_4c6re"]
 [ext_resource type="ButtonGroup" uid="uid://ddb25c42b1awi" path="res://UI/Buttons/ui_buttons.tres" id="4_1r7ej"]
-[ext_resource type="Texture2D" uid="uid://ksdepxe3lbwt" path="res://UI/Icons/start game placeholder.svg" id="5_5bl4f"]
+[ext_resource type="Texture2D" uid="uid://cgokxufbau5lj" path="res://UI/Menus/MainMenu/JankBot_logo.png" id="4_8bl70"]
+[ext_resource type="Texture2D" uid="uid://dpsrwfgh8gcuj" path="res://UI/Buttons/JankBotTextBoxes_button_small.png" id="5_ofgxs"]
 [ext_resource type="Script" path="res://UI/Buttons/ui_buttons_icon_version.gd" id="5_wqmac"]
 [ext_resource type="Texture2D" uid="uid://3ga5yqmsptm2" path="res://UI/Icons/help_placeholder.svg" id="6_ixtcu"]
+[ext_resource type="Texture2D" uid="uid://cgrgjbq73knh" path="res://UI/Buttons/JankBotTextBoxes_button_small_pressed.png" id="6_t1o0v"]
 [ext_resource type="Texture2D" uid="uid://b75fg2y051bkf" path="res://UI/Icons/options_placeholder.svg" id="7_np1bb"]
 [ext_resource type="Texture2D" uid="uid://q3b2qmqpr0qp" path="res://UI/Icons/quit_placeholder.svg" id="8_5hri1"]
+[ext_resource type="Texture2D" uid="uid://cu2t1sn1dwai" path="res://UI/Buttons/JankBotTextBoxes_button_small_hover.png" id="8_rxbmc"]
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -23,21 +27,30 @@ layout_mode = 0
 offset_right = 1355.0
 offset_bottom = 762.0
 scale = Vector2(0.85, 0.85)
-texture = ExtResource("2_a118a")
+texture = ExtResource("2_rcolv")
+expand_mode = 1
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+layout_mode = 2
+offset_left = 119.0
+offset_top = 93.0
+offset_right = 1010.0
+offset_bottom = 357.0
+texture = ExtResource("3_4c6re")
 expand_mode = 1
 
 [node name="TitleContainer" type="MarginContainer" parent="."]
 custom_minimum_size = Vector2(200, 100)
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
+anchors_preset = -1
+anchor_left = 0.51
 anchor_top = 0.5
-anchor_right = 0.5
+anchor_right = 0.51
 anchor_bottom = 0.5
-offset_left = -0.5
-offset_top = -34.5
-offset_right = 0.5
-offset_bottom = 34.5
+offset_left = -394.52
+offset_top = -261.0
+offset_right = 354.48
+offset_bottom = 147.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/margin_bottom = 100
@@ -45,9 +58,14 @@ theme_override_constants/margin_bottom = 100
 [node name="Title" type="Label" parent="TitleContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 80
-text = "Jankbot"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="TitleContainer"]
+layout_mode = 2
+texture = ExtResource("4_8bl70")
+expand_mode = 1
+stretch_mode = 5
 
 [node name="MenuContainer" type="MarginContainer" parent="."]
 layout_mode = 1
@@ -56,9 +74,10 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -448.0
-offset_top = -222.0
-offset_right = 448.0
+offset_left = -505.0
+offset_top = -219.0
+offset_right = 495.0
+offset_bottom = 56.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_constants/margin_left = 350
@@ -71,14 +90,15 @@ size_flags_vertical = 8
 theme_override_constants/separation = 16
 alignment = 1
 
-[node name="StartGame" type="Button" parent="MenuContainer/MenuVBoxContainer"]
+[node name="StartGame" type="TextureButton" parent="MenuContainer/MenuVBoxContainer"]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(200, 80)
 layout_mode = 2
+tooltip_text = "Play Game"
 toggle_mode = true
 button_group = ExtResource("4_1r7ej")
-icon = ExtResource("5_5bl4f")
-icon_alignment = 1
+texture_normal = ExtResource("5_ofgxs")
+texture_pressed = ExtResource("6_t1o0v")
+texture_hover = ExtResource("8_rxbmc")
 
 [node name="MenuContainer2" type="MarginContainer" parent="."]
 layout_mode = 1
