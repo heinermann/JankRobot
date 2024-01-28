@@ -1,0 +1,71 @@
+[gd_scene load_steps=6 format=3 uid="uid://c4ak8kpg7qend"]
+
+[ext_resource type="Texture2D" uid="uid://b5ge2ogvtet5w" path="res://UI/Gauge/mood_module_gauge.png" id="1_jyyla"]
+
+[sub_resource type="Animation" id="Animation_0thf6"]
+resource_name = "happy"
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [10, 11, 12, 13, 14, 15]
+}
+
+[sub_resource type="Animation" id="Animation_1ldi2"]
+resource_name = "frustrated_to_stressed"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5]
+}
+
+[sub_resource type="Animation" id="Animation_76320"]
+resource_name = "stressed_to_confused"
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1, 1.6, 3.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [5, 6, 7, 8, 9, 10, 10, 11]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5yv3v"]
+_data = {
+"confused_to_happy": SubResource("Animation_0thf6"),
+"frustrated_to_stressed": SubResource("Animation_1ldi2"),
+"stressed_to_confused": SubResource("Animation_76320")
+}
+
+[node name="gauge" type="Sprite2D"]
+texture_filter = 1
+position = Vector2(58, 39)
+scale = Vector2(0.679999, 0.679999)
+texture = ExtResource("1_jyyla")
+centered = false
+hframes = 16
+frame = 10
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_5yv3v")
+}

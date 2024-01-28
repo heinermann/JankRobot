@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://bu1bvrs85u0h5"]
+
+[ext_resource type="Texture2D" uid="uid://cqt343heg553y" path="res://UI/emoji_and_boxes_sprite_sheet.png" id="1_x4rq1"]
+[ext_resource type="Script" path="res://UI/Face/face.gd" id="2_wnr1u"]
+
+[node name="face" type="Sprite2D" node_paths=PackedStringArray("mood_placeholder")]
+texture_filter = 1
+position = Vector2(1003, 87)
+scale = Vector2(0.255705, 0.249767)
+texture = ExtResource("1_x4rq1")
+hframes = 4
+vframes = 3
+frame = 8
+script = ExtResource("2_wnr1u")
+mood_placeholder = NodePath("")

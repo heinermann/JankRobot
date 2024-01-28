@@ -1,11 +1,11 @@
-extends Control
+extends Sprite2D
 var previous_mood := 100
-@onready var animator: AnimationPlayer = $gauge/AnimationPlayer
+@export var mood_placeholder: HSlider = null
+@onready var animator: AnimationPlayer = $AnimationPlayer
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	$mood_placeholder.connect("mood_changed", _on_mood_changed)
-	var gauge_sprite: Sprite2D = $gauge
-	gauge_sprite.frame = gauge_sprite.hframes - 1
+	mood_placeholder.connect("mood_changed", _on_mood_changed)
+	frame = hframes - 1
 
 func _on_mood_changed(mood): # mood is a numeral measurement for the mood of scientist
 	#print("current mood value: ", mood)

@@ -1,13 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://bojm2io7eoq7h"]
+[gd_scene load_steps=5 format=3 uid="uid://bojm2io7eoq7h"]
 
 [ext_resource type="Theme" uid="uid://drw5rwouf8i5f" path="res://UI/ui_theme.tres" id="1_2wgro"]
 [ext_resource type="Script" path="res://UI/Menus/menu_manager.gd" id="1_bcsv8"]
 [ext_resource type="PackedScene" uid="uid://4tc1kq1idr1p" path="res://UI/Menus/MainMenu/main_menu.tscn" id="2_mc7mt"]
 [ext_resource type="PackedScene" uid="uid://cstl2kpl5wfow" path="res://UI/Menus/ControlsMenu/controls_menu.tscn" id="3_vluar"]
-
-[sub_resource type="ButtonGroup" id="ButtonGroup_wo47o"]
-
-[sub_resource type="ButtonGroup" id="ButtonGroup_ofyqx"]
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -22,65 +18,6 @@ script = ExtResource("1_bcsv8")
 [node name="MainMenu" parent="." instance=ExtResource("2_mc7mt")]
 layout_mode = 1
 
-[node name="MenuContainer" parent="MainMenu" index="3"]
-offset_left = -75.0
-offset_top = -150.0
-offset_right = 75.0
-theme_override_constants/margin_left = 50
-theme_override_constants/margin_top = 50
-theme_override_constants/margin_right = 50
-
-[node name="StartGame" parent="MainMenu/MenuContainer/MenuVBoxContainer" index="0"]
-custom_minimum_size = Vector2(50, 50)
-button_group = SubResource("ButtonGroup_wo47o")
-
-[node name="MenuContainer2" parent="MainMenu" index="4"]
-theme_override_constants/margin_top = 25
-theme_override_constants/margin_right = 50
-
-[node name="HBoxContainer" parent="MainMenu/MenuContainer2" index="0"]
-theme_override_constants/separation = 35
-button_group = SubResource("ButtonGroup_wo47o")
-
-[node name="Controls" parent="MainMenu/MenuContainer2/HBoxContainer" index="0"]
-custom_minimum_size = Vector2(50, 50)
-button_group = SubResource("ButtonGroup_wo47o")
-
-[node name="Options" parent="MainMenu/MenuContainer2/HBoxContainer" index="1"]
-custom_minimum_size = Vector2(50, 50)
-button_group = SubResource("ButtonGroup_wo47o")
-
-[node name="Quit" parent="MainMenu/MenuContainer2/HBoxContainer" index="2"]
-custom_minimum_size = Vector2(50, 50)
-button_group = SubResource("ButtonGroup_wo47o")
-
 [node name="ControlsMenu" parent="." instance=ExtResource("3_vluar")]
 visible = false
 layout_mode = 1
-
-[node name="MoveHand" parent="ControlsMenu/MarginContainer/VBoxContainer2" index="0"]
-button_group = SubResource("ButtonGroup_ofyqx")
-
-[node name="Camera Up" parent="ControlsMenu/MarginContainer/VBoxContainer2/HBoxContainer" index="0"]
-button_group = SubResource("ButtonGroup_ofyqx")
-
-[node name="Camera Left" parent="ControlsMenu/MarginContainer/VBoxContainer2/HBoxContainer" index="1"]
-button_group = SubResource("ButtonGroup_ofyqx")
-
-[node name="Camera Down" parent="ControlsMenu/MarginContainer/VBoxContainer2/HBoxContainer" index="2"]
-button_group = SubResource("ButtonGroup_ofyqx")
-
-[node name="Camera Right" parent="ControlsMenu/MarginContainer/VBoxContainer2/HBoxContainer" index="3"]
-button_group = SubResource("ButtonGroup_ofyqx")
-
-[node name="Switch to Hand Rotation" parent="ControlsMenu/MarginContainer/VBoxContainer2" index="2"]
-button_group = SubResource("ButtonGroup_ofyqx")
-
-[node name="Close Hand" parent="ControlsMenu/MarginContainer/VBoxContainer2" index="3"]
-button_group = SubResource("ButtonGroup_ofyqx")
-
-[node name="Pause" parent="ControlsMenu/MarginContainer/VBoxContainer2" index="4"]
-button_group = SubResource("ButtonGroup_ofyqx")
-
-[editable path="MainMenu"]
-[editable path="ControlsMenu"]
