@@ -1,4 +1,3 @@
-
 [gd_scene load_steps=8 format=3 uid="uid://ctoo1b64qlqw6"]
 
 [ext_resource type="PackedScene" uid="uid://cotsj81ekdc8a" path="res://[painting] Painting Room/Pickupable/Pickupable.tscn" id="1_r0hm6"]
@@ -23,7 +22,6 @@ transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, -1, 0)
 [node name="CollisionShape3D" parent="." index="1"]
 transform = Transform3D(0.2, 0, 0, 0, 1.15, 0, 0, 0, 0.2, 0, -0.3, 0)
 shape = SubResource("CapsuleShape3D_japm7")
-
 
 [node name="Paint" type="Node3D" parent="." index="2"]
 

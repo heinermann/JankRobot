@@ -1,4 +1,3 @@
-
 [gd_scene load_steps=12 format=3 uid="uid://yl2ex6llvpyh"]
 
 [ext_resource type="Script" path="res://addons/controller_icons/objects/Button.gd" id="1_2am1g"]
@@ -11,7 +10,6 @@
 [ext_resource type="Texture2D" uid="uid://cy7e67qj2flir" path="res://addons/controller_icons/assets/mouse/right.png" id="8_5w3nv"]
 [ext_resource type="Texture2D" uid="uid://b8vuy7l8npt6w" path="res://addons/controller_icons/assets/mouse/left.png" id="9_48b4x"]
 [ext_resource type="Texture2D" uid="uid://cnghdqiitl0fu" path="res://addons/controller_icons/assets/key/esc.png" id="10_t2wf5"]
-
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vry1y"]
 bg_color = Color(0.211765, 0.211765, 0.211765, 1)
@@ -60,9 +58,7 @@ theme_override_colors/font_disabled_color = Color(0.811765, 0.811765, 0.811765, 
 theme_override_colors/icon_disabled_color = Color(1, 1, 1, 1)
 disabled = true
 text = "Move Hand"
-
 icon = ExtResource("2_kqsth")
-
 flat = true
 alignment = 2
 script = ExtResource("1_2am1g")
@@ -77,9 +73,7 @@ focus_mode = 0
 theme_override_colors/font_disabled_color = Color(0.811765, 0.811765, 0.811765, 1)
 theme_override_colors/icon_disabled_color = Color(1, 1, 1, 1)
 disabled = true
-
 icon = ExtResource("4_lk5kd")
-
 flat = true
 alignment = 2
 script = ExtResource("1_2am1g")
@@ -91,9 +85,7 @@ focus_mode = 0
 theme_override_colors/font_disabled_color = Color(0.811765, 0.811765, 0.811765, 1)
 theme_override_colors/icon_disabled_color = Color(1, 1, 1, 1)
 disabled = true
-
 icon = ExtResource("5_6rccn")
-
 flat = true
 alignment = 2
 script = ExtResource("1_2am1g")
@@ -105,9 +97,7 @@ focus_mode = 0
 theme_override_colors/font_disabled_color = Color(0.811765, 0.811765, 0.811765, 1)
 theme_override_colors/icon_disabled_color = Color(1, 1, 1, 1)
 disabled = true
-
 icon = ExtResource("6_rdyu4")
-
 flat = true
 alignment = 2
 script = ExtResource("1_2am1g")
@@ -121,9 +111,7 @@ theme_override_colors/font_disabled_color = Color(0.811765, 0.811765, 0.811765, 
 theme_override_colors/icon_disabled_color = Color(1, 1, 1, 1)
 disabled = true
 text = "Move Camera"
-
 icon = ExtResource("7_mgsn1")
-
 flat = true
 alignment = 2
 script = ExtResource("1_2am1g")
@@ -136,9 +124,7 @@ theme_override_colors/font_disabled_color = Color(0.811765, 0.811765, 0.811765, 
 theme_override_colors/icon_disabled_color = Color(1, 1, 1, 1)
 disabled = true
 text = "Switch to Hand Rotation (Hold)"
-
 icon = ExtResource("8_5w3nv")
-
 flat = true
 alignment = 2
 script = ExtResource("1_2am1g")
@@ -151,9 +137,7 @@ theme_override_colors/font_disabled_color = Color(0.811765, 0.811765, 0.811765, 
 theme_override_colors/icon_disabled_color = Color(1, 1, 1, 1)
 disabled = true
 text = "Close Hand (Hold)"
-
 icon = ExtResource("9_48b4x")
-
 flat = true
 alignment = 2
 script = ExtResource("1_2am1g")
@@ -166,9 +150,7 @@ theme_override_colors/font_disabled_color = Color(0.811765, 0.811765, 0.811765, 
 theme_override_colors/icon_disabled_color = Color(1, 1, 1, 1)
 disabled = true
 text = "Pause Game"
-
 icon = ExtResource("10_t2wf5")
-
 flat = true
 alignment = 2
 script = ExtResource("1_2am1g")
