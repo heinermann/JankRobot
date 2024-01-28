@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 UvPosition="*res://[painting] Painting Room/UVPosition.gd"
 ControllerIcons="*res://addons/controller_icons/ControllerIcons.gd"
+MusicManager="*res://music_manager.tscn"
 
 [display]
 
