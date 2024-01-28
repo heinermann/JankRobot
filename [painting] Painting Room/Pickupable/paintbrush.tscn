@@ -27,8 +27,8 @@ shape = SubResource("CapsuleShape3D_japm7")
 
 [node name="Painter" type="CharacterBody3D" parent="Paint" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0824549, 0)
-collision_layer = 4
-collision_mask = 4
+collision_layer = 20
+collision_mask = 20
 script = ExtResource("3_65a3b")
 color = Color(0.666667, 0.196078, 0.196078, 1)
 texture = ExtResource("4_ob32g")
