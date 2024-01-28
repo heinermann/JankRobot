@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://c63gewo0qeut2"]
+[gd_scene load_steps=19 format=3 uid="uid://c63gewo0qeut2"]
 
 [ext_resource type="PackedScene" uid="uid://cfbrwe0v6ulkf" path="res://scientist.tscn" id="1_wfx3d"]
 [ext_resource type="PackedScene" uid="uid://cqvuawo0x37ol" path="res://3D Assests/paintbrush.glb" id="2_h7yvm"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://6n40ijh5ihqh" path="res://3D Assests/SecurityCam.glb" id="10_7pvao"]
 [ext_resource type="PackedScene" uid="uid://bersoijs3iadt" path="res://3D Assests/RoboArm.glb" id="11_smab5"]
 [ext_resource type="PackedScene" uid="uid://d01bgwrevvi1f" path="res://3D Assests/paintbrush_thick.glb" id="12_vt2d1"]
+[ext_resource type="PackedScene" uid="uid://btycdbwcgx4r6" path="res://3D Assests/paintbrush_sausage.glb" id="13_vtuc0"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_y8jjb"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -56,7 +57,7 @@ shape = SubResource("ConcavePolygonShape3D_h6fo4")
 [node name="Scientist" parent="." instance=ExtResource("1_wfx3d")]
 
 [node name="paintbrush" parent="." instance=ExtResource("2_h7yvm")]
-transform = Transform3D(0.2, 0, 0, 0, 0.180925, -0.0852413, 0, 0.0852413, 0.180925, 0.251098, 0.565667, 0.307045)
+transform = Transform3D(0.2, 0, 0, 0, 0.180925, -0.0852413, 0, 0.0852413, 0.180925, 0.239592, 0.555692, 0.310507)
 
 [node name="JankRobotArmLeft_RIG" parent="." instance=ExtResource("3_hfigv")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.224641, 0.618519, 0.454333)
@@ -108,3 +109,6 @@ transform = Transform3D(-0.0345387, 0, 0.498806, 0, 0.5, 0, -0.498806, 0, -0.034
 
 [node name="paintbrush_thick2" parent="." instance=ExtResource("12_vt2d1")]
 transform = Transform3D(0.318651, 0, -0.385307, 0, 0.5, 0, 0.385307, 0, 0.318651, -0.130827, 0.614251, 1.12662)
+
+[node name="paintbrush_sausage2" parent="." instance=ExtResource("13_vtuc0")]
+transform = Transform3D(0.0876318, 0, -0.492261, 0, 0.5, 0, 0.492261, 0, 0.0876318, -0.0468722, 0.632396, 1.01988)
