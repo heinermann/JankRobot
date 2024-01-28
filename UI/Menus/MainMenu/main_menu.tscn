@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://4tc1kq1idr1p"]
+[gd_scene load_steps=13 format=3 uid="uid://4tc1kq1idr1p"]
 
 [ext_resource type="Script" path="res://UI/Menus/MainMenu/main_menu.gd" id="1_1f8iv"]
 [ext_resource type="Texture2D" uid="uid://ciak1t2kwvjk5" path="res://UI/Menus/MainMenu/backgroundImage.jpg" id="2_rcolv"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://cgrgjbq73knh" path="res://UI/Buttons/JankBotTextBoxes_button_small_pressed.png" id="6_t1o0v"]
 [ext_resource type="Texture2D" uid="uid://b75fg2y051bkf" path="res://UI/Icons/options_placeholder.svg" id="7_np1bb"]
 [ext_resource type="Texture2D" uid="uid://q3b2qmqpr0qp" path="res://UI/Icons/quit_placeholder.svg" id="8_5hri1"]
+[ext_resource type="Texture2D" uid="uid://cu2t1sn1dwai" path="res://UI/Buttons/JankBotTextBoxes_button_small_hover.png" id="8_rxbmc"]
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -97,6 +98,7 @@ toggle_mode = true
 button_group = ExtResource("4_1r7ej")
 texture_normal = ExtResource("5_ofgxs")
 texture_pressed = ExtResource("6_t1o0v")
+texture_hover = ExtResource("8_rxbmc")
 
 [node name="MenuContainer2" type="MarginContainer" parent="."]
 layout_mode = 1
