@@ -13,6 +13,11 @@ var expected_z: float
 
 @onready var globals = get_node("/root/PaintingRoom/Globals")
 
+@onready var hand_open = $hand_open
+@onready var hand_close = $hand_close
+@onready var hand_rotate = $hand_rotate
+@onready var brush_grabbed = $brush_grabbed
+
 
 func _ready():
 	play_anim("hand_open")
@@ -64,13 +69,23 @@ func get_movement_direction():
 
 	return Vector3(input_dir.x, input_dir.y, 0).normalized()
 
+var rotating: bool = false
 
 func rotate_hand(direction):
 	if direction:
+		rotating = true
 		var new_rotation = rotation.x + direction.y * 0.1
 		if new_rotation >= 0 and new_rotation < 1.5:
 			rotation = Vector3(new_rotation, new_rotation * .8, 0)
 			expected_z = original_z - new_rotation * 0.49
+	else:
+		rotating = false
+		
+	if rotating:
+		if !hand_rotate.playing:
+			hand_rotate.play()
+	else:
+		hand_rotate.stop()
 
 	kill_movement()
 
@@ -89,6 +104,11 @@ func kill_movement():
 
 
 func handle_other_input(delta):
+	if Input.is_action_just_pressed("close_hand"):
+		hand_close.play()
+	if Input.is_action_just_released("close_hand"):
+		hand_open.play()
+		
 	if Input.is_action_pressed("close_hand"):
 		play_anim("default") # was hand_closed
 		if _last_collided and _last_collided.global_position.distance_to(self.global_position) < DISTANCE_TO_CLAMP:
@@ -103,6 +123,7 @@ func pick_up(object: RigidBody3D):
 	if not object or not object.has_method("pick_up"): return
 
 	print("Grabbed a " + object.name)
+	brush_grabbed.play()
 	object.pick_up(self)
 	_held_object = object
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=51 format=3 uid="uid://cnaj0l06agogf"]
+[gd_scene load_steps=56 format=3 uid="uid://cnaj0l06agogf"]
 
 [ext_resource type="Script" path="res://[painting] Painting Room/painting room2.gd" id="1_ia77t"]
 [ext_resource type="Script" path="res://[painting] Painting Room/RobotArm.gd" id="1_serdl"]
@@ -22,7 +22,11 @@
 [ext_resource type="Shader" uid="uid://8q2dcbmkx5nc" path="res://[painting] Painting Room/paintable.tres" id="11_1hcha"]
 [ext_resource type="PackedScene" uid="uid://4oeqmpb140j0" path="res://Models/Model Assets/RoomFan.glb" id="11_grfsn"]
 [ext_resource type="Texture2D" uid="uid://dnaqdlpo1r4pd" path="res://Models/Untitled.png" id="12_b4r8j"]
+[ext_resource type="AudioStream" uid="uid://dr25um3546iqj" path="res://SFX/robot_claw_open.ogg" id="12_kix4e"]
 [ext_resource type="PackedScene" uid="uid://ctoo1b64qlqw6" path="res://[painting] Painting Room/Pickupable/paintbrush.tscn" id="13_30e0q"]
+[ext_resource type="AudioStream" uid="uid://c1wjo08i4v4vm" path="res://SFX/robot_claw_close.ogg" id="13_ka0qx"]
+[ext_resource type="AudioStream" uid="uid://b325pdxdmshb3" path="res://SFX/robot_wrist_rotate.ogg" id="14_0s2dc"]
+[ext_resource type="AudioStream" uid="uid://clgnpxws2rcq4" path="res://SFX/brush_grab.ogg" id="15_6c6l6"]
 [ext_resource type="PackedScene" uid="uid://dkxanr36swtn0" path="res://[painting] Painting Room/Pickupable/paintbucket.tscn" id="18_48idl"]
 [ext_resource type="PackedScene" path="res://[painting] Painting Room/finish_button.tscn" id="24_7nm75"]
 [ext_resource type="PackedScene" uid="uid://ii7ojwly8qf1" path="res://[painting] Painting Room/Pickupable/paintbrush_wide.tscn" id="24_031j1"]
@@ -30,6 +34,7 @@
 [ext_resource type="AudioStream" uid="uid://buygv3qphd5he" path="res://Music/Someones_Watching_Main_Game.ogg" id="26_l8ge1"]
 [ext_resource type="Script" path="res://[painting] Painting Room/SkeletonIK3D.gd" id="27_0lemj"]
 [ext_resource type="PackedScene" uid="uid://d3q1vepj7k2al" path="res://Models/Model Assets/RoomFloor.glb" id="28_2g5p2"]
+[ext_resource type="AudioStream" uid="uid://ca1arimfmhlkk" path="res://SFX/Lab_Roomtone.ogg" id="35_gte21"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_2p2er"]
 font_size = 24
@@ -376,6 +381,18 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.773826, 0, 0.232899)
 [node name="Target" type="Node3D" parent="ArmP1/RobotArm"]
 transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0.925888, 0.021116, 0.338779)
 
+[node name="hand_open" type="AudioStreamPlayer" parent="ArmP1/RobotArm"]
+stream = ExtResource("12_kix4e")
+
+[node name="hand_close" type="AudioStreamPlayer" parent="ArmP1/RobotArm"]
+stream = ExtResource("13_ka0qx")
+
+[node name="hand_rotate" type="AudioStreamPlayer" parent="ArmP1/RobotArm"]
+stream = ExtResource("14_0s2dc")
+
+[node name="brush_grabbed" type="AudioStreamPlayer" parent="ArmP1/RobotArm"]
+stream = ExtResource("15_6c6l6")
+
 [node name="Level" type="Node3D" parent="."]
 
 [node name="Level" type="MeshInstance3D" parent="Level"]
@@ -667,5 +684,9 @@ script = ExtResource("27_0lemj")
 
 [node name="RoomFloor" parent="." instance=ExtResource("28_2g5p2")]
 transform = Transform3D(8, 0, 0, 0, 8, 0, 0, 0, 8, 0, -0.355756, 0)
+
+[node name="lab_room_tone" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("35_gte21")
+autoplay = true
 
 [connection signal="body_entered" from="Level/Floor Collector" to="Level/Floor Collector" method="_on_body_entered"]
