@@ -5,6 +5,8 @@ var finished_game: bool = false
 @export var decrease_mood_over_time: bool = true
 @export var mood_down_over_time: float
 
+@export var item_dropped_mood_decrease_amount: float = 10
+
 var mood: float = 100.0
 
 @export var max_time_in_seconds: float
@@ -38,6 +40,12 @@ func _process(delta):
 		
 	if Input.is_action_just_pressed("ui_page_down"):
 		finish_game()
+	
+
+func decrease_mood(amount: float):
+	mood -= amount
+	slider.value = mood
+	print("Mood: ", mood)
 	
 
 func finish_game():
