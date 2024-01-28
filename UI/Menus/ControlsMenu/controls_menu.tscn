@@ -1,18 +1,16 @@
-[gd_scene load_steps=12 format=3 uid="uid://yl2ex6llvpyh"]
+[gd_scene load_steps=12 format=3 uid="uid://cstl2kpl5wfow"]
 
 [ext_resource type="Script" path="res://addons/controller_icons/objects/Button.gd" id="1_2am1g"]
 [ext_resource type="Script" path="res://UI/Menus/ControlsMenu/controls.gd" id="1_ld0w4"]
-[ext_resource type="Texture2D" uid="uid://puc614rf26im" path="res://addons/controller_icons/assets/key/arrow_left.png" id="2_kqsth"]
-[ext_resource type="Texture2D" uid="uid://casmdw1resubx" path="res://addons/controller_icons/assets/key/w.png" id="4_lk5kd"]
-[ext_resource type="Texture2D" uid="uid://bptg6u6b4y5no" path="res://addons/controller_icons/assets/key/a.png" id="5_6rccn"]
-[ext_resource type="Texture2D" uid="uid://db6nbed6w2fis" path="res://addons/controller_icons/assets/key/s.png" id="6_rdyu4"]
-[ext_resource type="Texture2D" uid="uid://dlwamiuq1f5t6" path="res://addons/controller_icons/assets/key/d.png" id="7_mgsn1"]
-[ext_resource type="Texture2D" uid="uid://cy7e67qj2flir" path="res://addons/controller_icons/assets/mouse/right.png" id="8_5w3nv"]
-[ext_resource type="Texture2D" uid="uid://b8vuy7l8npt6w" path="res://addons/controller_icons/assets/mouse/left.png" id="9_48b4x"]
-[ext_resource type="Texture2D" uid="uid://cnghdqiitl0fu" path="res://addons/controller_icons/assets/key/esc.png" id="10_t2wf5"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vry1y"]
-bg_color = Color(0.211765, 0.211765, 0.211765, 1)
+[ext_resource type="Texture2D" uid="uid://casmdw1resubx" path="res://addons/controller_icons/assets/key/w.png" id="1_yi2m3"]
+[ext_resource type="ButtonGroup" uid="uid://dsxm418bhvri1" path="res://UI/Menus/ControlsMenu/controls_button_group.tres" id="2_qgaql"]
+[ext_resource type="Theme" uid="uid://drw5rwouf8i5f" path="res://UI/ui_theme.tres" id="3_755f7"]
+[ext_resource type="Texture2D" uid="uid://bptg6u6b4y5no" path="res://addons/controller_icons/assets/key/a.png" id="3_n2jvj"]
+[ext_resource type="Texture2D" uid="uid://db6nbed6w2fis" path="res://addons/controller_icons/assets/key/s.png" id="4_1rjo7"]
+[ext_resource type="Texture2D" uid="uid://dlwamiuq1f5t6" path="res://addons/controller_icons/assets/key/d.png" id="5_ayu15"]
+[ext_resource type="Texture2D" uid="uid://cy7e67qj2flir" path="res://addons/controller_icons/assets/mouse/right.png" id="6_ou8yi"]
+[ext_resource type="Texture2D" uid="uid://b8vuy7l8npt6w" path="res://addons/controller_icons/assets/mouse/left.png" id="7_a2mou"]
+[ext_resource type="Texture2D" uid="uid://cnghdqiitl0fu" path="res://addons/controller_icons/assets/key/esc.png" id="8_gump3"]
 
 [node name="ControlsMenu" type="Control"]
 layout_mode = 3
@@ -32,7 +30,7 @@ offset_top = -1.0
 offset_bottom = -1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_vry1y")
+theme = ExtResource("3_755f7")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
@@ -57,8 +55,9 @@ focus_mode = 0
 theme_override_colors/font_disabled_color = Color(0.811765, 0.811765, 0.811765, 1)
 theme_override_colors/icon_disabled_color = Color(1, 1, 1, 1)
 disabled = true
+toggle_mode = true
+button_group = ExtResource("2_qgaql")
 text = "Move Hand"
-icon = ExtResource("2_kqsth")
 flat = true
 alignment = 2
 script = ExtResource("1_2am1g")
@@ -73,7 +72,9 @@ focus_mode = 0
 theme_override_colors/font_disabled_color = Color(0.811765, 0.811765, 0.811765, 1)
 theme_override_colors/icon_disabled_color = Color(1, 1, 1, 1)
 disabled = true
-icon = ExtResource("4_lk5kd")
+toggle_mode = true
+button_group = ExtResource("2_qgaql")
+icon = ExtResource("1_yi2m3")
 flat = true
 alignment = 2
 script = ExtResource("1_2am1g")
@@ -85,7 +86,9 @@ focus_mode = 0
 theme_override_colors/font_disabled_color = Color(0.811765, 0.811765, 0.811765, 1)
 theme_override_colors/icon_disabled_color = Color(1, 1, 1, 1)
 disabled = true
-icon = ExtResource("5_6rccn")
+toggle_mode = true
+button_group = ExtResource("2_qgaql")
+icon = ExtResource("3_n2jvj")
 flat = true
 alignment = 2
 script = ExtResource("1_2am1g")
@@ -97,7 +100,9 @@ focus_mode = 0
 theme_override_colors/font_disabled_color = Color(0.811765, 0.811765, 0.811765, 1)
 theme_override_colors/icon_disabled_color = Color(1, 1, 1, 1)
 disabled = true
-icon = ExtResource("6_rdyu4")
+toggle_mode = true
+button_group = ExtResource("2_qgaql")
+icon = ExtResource("4_1rjo7")
 flat = true
 alignment = 2
 script = ExtResource("1_2am1g")
@@ -110,8 +115,10 @@ focus_mode = 0
 theme_override_colors/font_disabled_color = Color(0.811765, 0.811765, 0.811765, 1)
 theme_override_colors/icon_disabled_color = Color(1, 1, 1, 1)
 disabled = true
+toggle_mode = true
+button_group = ExtResource("2_qgaql")
 text = "Move Camera"
-icon = ExtResource("7_mgsn1")
+icon = ExtResource("5_ayu15")
 flat = true
 alignment = 2
 script = ExtResource("1_2am1g")
@@ -123,8 +130,10 @@ focus_mode = 0
 theme_override_colors/font_disabled_color = Color(0.811765, 0.811765, 0.811765, 1)
 theme_override_colors/icon_disabled_color = Color(1, 1, 1, 1)
 disabled = true
+toggle_mode = true
+button_group = ExtResource("2_qgaql")
 text = "Switch to Hand Rotation (Hold)"
-icon = ExtResource("8_5w3nv")
+icon = ExtResource("6_ou8yi")
 flat = true
 alignment = 2
 script = ExtResource("1_2am1g")
@@ -136,8 +145,10 @@ focus_mode = 0
 theme_override_colors/font_disabled_color = Color(0.811765, 0.811765, 0.811765, 1)
 theme_override_colors/icon_disabled_color = Color(1, 1, 1, 1)
 disabled = true
+toggle_mode = true
+button_group = ExtResource("2_qgaql")
 text = "Close Hand (Hold)"
-icon = ExtResource("9_48b4x")
+icon = ExtResource("7_a2mou")
 flat = true
 alignment = 2
 script = ExtResource("1_2am1g")
@@ -149,8 +160,10 @@ focus_mode = 0
 theme_override_colors/font_disabled_color = Color(0.811765, 0.811765, 0.811765, 1)
 theme_override_colors/icon_disabled_color = Color(1, 1, 1, 1)
 disabled = true
+toggle_mode = true
+button_group = ExtResource("2_qgaql")
 text = "Pause Game"
-icon = ExtResource("10_t2wf5")
+icon = ExtResource("8_gump3")
 flat = true
 alignment = 2
 script = ExtResource("1_2am1g")
@@ -167,12 +180,13 @@ offset_left = -40.0
 offset_top = -40.0
 grow_horizontal = 0
 grow_vertical = 0
-theme_override_constants/margin_right = 10
-theme_override_constants/margin_bottom = 10
+theme_override_constants/margin_right = 120
+theme_override_constants/margin_bottom = 80
 
 [node name="Cancel" type="Button" parent="MarginContainer2"]
 layout_mode = 2
 size_flags_horizontal = 4
+theme = ExtResource("3_755f7")
 theme_override_font_sizes/font_size = 25
 text = "Cancel"
 

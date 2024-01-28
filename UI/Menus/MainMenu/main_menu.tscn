@@ -1,6 +1,7 @@
-[gd_scene load_steps=13 format=3 uid="uid://4tc1kq1idr1p"]
+[gd_scene load_steps=14 format=3 uid="uid://4tc1kq1idr1p"]
 
 [ext_resource type="Script" path="res://UI/Menus/MainMenu/main_menu.gd" id="1_1f8iv"]
+[ext_resource type="Theme" uid="uid://drw5rwouf8i5f" path="res://UI/ui_theme.tres" id="1_v28rf"]
 [ext_resource type="Texture2D" uid="uid://ciak1t2kwvjk5" path="res://UI/Menus/MainMenu/backgroundImage.jpg" id="2_rcolv"]
 [ext_resource type="Texture2D" uid="uid://csunoswur3jwe" path="res://UI/Menus/MainMenu/JankBot_small_bg.png" id="3_4c6re"]
 [ext_resource type="ButtonGroup" uid="uid://ddb25c42b1awi" path="res://UI/Buttons/ui_buttons.tres" id="4_1r7ej"]
@@ -20,6 +21,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_v28rf")
 script = ExtResource("1_1f8iv")
 
 [node name="TextureRect" type="TextureRect" parent="."]
@@ -108,12 +110,12 @@ anchor_right = 1.0
 offset_left = -40.0
 offset_bottom = 40.0
 grow_horizontal = 0
-theme_override_constants/margin_top = 10
-theme_override_constants/margin_right = 10
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 40
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MenuContainer2"]
 layout_mode = 2
-theme_override_constants/separation = 10
+theme_override_constants/separation = 25
 script = ExtResource("5_wqmac")
 button_group = ExtResource("4_1r7ej")
 

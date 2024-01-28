@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3 uid="uid://d0tv1ilw70heh"]
+
+[ext_resource type="Script" path="res://UI/Mood Module/mood_placeholder.gd" id="1_5jcku"]
+
+[node name="mood_placeholder" type="HSlider"]
+visible = false
+custom_minimum_size = Vector2(400, 200)
+offset_left = 392.0
+offset_top = 391.0
+offset_right = 792.0
+offset_bottom = 591.0
+step = 5.0
+value = 100.0
+rounded = true
+tick_count = 5
+script = ExtResource("1_5jcku")
