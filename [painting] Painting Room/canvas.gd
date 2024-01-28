@@ -114,7 +114,7 @@ func get_score():
 	var viewport = get_node('Canvas/DrawViewport')
 	var painted_image = get_region(viewport.get_texture().get_image())
 	var count = count_pixels(score_image, painted_image)
-	return [count, calculate_score(100, count[0], count[1], count[2], [])]
+	return [count, calculate_score(100, count[0], count[1], count[2], []), painted_image]
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -123,11 +123,4 @@ func _ready():
 	material.set_shader_parameter("MainColor", create_texture_with_overlay(canvas_texture, painting_texture, painting_origin, painting_position, painting_scale))
 
 func _process(delta):
-	# test to see canvas result
-	if Input.is_action_pressed("ui_page_up"):
-		var viewport = get_node('Canvas/DrawViewport')
-		var painted_image = get_region(viewport.get_texture().get_image())
-		#painted_image.get_region(Rect2(canvas_top_left, canvas_bottom_right - canvas_top_left)).save_png('res://no.png')
-		var count = count_pixels(score_image, painted_image)
-		print(count)
-		print("Score: ", calculate_score(100, count[0], count[1], count[2], []))
+	pass
