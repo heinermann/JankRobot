@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://ii7ojwly8qf1"]
+[gd_scene load_steps=10 format=3 uid="uid://ii7ojwly8qf1"]
 
 [ext_resource type="PackedScene" uid="uid://cotsj81ekdc8a" path="res://[painting] Painting Room/Pickupable/Pickupable.tscn" id="1_e4nao"]
 [ext_resource type="PackedScene" uid="uid://d01bgwrevvi1f" path="res://Models/Model Assets/paintbrush_thick.glb" id="2_qqyjt"]
 [ext_resource type="Script" path="res://[painting] Painting Room/Pickupable/Paintbrush.gd" id="3_550ed"]
 [ext_resource type="Texture2D" uid="uid://cnjm8eo643ag2" path="res://[painting] Painting Room/Brush2.png" id="4_xi44w"]
+[ext_resource type="AudioStream" uid="uid://cad36tkj8erlx" path="res://SFX/brushspread_paint.ogg" id="5_lf0ou"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_vvbky"]
 radius = 0.06
@@ -34,13 +35,14 @@ shape = SubResource("CylinderShape3D_cof2u")
 
 [node name="Paint" type="Node3D" parent="." index="3"]
 
-[node name="Painter" type="CharacterBody3D" parent="Paint" index="0"]
+[node name="Painter" type="CharacterBody3D" parent="Paint" index="0" node_paths=PackedStringArray("paint_sound")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0824549, 0)
 collision_layer = 20
 collision_mask = 20
 script = ExtResource("3_550ed")
 color = Color(0.666667, 0.196078, 0.196078, 1)
 texture = ExtResource("4_xi44w")
+paint_sound = NodePath("paint_sound")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Paint/Painter" index="0"]
 transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, -1.20914, 0)
@@ -51,3 +53,6 @@ mesh = SubResource("CapsuleMesh_jmmio")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Paint/Painter" index="1"]
 transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, -1.20914, 0)
 shape = SubResource("CapsuleShape3D_35h0r")
+
+[node name="paint_sound" type="AudioStreamPlayer" parent="Paint/Painter" index="2"]
+stream = ExtResource("5_lf0ou")

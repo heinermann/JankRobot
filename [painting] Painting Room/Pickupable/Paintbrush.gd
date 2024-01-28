@@ -14,6 +14,8 @@ var initial_mouse_pos
  
 @onready var globals: Node = get_node("/root/PaintingRoom/Globals")
 
+@export var paint_sound: Node
+
 func _physics_process(delta):
 	position = Vector3.ZERO
 	move_and_slide()
@@ -52,9 +54,13 @@ func handle_collisions():
 			var uv = uv_pos.get_uv_coords(pos, local_normal, true)
 			if uv and viewport:
 				print(uv)
+				if !paint_sound.playing:
+					paint_sound.play()
 				viewport.paint(uv, color, texture)
 	else:
 		globals.is_collided = false
+		if paint_sound:
+			paint_sound.stop()
 
 
 func set_brush_color(new_color: Color):

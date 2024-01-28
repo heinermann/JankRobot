@@ -1,6 +1,7 @@
 extends RigidBody3D
 
 @export var color: Color = Color()
+@onready var dipped = $dipped
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -14,5 +15,6 @@ func _ready():
 
 func _on_area_3d_body_entered(body):
 	if body.has_method("set_brush_color"):
+		dipped.play()
 		body.set_brush_color(color)
 

@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://dkxanr36swtn0"]
+[gd_scene load_steps=8 format=3 uid="uid://dkxanr36swtn0"]
 
 [ext_resource type="PackedScene" uid="uid://bp06ebjm3da6" path="res://Models/Model Assets/PaintBucket_v2.glb" id="1_tkq2p"]
 [ext_resource type="Script" path="res://[painting] Painting Room/Pickupable/paintbucket.gd" id="1_w3bl6"]
+[ext_resource type="AudioStream" uid="uid://bs2wa831yxu2o" path="res://SFX/brushDip_paint.ogg" id="3_bximk"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_d145s"]
 
@@ -35,5 +36,8 @@ collision_mask = 16
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
 transform = Transform3D(0.6, 0, 0, 0, 0.1, 0, 0, 0, 0.6, 0, 0.74, 0)
 shape = SubResource("CylinderShape3D_dwapv")
+
+[node name="dipped" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_bximk")
 
 [connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
