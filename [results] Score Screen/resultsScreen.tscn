@@ -1,0 +1,85 @@
+[gd_scene load_steps=14 format=3 uid="uid://dhpjprdx7l5t7"]
+
+[ext_resource type="Script" path="res://UI/Menus/menu_manager.gd" id="1_ilu86"]
+[ext_resource type="PackedScene" uid="uid://4tc1kq1idr1p" path="res://UI/Menus/MainMenu/main_menu.tscn" id="2_7145c"]
+[ext_resource type="PackedScene" uid="uid://yl2ex6llvpyh" path="res://UI/Menus/MainMenu/controls_menu.tscn" id="3_jbctq"]
+[ext_resource type="Texture2D" uid="uid://puc614rf26im" path="res://addons/controller_icons/assets/key/arrow_left.png" id="4_snuco"]
+[ext_resource type="Texture2D" uid="uid://casmdw1resubx" path="res://addons/controller_icons/assets/key/w.png" id="5_wi71j"]
+[ext_resource type="Texture2D" uid="uid://bptg6u6b4y5no" path="res://addons/controller_icons/assets/key/a.png" id="6_j7qkj"]
+[ext_resource type="Texture2D" uid="uid://db6nbed6w2fis" path="res://addons/controller_icons/assets/key/s.png" id="7_fc2wu"]
+[ext_resource type="Texture2D" uid="uid://dlwamiuq1f5t6" path="res://addons/controller_icons/assets/key/d.png" id="8_5352j"]
+[ext_resource type="Texture2D" uid="uid://cy7e67qj2flir" path="res://addons/controller_icons/assets/mouse/right.png" id="9_o1etb"]
+[ext_resource type="Texture2D" uid="uid://b8vuy7l8npt6w" path="res://addons/controller_icons/assets/mouse/left.png" id="10_ha7rx"]
+[ext_resource type="Texture2D" uid="uid://cnghdqiitl0fu" path="res://addons/controller_icons/assets/key/esc.png" id="11_2l5j5"]
+
+[sub_resource type="ButtonGroup" id="ButtonGroup_wo47o"]
+
+[sub_resource type="ButtonGroup" id="ButtonGroup_ofyqx"]
+
+[node name="Menu2" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ilu86")
+
+[node name="MainMenu" parent="." instance=ExtResource("2_7145c")]
+layout_mode = 1
+
+[node name="StartGame" parent="MainMenu/MenuContainer/MenuVBoxContainer" index="0"]
+button_group = SubResource("ButtonGroup_wo47o")
+
+[node name="HBoxContainer" parent="MainMenu/MenuContainer2" index="0"]
+button_group = SubResource("ButtonGroup_wo47o")
+
+[node name="Controls" parent="MainMenu/MenuContainer2/HBoxContainer" index="0"]
+custom_minimum_size = Vector2(50, 50)
+button_group = SubResource("ButtonGroup_wo47o")
+
+[node name="Options" parent="MainMenu/MenuContainer2/HBoxContainer" index="1"]
+custom_minimum_size = Vector2(50, 50)
+button_group = SubResource("ButtonGroup_wo47o")
+
+[node name="Quit" parent="MainMenu/MenuContainer2/HBoxContainer" index="2"]
+custom_minimum_size = Vector2(50, 50)
+button_group = SubResource("ButtonGroup_wo47o")
+
+[node name="ControlsMenu" parent="." instance=ExtResource("3_jbctq")]
+layout_mode = 1
+
+[node name="MoveHand" parent="ControlsMenu/MarginContainer/VBoxContainer2" index="0"]
+button_group = SubResource("ButtonGroup_ofyqx")
+icon = ExtResource("4_snuco")
+
+[node name="Camera Up" parent="ControlsMenu/MarginContainer/VBoxContainer2/HBoxContainer" index="0"]
+button_group = SubResource("ButtonGroup_ofyqx")
+icon = ExtResource("5_wi71j")
+
+[node name="Camera Left" parent="ControlsMenu/MarginContainer/VBoxContainer2/HBoxContainer" index="1"]
+button_group = SubResource("ButtonGroup_ofyqx")
+icon = ExtResource("6_j7qkj")
+
+[node name="Camera Down" parent="ControlsMenu/MarginContainer/VBoxContainer2/HBoxContainer" index="2"]
+button_group = SubResource("ButtonGroup_ofyqx")
+icon = ExtResource("7_fc2wu")
+
+[node name="Camera Right" parent="ControlsMenu/MarginContainer/VBoxContainer2/HBoxContainer" index="3"]
+button_group = SubResource("ButtonGroup_ofyqx")
+icon = ExtResource("8_5352j")
+
+[node name="Switch to Hand Rotation" parent="ControlsMenu/MarginContainer/VBoxContainer2" index="2"]
+button_group = SubResource("ButtonGroup_ofyqx")
+icon = ExtResource("9_o1etb")
+
+[node name="Close Hand" parent="ControlsMenu/MarginContainer/VBoxContainer2" index="3"]
+button_group = SubResource("ButtonGroup_ofyqx")
+icon = ExtResource("10_ha7rx")
+
+[node name="Pause" parent="ControlsMenu/MarginContainer/VBoxContainer2" index="4"]
+button_group = SubResource("ButtonGroup_ofyqx")
+icon = ExtResource("11_2l5j5")
+
+[editable path="MainMenu"]
+[editable path="ControlsMenu"]
