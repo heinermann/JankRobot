@@ -1,11 +1,11 @@
-[gd_scene load_steps=35 format=3 uid="uid://1jo2j6nmel70"]
+[gd_scene load_steps=35 format=3 uid="uid://b1lb2vkafim3l"]
 
 [ext_resource type="Script" path="res://[painting] Painting Room/painting room2.gd" id="1_ia77t"]
 [ext_resource type="Script" path="res://[painting] Painting Room/RobotArm.gd" id="1_serdl"]
 [ext_resource type="PackedScene" uid="uid://c842bmncjac7f" path="res://Models/Model Assets/JankRobotArmRight_RIG.glb" id="1_wtmx1"]
 [ext_resource type="Script" path="res://[painting] Painting Room/Globals.gd" id="2_40k3t"]
 [ext_resource type="Script" path="res://[painting] Painting Room/SetUVPositionMesh.gd" id="5_edvpv"]
-[ext_resource type="PackedScene" uid="uid://bl1mjgfldx7re" path="res://[painting] Painting Room/scientist.tscn" id="8_uum8u"]
+[ext_resource type="PackedScene" path="res://[painting] Painting Room/scientist.tscn" id="8_uum8u"]
 [ext_resource type="PackedScene" uid="uid://b7cjv3hwiv7ni" path="res://Models/Model Assets/RoomWall.glb" id="9_5gqxm"]
 [ext_resource type="Script" path="res://[painting] Painting Room/Brush.gd" id="9_41s0o"]
 [ext_resource type="Script" path="res://[painting] Painting Room/DrawViewport.gd" id="9_j2chq"]
