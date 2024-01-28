@@ -1,16 +1,8 @@
-[gd_scene load_steps=14 format=3 uid="uid://bojm2io7eoq7h"]
+[gd_scene load_steps=6 format=3 uid="uid://bojm2io7eoq7h"]
 
 [ext_resource type="Script" path="res://UI/Menus/menu_manager.gd" id="1_bcsv8"]
 [ext_resource type="PackedScene" uid="uid://4tc1kq1idr1p" path="res://UI/Menus/MainMenu/main_menu.tscn" id="2_mc7mt"]
 [ext_resource type="PackedScene" uid="uid://yl2ex6llvpyh" path="res://UI/Menus/ControlsMenu/controls_menu.tscn" id="3_vluar"]
-[ext_resource type="Texture2D" uid="uid://puc614rf26im" path="res://addons/controller_icons/assets/key/arrow_left.png" id="4_x8ewr"]
-[ext_resource type="Texture2D" uid="uid://casmdw1resubx" path="res://addons/controller_icons/assets/key/w.png" id="5_yrarm"]
-[ext_resource type="Texture2D" uid="uid://bptg6u6b4y5no" path="res://addons/controller_icons/assets/key/a.png" id="6_g7k7n"]
-[ext_resource type="Texture2D" uid="uid://db6nbed6w2fis" path="res://addons/controller_icons/assets/key/s.png" id="7_u07hh"]
-[ext_resource type="Texture2D" uid="uid://dlwamiuq1f5t6" path="res://addons/controller_icons/assets/key/d.png" id="8_3jpxe"]
-[ext_resource type="Texture2D" uid="uid://cy7e67qj2flir" path="res://addons/controller_icons/assets/mouse/right.png" id="9_p1jge"]
-[ext_resource type="Texture2D" uid="uid://b8vuy7l8npt6w" path="res://addons/controller_icons/assets/mouse/left.png" id="10_gi8fe"]
-[ext_resource type="Texture2D" uid="uid://cnghdqiitl0fu" path="res://addons/controller_icons/assets/key/esc.png" id="11_kwsc4"]
 
 [sub_resource type="ButtonGroup" id="ButtonGroup_wo47o"]
 
@@ -51,35 +43,27 @@ layout_mode = 1
 
 [node name="MoveHand" parent="ControlsMenu/MarginContainer/VBoxContainer2" index="0"]
 button_group = SubResource("ButtonGroup_ofyqx")
-icon = ExtResource("4_x8ewr")
 
 [node name="Camera Up" parent="ControlsMenu/MarginContainer/VBoxContainer2/HBoxContainer" index="0"]
 button_group = SubResource("ButtonGroup_ofyqx")
-icon = ExtResource("5_yrarm")
 
 [node name="Camera Left" parent="ControlsMenu/MarginContainer/VBoxContainer2/HBoxContainer" index="1"]
 button_group = SubResource("ButtonGroup_ofyqx")
-icon = ExtResource("6_g7k7n")
 
 [node name="Camera Down" parent="ControlsMenu/MarginContainer/VBoxContainer2/HBoxContainer" index="2"]
 button_group = SubResource("ButtonGroup_ofyqx")
-icon = ExtResource("7_u07hh")
 
 [node name="Camera Right" parent="ControlsMenu/MarginContainer/VBoxContainer2/HBoxContainer" index="3"]
 button_group = SubResource("ButtonGroup_ofyqx")
-icon = ExtResource("8_3jpxe")
 
 [node name="Switch to Hand Rotation" parent="ControlsMenu/MarginContainer/VBoxContainer2" index="2"]
 button_group = SubResource("ButtonGroup_ofyqx")
-icon = ExtResource("9_p1jge")
 
 [node name="Close Hand" parent="ControlsMenu/MarginContainer/VBoxContainer2" index="3"]
 button_group = SubResource("ButtonGroup_ofyqx")
-icon = ExtResource("10_gi8fe")
 
 [node name="Pause" parent="ControlsMenu/MarginContainer/VBoxContainer2" index="4"]
 button_group = SubResource("ButtonGroup_ofyqx")
-icon = ExtResource("11_kwsc4")
 
 [editable path="MainMenu"]
 [editable path="ControlsMenu"]

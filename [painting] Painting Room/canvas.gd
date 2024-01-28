@@ -110,6 +110,12 @@ func calculate_score(max_score, correct_pixels, outside_pixels, total_correct, o
 
 	return min(score, score_cap)
 
+func get_score():
+	var viewport = get_node('Canvas/DrawViewport')
+	var painted_image = get_region(viewport.get_texture().get_image())
+	var count = count_pixels(score_image, painted_image)
+	return [count, calculate_score(100, count[0], count[1], count[2], [])]
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	var material = ($Canvas.mesh.surface_get_material(0) as ShaderMaterial)

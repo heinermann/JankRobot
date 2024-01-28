@@ -13,4 +13,11 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	var exists = get_node_or_null("/root/PaintingRoom/ResultsMenu")
+	if Input.is_action_just_pressed("ui_page_down") and !exists:
+		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+		var results_menu = load("res://UI/Menus/ResultsMenu/results_menu.tscn")
+		var instance = results_menu.instantiate()
+		instance.score = $canvas.get_score()
+		add_child(instance)
 	pass
