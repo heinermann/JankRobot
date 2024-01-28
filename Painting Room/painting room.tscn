@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://c63gewo0qeut2"]
+[gd_scene load_steps=20 format=3 uid="uid://c63gewo0qeut2"]
 
 [ext_resource type="PackedScene" uid="uid://cfbrwe0v6ulkf" path="res://scientist.tscn" id="1_wfx3d"]
 [ext_resource type="PackedScene" uid="uid://cqvuawo0x37ol" path="res://3D Assests/paintbrush.glb" id="2_h7yvm"]
@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://bersoijs3iadt" path="res://3D Assests/RoboArm.glb" id="11_smab5"]
 [ext_resource type="PackedScene" uid="uid://d01bgwrevvi1f" path="res://3D Assests/paintbrush_thick.glb" id="12_vt2d1"]
 [ext_resource type="PackedScene" uid="uid://btycdbwcgx4r6" path="res://3D Assests/paintbrush_sausage.glb" id="13_vtuc0"]
+[ext_resource type="PackedScene" uid="uid://nqpexca4fva8" path="res://3D Assests/paintcan_2.glb" id="14_67hsq"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_y8jjb"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -81,7 +82,7 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.0801
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.98597, -0.00442195, -0.189489)
 
 [node name="RoomWall3" parent="." instance=ExtResource("8_wn3nj")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 2.16816, -0.0126309, -0.189642)
+transform = Transform3D(-1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, 2.16816, -0.0126309, -0.189642)
 
 [node name="RoomWall4" parent="." instance=ExtResource("8_wn3nj")]
 transform = Transform3D(0.000184289, -0.0280955, 0.999605, -0.999978, -0.00656235, -8.74209e-08, 0.00655976, -0.999584, -0.0280962, 0.112046, 2.33311, -0.94301)
@@ -111,4 +112,10 @@ transform = Transform3D(-0.0345387, 0, 0.498806, 0, 0.5, 0, -0.498806, 0, -0.034
 transform = Transform3D(0.318651, 0, -0.385307, 0, 0.5, 0, 0.385307, 0, 0.318651, -0.130827, 0.614251, 1.12662)
 
 [node name="paintbrush_sausage2" parent="." instance=ExtResource("13_vtuc0")]
-transform = Transform3D(0.0876318, 0, -0.492261, 0, 0.5, 0, 0.492261, 0, 0.0876318, -0.0468722, 0.632396, 1.01988)
+transform = Transform3D(0.0876318, 0, -0.492261, 0, 0.5, 0, 0.492261, 0, 0.0876318, 0.0739538, 0.632396, 1.01988)
+
+[node name="paintcan_2" parent="." instance=ExtResource("14_67hsq")]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, -0.0612174, 0.488663, 0.822013)
+
+[node name="paintcan_3" parent="." instance=ExtResource("14_67hsq")]
+transform = Transform3D(0.363231, 0.165819, 0.023821, 0.0138401, 0.0269803, -0.398849, -0.166948, 0.36301, 0.0187629, -0.226845, 0.53565, 0.587592)
