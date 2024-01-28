@@ -9,6 +9,7 @@ func _ready():
 	var count = score[0]
 	var body_string = "Pixels painted correctly: %d\nPixels drawn outside the lines: %d\n\nScore: %f"
 	img = score[2]
+	img.flip_y()
 	get_node("%Body").set_text(body_string % [count[0], count[1], score[1]])
 	$Sprite2D.set_texture(ImageTexture.create_from_image(img))
 
