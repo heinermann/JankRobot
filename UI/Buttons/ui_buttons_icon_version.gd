@@ -7,6 +7,7 @@ var button_released = null
 func _ready(): 
 	for i in get_children():
 		if i is Button:
+			if i.name == "Restart" or i.name == "ReturnToMainMenu": continue
 			i.connect("pressed", on_button_pressed)
 				
 

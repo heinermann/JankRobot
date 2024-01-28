@@ -1,9 +1,10 @@
-[gd_scene load_steps=39 format=3 uid="uid://b1lb2vkafim3l"]
+[gd_scene load_steps=40 format=3 uid="uid://b1lb2vkafim3l"]
 
 [ext_resource type="Script" path="res://[painting] Painting Room/painting room2.gd" id="1_ia77t"]
 [ext_resource type="Script" path="res://[painting] Painting Room/RobotArm.gd" id="1_serdl"]
 [ext_resource type="PackedScene" uid="uid://c842bmncjac7f" path="res://Models/Model Assets/JankRobotArmRight_RIG.glb" id="1_wtmx1"]
 [ext_resource type="Script" path="res://[painting] Painting Room/Globals.gd" id="2_40k3t"]
+[ext_resource type="PackedScene" uid="uid://cbomx5b8dkhoi" path="res://UI/Menus/PauseMenu/pause_menu.tscn" id="2_rwqgw"]
 [ext_resource type="PackedScene" uid="uid://bu1bvrs85u0h5" path="res://UI/Face/face.tscn" id="2_xskvt"]
 [ext_resource type="PackedScene" uid="uid://c4ak8kpg7qend" path="res://UI/Gauge/gauge.tscn" id="3_p8wy1"]
 [ext_resource type="Script" path="res://UI/Gauge/gauge.gd" id="4_3irg8"]
@@ -185,7 +186,7 @@ decrease_mood_over_time = false
 mood_down_over_time = 0.5
 max_time_in_seconds = 60.0
 
-[node name="MoodModule" type="Control" parent="."]
+[node name="UI" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -193,23 +194,34 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="face" parent="MoodModule" node_paths=PackedStringArray("mood_placeholder") instance=ExtResource("2_xskvt")]
+[node name="MoodModule" type="Control" parent="UI"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="face" parent="UI/MoodModule" node_paths=PackedStringArray("mood_placeholder") instance=ExtResource("2_xskvt")]
 position = Vector2(991, 88)
 mood_placeholder = NodePath("../mood_placeholder")
 
-[node name="gauge" parent="MoodModule" node_paths=PackedStringArray("mood_placeholder") instance=ExtResource("3_p8wy1")]
+[node name="gauge" parent="UI/MoodModule" node_paths=PackedStringArray("mood_placeholder") instance=ExtResource("3_p8wy1")]
 position = Vector2(895, 152)
 scale = Vector2(0.5, 0.5)
 script = ExtResource("4_3irg8")
 mood_placeholder = NodePath("../mood_placeholder")
 
-[node name="mood_placeholder" parent="MoodModule" instance=ExtResource("4_hb2r7")]
+[node name="mood_placeholder" parent="UI/MoodModule" instance=ExtResource("4_hb2r7")]
 layout_mode = 0
 offset_left = 40.0
 offset_top = 36.0
 offset_right = 440.0
 offset_bottom = 236.0
 scale = Vector2(0.8, 0.8)
+
+[node name="PauseMenu" parent="UI" instance=ExtResource("2_rwqgw")]
+layout_mode = 1
 
 [node name="Globals" type="Node" parent="."]
 script = ExtResource("2_40k3t")
