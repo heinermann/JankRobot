@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=3 uid="uid://b1lb2vkafim3l"]
+[gd_scene load_steps=41 format=3 uid="uid://b1lb2vkafim3l"]
 
 [ext_resource type="Script" path="res://[painting] Painting Room/painting room2.gd" id="1_ia77t"]
 [ext_resource type="Script" path="res://[painting] Painting Room/RobotArm.gd" id="1_serdl"]
@@ -23,6 +23,7 @@
 [ext_resource type="PackedScene" uid="uid://ctoo1b64qlqw6" path="res://[painting] Painting Room/Pickupable/paintbrush.tscn" id="13_30e0q"]
 [ext_resource type="PackedScene" uid="uid://dkxanr36swtn0" path="res://[painting] Painting Room/Pickupable/paintbucket.tscn" id="18_48idl"]
 [ext_resource type="Texture2D" uid="uid://e4utc82nnkv6" path="res://Paintings/bloofus.png" id="21_qblll"]
+[ext_resource type="PackedScene" uid="uid://ii7ojwly8qf1" path="res://[painting] Painting Room/Pickupable/paintbrush_wide.tscn" id="24_031j1"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_p6ks8"]
 
@@ -405,7 +406,10 @@ script = ExtResource("9_j2chq")
 script = ExtResource("9_41s0o")
 
 [node name="Paintbrush" parent="." instance=ExtResource("13_30e0q")]
-transform = Transform3D(0.776673, 0.629903, 0, -0.629903, 0.776673, 0, 0, 0, 1, 0, 3.45974, 1.56482)
+transform = Transform3D(0.776673, 0.629903, 0, -0.629903, 0.776673, 0, 0, 0, 1, 0.679836, 3.45974, 1.56482)
+
+[node name="WidePaintbrush" parent="." instance=ExtResource("24_031j1")]
+transform = Transform3D(-0.669131, -0.743145, 0, 0.743145, -0.669131, 0, 0, 0, 1, -1.4685, 3.325, 1.40539)
 
 [node name="PaintbucketPos" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.44, 2, 0.83)
