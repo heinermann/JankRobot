@@ -1,4 +1,4 @@
-[gd_scene load_steps=49 format=3 uid="uid://cnaj0l06agogf"]
+[gd_scene load_steps=51 format=3 uid="uid://cnaj0l06agogf"]
 
 [ext_resource type="Script" path="res://[painting] Painting Room/painting room2.gd" id="1_ia77t"]
 [ext_resource type="Script" path="res://[painting] Painting Room/RobotArm.gd" id="1_serdl"]
@@ -10,6 +10,8 @@
 [ext_resource type="Script" path="res://UI/Gauge/gauge.gd" id="4_3irg8"]
 [ext_resource type="PackedScene" uid="uid://d0tv1ilw70heh" path="res://UI/Mood Module/mood_placeholder.tscn" id="4_hb2r7"]
 [ext_resource type="Script" path="res://[painting] Painting Room/SetUVPositionMesh.gd" id="5_edvpv"]
+[ext_resource type="AudioStream" uid="uid://cg0ymj6ksp2sc" path="res://SFX/scientist_confused_1.wav" id="5_nxnti"]
+[ext_resource type="AudioStream" uid="uid://c1tkcwjhofn61" path="res://SFX/scientist_confused_2.wav" id="6_wuuak"]
 [ext_resource type="PackedScene" path="res://[painting] Painting Room/scientist.tscn" id="8_uum8u"]
 [ext_resource type="PackedScene" uid="uid://b7cjv3hwiv7ni" path="res://Models/Model Assets/RoomWall.glb" id="9_5gqxm"]
 [ext_resource type="Script" path="res://[painting] Painting Room/Brush.gd" id="9_41s0o"]
@@ -17,14 +19,14 @@
 [ext_resource type="Script" path="res://[painting] Painting Room/canvas.gd" id="9_kq04p"]
 [ext_resource type="Texture2D" uid="uid://bnhi1hi6mv7b2" path="res://Models/canvas/Canvas.png" id="10_ayqtt"]
 [ext_resource type="Script" path="res://[painting] Painting Room/FloorCollector.gd" id="10_m3elr"]
-[ext_resource type="Shader" path="res://[painting] Painting Room/paintable.tres" id="11_1hcha"]
+[ext_resource type="Shader" uid="uid://8q2dcbmkx5nc" path="res://[painting] Painting Room/paintable.tres" id="11_1hcha"]
 [ext_resource type="PackedScene" uid="uid://4oeqmpb140j0" path="res://Models/Model Assets/RoomFan.glb" id="11_grfsn"]
 [ext_resource type="Texture2D" uid="uid://dnaqdlpo1r4pd" path="res://Models/Untitled.png" id="12_b4r8j"]
 [ext_resource type="PackedScene" uid="uid://ctoo1b64qlqw6" path="res://[painting] Painting Room/Pickupable/paintbrush.tscn" id="13_30e0q"]
 [ext_resource type="PackedScene" uid="uid://dkxanr36swtn0" path="res://[painting] Painting Room/Pickupable/paintbucket.tscn" id="18_48idl"]
 [ext_resource type="PackedScene" path="res://[painting] Painting Room/finish_button.tscn" id="24_7nm75"]
 [ext_resource type="PackedScene" uid="uid://ii7ojwly8qf1" path="res://[painting] Painting Room/Pickupable/paintbrush_wide.tscn" id="24_031j1"]
-[ext_resource type="PackedScene" path="res://music_manager.tscn" id="25_ohpjo"]
+[ext_resource type="PackedScene" uid="uid://cy3foeqo5koch" path="res://music_manager.tscn" id="25_ohpjo"]
 [ext_resource type="AudioStream" uid="uid://buygv3qphd5he" path="res://Music/Someones_Watching_Main_Game.ogg" id="26_l8ge1"]
 [ext_resource type="Script" path="res://[painting] Painting Room/SkeletonIK3D.gd" id="27_0lemj"]
 [ext_resource type="PackedScene" uid="uid://d3q1vepj7k2al" path="res://Models/Model Assets/RoomFloor.glb" id="28_2g5p2"]
@@ -299,6 +301,14 @@ position = Vector2(895, 152)
 scale = Vector2(0.5, 0.5)
 script = ExtResource("4_3irg8")
 mood_placeholder = NodePath("../mood_placeholder")
+
+[node name="confused_1" type="AudioStreamPlayer" parent="UI/MoodModule/gauge"]
+stream = ExtResource("5_nxnti")
+volume_db = 24.0
+
+[node name="confused_2" type="AudioStreamPlayer" parent="UI/MoodModule/gauge"]
+stream = ExtResource("6_wuuak")
+volume_db = 24.0
 
 [node name="mood_placeholder" parent="UI/MoodModule" instance=ExtResource("4_hb2r7")]
 layout_mode = 0
