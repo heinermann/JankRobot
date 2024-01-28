@@ -59,5 +59,6 @@ func finish_game(victory: bool):
 		var results_menu = load("res://UI/Menus/ResultsMenu/results_menu.tscn")
 		var instance = results_menu.instantiate()
 		instance.score = $canvas.get_score()
+		instance.mood = mood
 		instance.victory = victory
 		add_child(instance)

@@ -2,6 +2,7 @@ extends Control
 
 var score
 var victory: bool = false
+var mood: float
 
 var img: Image
 
@@ -24,11 +25,12 @@ func _ready():
 		result.set_text("LOSS")
 	
 	var count = score[0]
-	var body_string = "Pixels painted correctly: %d\nPixels drawn outside the lines: %d\n\nScore: %f"
+	var body_string = "Pixels painted correctly: %d\nMood penalty: %d\n\nScore: %f"
 	img = score[2]
 	img.flip_y()
 	
-	var rest: String = body_string % [count[0], count[1], score[1]]
+	var mood_penalty = mood - 100
+	var rest: String = body_string % [count[0], mood_penalty, score[1] + mood_penalty]
 	get_node("%Body").set_text(top_text + rest)
 		
 		
