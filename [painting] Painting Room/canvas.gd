@@ -108,7 +108,7 @@ func get_score():
 	return [count, calculate_score(100, count[0], count[1], count[2], []), painted_image]
 
 func read_painting_file(path):
-	var config = FileAccess.open("res://Paintings/" + path.replace(".png", ".json"), FileAccess.READ)
+	var config = FileAccess.open("./Paintings/" + path.replace(".png", ".json"), FileAccess.READ)
 	var config_parse = JSON.parse_string(config.get_as_text())
 	
 	painting_position = Vector2(config_parse["pos_x"], config_parse["pos_y"])
@@ -125,7 +125,7 @@ func read_painting_file(path):
 	empty_colors = new_empty_colors
 	
 func choose_painting():
-	var dir = DirAccess.open("res://Paintings")
+	var dir = DirAccess.open("./Paintings")
 	
 	var files = []
 	
@@ -141,7 +141,7 @@ func choose_painting():
 	
 	read_painting_file(files[chosen])
 	
-	painting_texture = ImageTexture.create_from_image(Image.load_from_file("res://Paintings/" + files[chosen]))
+	painting_texture = ImageTexture.create_from_image(Image.load_from_file("./Paintings/" + files[chosen]))
 
 func make_paintbuckets():
 	var root = get_node("/root/PaintingRoom")
